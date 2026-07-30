@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>J. HAN — Portfolio</title>
+<meta name="description" content="J. HAN — Designer / Art Director portfolio">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="brand"><a href="#top">J. HAN</a></div>
+  <nav class="main-nav">
+    <button class="nav-link" data-target="about">ABOUT</button>
+    <button class="nav-link" data-target="index-section">INDEX</button>
+  </nav>
+  <div class="view-toggle">
+    <button class="view-btn active" data-view="image">Image View</button>
+    <span>/</span>
+    <button class="view-btn" data-view="list">List View</button>
+  </div>
+</header>
+
+<div class="logo-mark" id="top" aria-hidden="true">
+  <span class="logo-letter">J</span>
+  <span class="logo-letter logo-letter--right">H</span>
+</div>
+
+<main>
+
+  <section id="about" class="about-section">
+    <div class="about-grid">
+      <div class="about-text">
+        <p class="about-lede">
+          J. HAN은 브랜드 경험과 비주얼 아이덴티티를 다루는 디자이너 / 아트 디렉터입니다.
+          그래픽 디자인, 브랜딩, 편집 디자인을 중심으로 클라이언트의 이야기를
+          명료하고 감각적인 시각 언어로 번역하는 작업을 합니다.
+        </p>
+        <p>
+          이 사이트의 프로젝트와 크레딧은 데모를 위한 더미 콘텐츠입니다.
+          실제 프로젝트, 이력, 연락처로 교체하여 사용하세요.
+        </p>
+      </div>
+      <div class="about-meta">
+        <div class="meta-block">
+          <h3>Contact</h3>
+          <p><a href="mailto:hello@example.com">hello@example.com</a></p>
+          <p><a href="#">Instagram</a></p>
+          <p><a href="#">LinkedIn</a></p>
+        </div>
+        <div class="meta-block">
+          <h3>Experience</h3>
+          <p>Senior Designer — Studio Placeholder<br>2021 — Present</p>
+          <p>Designer — Example Agency<br>2018 — 2021</p>
+        </div>
+        <div class="meta-block">
+          <h3>Recognition</h3>
+          <p>Design Award — Placeholder, 2023</p>
+          <p>Featured — Sample Publication, 2022</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="index-section" class="index-section">
+
+    <div class="list-header">
+      <span class="col-thumb" aria-hidden="true"></span>
+      <span class="col-project">PROJECTS</span>
+      <span class="col-discipline">DISCIPLINES</span>
+      <span class="col-deliverable">DELIVERABLES</span>
+      <span class="col-year">YEAR</span>
+    </div>
+
+    <div class="project-list" id="project-list"><!-- populated by js --></div>
+
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <span>&copy; 2026 J. HAN</span>
+  <button class="to-top" data-target="top">TOP</button>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

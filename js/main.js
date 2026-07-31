@@ -69,7 +69,7 @@ const projects = [
   },
   {
     title: "Digital Product Identity",
-    company: "205컴퍼니",
+    company: "이공오",
     desc: "스타트업 제품 런칭을 위한 디지털 아이덴티티. 로고, 컬러 시스템, 웹사이트 디자인 방향을 함께 진행했습니다.",
     credit: "Creative Direction: 김한솔\nWeb Development: Placeholder Dev",
     disciplines: ["Digital Design", "Identity"],

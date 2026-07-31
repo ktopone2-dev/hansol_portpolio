@@ -22,7 +22,7 @@ function slideCount(p) {
 
 function slideBackground(p, idx) {
   if (Array.isArray(p.images)) {
-    return `url('${p.images[idx]}') center / cover no-repeat`;
+    return `url('${p.images[idx]}') center / contain no-repeat, #101210`;
   }
   return GRADIENTS[idx % GRADIENTS.length];
 }

@@ -116,6 +116,7 @@ function renderProjects() {
 
       return `
         <article class="project-row" data-index="${pi}" data-current="0">
+          <h2 class="project-title-mobile">${p.title}</h2>
           <div class="project-thumb-wrap">
             <div class="project-thumb">
               <div class="thumb" style="background:${GRADIENTS[0]}"></div>

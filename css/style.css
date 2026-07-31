@@ -101,32 +101,37 @@ button {
 }
 .logo-letter--right { text-align: right; }
 
-/* About */
-.about-section {
-  padding: 50px 28px 70px;
-  border-bottom: 1px solid var(--black);
-}
-.about-grid {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  gap: 64px;
+/* Layout */
+.main-stack {
   max-width: 1500px;
   margin: 0 auto;
+  padding: 0 28px;
+}
+
+/* About */
+.about-text {
+  padding: 50px 0 40px;
+  border-bottom: 1px solid var(--black);
 }
 .about-lede {
   font-size: clamp(18px, 2vw, 24px);
   line-height: 1.4;
   font-weight: 500;
   margin: 0 0 20px;
+  max-width: 70ch;
 }
 .about-text p:not(.about-lede) {
   color: var(--gray);
   max-width: 60ch;
 }
+
+/* Footer meta (Contact / Skills / Experience) */
 .about-meta {
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  padding: 40px 0;
+  border-top: 1px solid var(--black);
 }
 .meta-block h3 {
   font-size: 12px;
@@ -139,7 +144,7 @@ button {
 .meta-block p { margin: 0 0 4px; }
 
 /* Index / list header */
-.index-section { padding: 0 28px 60px; max-width: 1500px; margin: 0 auto; }
+.index-section { padding: 40px 0 60px; }
 
 .list-header {
   display: grid;
@@ -218,6 +223,7 @@ button {
   font-weight: 700;
   margin: 0 0 6px;
 }
+.project-title-mobile { display: none; }
 .project-desc {
   color: var(--black);
   max-width: 62ch;
@@ -405,7 +411,7 @@ body.view-list .project-main h2 { margin: 0; font-size: 14px; }
 
 /* Responsive */
 @media (max-width: 900px) {
-  .about-grid { grid-template-columns: 1fr; gap: 32px; }
+  .about-meta { grid-template-columns: 1fr; gap: 28px; }
   .list-header { display: none; }
 
   .project-row,
@@ -424,6 +430,9 @@ body.view-list .project-main h2 { margin: 0; font-size: 14px; }
   .project-tags-mobile { display: flex; flex-wrap: wrap; gap: 6px 14px; margin: 0 0 8px; font-size: 13px; color: var(--gray); }
   .project-tags, .project-deliverables, .project-year { display: none; }
 
+  .project-title-mobile { display: block; font-size: 17px; font-weight: 700; margin: 0 0 10px; }
+  .project-main h2 { display: none; }
+
   .modal-overlay { padding: 0; align-items: stretch; }
   .modal-box {
     width: 100%;
@@ -440,5 +449,5 @@ body.view-list .project-main h2 { margin: 0; font-size: 14px; }
   .site-header { padding: 14px 18px; }
   .main-nav { gap: 14px; }
   .logo-mark { padding: 0 18px; height: 90px; }
-  .about-section, .index-section { padding-left: 18px; padding-right: 18px; }
+  .main-stack { padding-left: 18px; padding-right: 18px; }
 }

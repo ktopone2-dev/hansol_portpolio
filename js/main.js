@@ -16,7 +16,32 @@ function slugify(str) {
     .replace(/\s+/g, "-");
 }
 
+function slideCount(p) {
+  return Array.isArray(p.images) ? p.images.length : p.images;
+}
+
+function slideBackground(p, idx) {
+  if (Array.isArray(p.images)) {
+    return `url('${p.images[idx]}') center / cover no-repeat`;
+  }
+  return GRADIENTS[idx % GRADIENTS.length];
+}
+
 const projects = [
+  {
+    title: "Kasina x Crocs Echo II — Glow in the Dark",
+    company: "카시나",
+    desc: "카시나 x 크록스 콜라보 상품 출시를 위한 프리오더/릴리즈 랜딩페이지. 웹과 앱 두 가지 버전으로 제작했으며, 사전예약 카운트다운, 팝업 스토어 정보, 앱 다운로드 유도 흐름을 포함합니다.",
+    credit: "Web Design: 김한솔",
+    disciplines: ["Web Design", "App Design"],
+    deliverables: ["Landing Page", "Release Page"],
+    year: 2026,
+    images: [
+      "images/kasina-crocs-echo-web.jpg",
+      "images/kasina-crocs-echo-app-1.jpg",
+      "images/kasina-crocs-echo-app-2.jpg",
+    ],
+  },
   {
     title: "Studio Rebrand 2025",
     company: "비케이브",
@@ -114,23 +139,25 @@ function renderProjects() {
         .map((t) => `<span>${t}</span>`)
         .join("");
 
+      const total = slideCount(p);
+
       return `
         <article class="project-row" data-index="${pi}" data-current="0">
           <h2 class="project-title-mobile">${p.title}</h2>
           <div class="project-thumb-wrap">
             <div class="project-thumb">
-              <div class="thumb" style="background:${GRADIENTS[0]}"></div>
+              <div class="thumb" style="background:${slideBackground(p, 0)}"></div>
               <button class="thumb-nav prev" aria-label="이전 이미지"></button>
               <button class="thumb-nav next" aria-label="다음 이미지"></button>
             </div>
-            <div class="thumb thumb-sm project-thumb-sm" style="background:${GRADIENTS[0]}"></div>
+            <div class="thumb thumb-sm project-thumb-sm" style="background:${slideBackground(p, 0)}"></div>
           </div>
           <div class="project-main">
             <h2>${p.title}</h2>
             <div class="project-tags-mobile">${mobileTags}</div>
             <p class="project-desc">${p.desc}</p>
             <p class="project-credit">${p.credit}</p>
-            <div class="project-counter">1 / ${p.images}</div>
+            <div class="project-counter">1 / ${total}</div>
           </div>
           <div class="project-tags">${disciplines}</div>
           <div class="project-deliverables">${deliverables}</div>
@@ -142,7 +169,8 @@ function renderProjects() {
 
   list.querySelectorAll(".project-row").forEach((row) => {
     const pi = Number(row.dataset.index);
-    const total = projects[pi].images;
+    const p = projects[pi];
+    const total = slideCount(p);
     const bigThumb = row.querySelector(".project-thumb .thumb");
     const smThumb = row.querySelector(".project-thumb-sm");
     const counter = row.querySelector(".project-counter");
@@ -150,7 +178,7 @@ function renderProjects() {
     const setSlide = (idx) => {
       const clamped = ((idx % total) + total) % total;
       row.dataset.current = clamped;
-      const bg = GRADIENTS[clamped % GRADIENTS.length];
+      const bg = slideBackground(p, clamped);
       bigThumb.style.background = bg;
       smThumb.style.background = bg;
       counter.textContent = `${clamped + 1} / ${total}`;
@@ -213,9 +241,10 @@ function buildModalDots(container, total, current) {
 
 function setModalSlide(idx) {
   const p = projects[modalState.index];
-  const clamped = ((idx % p.images) + p.images) % p.images;
+  const total = slideCount(p);
+  const clamped = ((idx % total) + total) % total;
   modalState.slide = clamped;
-  document.getElementById("modal-thumb").style.background = GRADIENTS[clamped % GRADIENTS.length];
+  document.getElementById("modal-thumb").style.background = slideBackground(p, clamped);
   document.querySelectorAll("#modal-dots .dot").forEach((d, i) => {
     d.classList.toggle("active", i === clamped);
   });
@@ -228,7 +257,7 @@ function renderModalContent() {
   document.getElementById("modal-tags").innerHTML = [p.company, ...p.disciplines, String(p.year)]
     .map((t) => `<span>${t}</span>`)
     .join("");
-  buildModalDots(document.getElementById("modal-dots"), p.images, modalState.slide);
+  buildModalDots(document.getElementById("modal-dots"), slideCount(p), modalState.slide);
   setModalSlide(modalState.slide);
 }
 

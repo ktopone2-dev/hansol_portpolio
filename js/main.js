@@ -33,8 +33,8 @@ const projects = [
     company: "카시나",
     desc: "카시나 x 크록스 콜라보 상품 출시를 위한 프리오더/릴리즈 랜딩페이지. 웹과 앱 두 가지 버전으로 제작했으며, 사전예약 카운트다운, 팝업 스토어 정보, 앱 다운로드 유도 흐름을 포함합니다.",
     credit: "Web Design: 김한솔",
-    disciplines: ["Web Design", "App Design"],
-    deliverables: ["Landing Page", "Release Page"],
+    disciplines: ["Web Design"],
+    deliverables: ["Landing Page"],
     year: 2026,
     images: [
       "images/kasina-crocs-echo-web.jpg",
@@ -47,8 +47,8 @@ const projects = [
     company: "비케이브",
     desc: "부티크 스튜디오의 브랜드 아이덴티티 전면 개편. 로고, 타이포그래피, 명함 및 웹 적용까지 전체 시스템을 설계했습니다.",
     credit: "Creative Direction: 김한솔\nArt Direction & Design: S. Kim\nProject Management: M. Lee",
-    disciplines: ["Creative Direction", "Branding"],
-    deliverables: ["Identity System", "Guidelines"],
+    disciplines: ["Content Design"],
+    deliverables: ["Identity System"],
     year: 2025,
     images: 4,
   },
@@ -57,8 +57,8 @@ const projects = [
     company: "비케이브",
     desc: "리테일 브랜드의 겨울 시즌 캠페인. 광고, 매장 그래픽, SNS 콘텐츠까지 통합된 비주얼 톤을 개발했습니다.",
     credit: "Art Direction: 김한솔\nPhotography: R. Choi\nStyling: H. Kang",
-    disciplines: ["Art Direction", "Visual Design"],
-    deliverables: ["Campaign Visuals", "Motion"],
+    disciplines: ["KV Design"],
+    deliverables: ["Key Visual"],
     year: 2024,
     images: 6,
   },
@@ -67,8 +67,8 @@ const projects = [
     company: "데코큐비클",
     desc: "브랜드 전용 가변 타입페이스 개발 프로젝트. 디스플레이용 개성과 본문용 가독성을 동시에 만족시키는 시스템을 구축했습니다.",
     credit: "Type Design: 김한솔\nType Advisory: E. Noh",
-    disciplines: ["Type Design", "Branding"],
-    deliverables: ["Custom Typeface", "Specimen"],
+    disciplines: ["Content Design"],
+    deliverables: ["Identity System"],
     year: 2024,
     images: 3,
   },
@@ -77,8 +77,8 @@ const projects = [
     company: "데코큐비클",
     desc: "격월 발행 매거진의 편집 디자인. 그리드 시스템과 사진 편집 방향을 재정립하여 브랜드 톤을 일관되게 유지했습니다.",
     credit: "Editorial Design: 김한솔\nPhotography: Studio Placeholder",
-    disciplines: ["Editorial Design"],
-    deliverables: ["Print Layout", "Cover Series"],
+    disciplines: ["Content Design"],
+    deliverables: ["Editorial Layout"],
     year: 2023,
     images: 5,
   },
@@ -87,8 +87,8 @@ const projects = [
     company: "데코큐비클",
     desc: "플래그십 스토어 오픈에 맞춘 사이니지 및 공간 그래픽 디자인. 브랜드 아이덴티티를 공간 경험으로 확장했습니다.",
     credit: "Environmental Design: 김한솔\nFabrication: Placeholder Studio",
-    disciplines: ["Environmental Design"],
-    deliverables: ["Signage System", "Wayfinding"],
+    disciplines: ["Content Design"],
+    deliverables: ["Signage System"],
     year: 2023,
     images: 4,
   },
@@ -97,8 +97,8 @@ const projects = [
     company: "이공오",
     desc: "스타트업 제품 런칭을 위한 디지털 아이덴티티. 로고, 컬러 시스템, 웹사이트 디자인 방향을 함께 진행했습니다.",
     credit: "Creative Direction: 김한솔\nWeb Development: Placeholder Dev",
-    disciplines: ["Digital Design", "Identity"],
-    deliverables: ["Logo", "Web Design"],
+    disciplines: ["Web Design"],
+    deliverables: ["Identity System"],
     year: 2022,
     images: 3,
   },
@@ -107,8 +107,8 @@ const projects = [
     company: "아이엠컴퍼니",
     desc: "새해를 맞이하는 브랜드 시즌 비주얼. 희망적이고 밝은 분위기를 그래픽 모티프로 표현했습니다.",
     credit: "Creative Direction: 김한솔\nIllustration: Placeholder Artist",
-    disciplines: ["Visual Design"],
-    deliverables: ["Key Visual", "Poster Series"],
+    disciplines: ["KV Design"],
+    deliverables: ["Key Visual"],
     year: 2021,
     images: 2,
   },
@@ -117,8 +117,8 @@ const projects = [
     company: "Independent",
     desc: "개인 작업으로 진행한 포스터 시리즈. 타이포그래피 실험을 중심으로 자유로운 형식을 탐구했습니다.",
     credit: "Design: 김한솔",
-    disciplines: ["Graphic Design", "Poster Design"],
-    deliverables: ["Poster Series"],
+    disciplines: ["KV Design"],
+    deliverables: ["Poster"],
     year: 2019,
     images: 3,
   },
@@ -242,6 +242,20 @@ function initHeaderScrollShrink() {
   sync();
 }
 
+function initAboutScrollCollapse() {
+  let scrollCollapsed = false;
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (window.scrollY > 0 && !scrollCollapsed) {
+        scrollCollapsed = true;
+        toggleAbout(false);
+      }
+    },
+    { passive: true }
+  );
+}
+
 function initHeaderOffsetSync() {
   const header = document.querySelector(".site-header");
   const sync = () => {
@@ -249,6 +263,15 @@ function initHeaderOffsetSync() {
   };
   new ResizeObserver(sync).observe(header);
   sync();
+}
+
+function renderThumbStrip(p) {
+  const total = slideCount(p);
+  let html = "";
+  for (let i = 0; i < total; i++) {
+    html += `<div class="thumb-sq" style="background:${slideBackground(p, i)}"></div>`;
+  }
+  return html;
 }
 
 function renderProjects() {
@@ -261,19 +284,18 @@ function renderProjects() {
       const mobileTags = [...p.disciplines, ...p.deliverables, String(p.year)]
         .map((t) => `<span>${t}</span>`)
         .join("");
+      const metaLine = [String(p.year), ...p.disciplines].join(", ");
 
       const total = slideCount(p);
 
       return `
-        <article class="project-row" data-index="${pi}" data-current="0">
+        <article class="project-row" data-index="${pi}">
           <h2 class="project-title-mobile">${p.title}</h2>
           <div class="project-thumb-wrap">
             <div class="project-thumb">
               <div class="thumb" style="background:${slideBackground(p, 0)}"></div>
-              <button class="thumb-nav prev" aria-label="이전 이미지"></button>
-              <button class="thumb-nav next" aria-label="다음 이미지"></button>
             </div>
-            <div class="thumb thumb-sm project-thumb-sm" style="background:${slideBackground(p, 0)}"></div>
+            <div class="project-thumb-strip">${renderThumbStrip(p)}</div>
           </div>
           <div class="project-main">
             <h2>${p.title}</h2>
@@ -281,6 +303,7 @@ function renderProjects() {
             <p class="project-desc">${p.desc}</p>
             <p class="project-credit">${p.credit}</p>
             <div class="project-counter">1 / ${total}</div>
+            <div class="project-meta-line">${metaLine}</div>
           </div>
           <div class="project-tags">${disciplines}</div>
           <div class="project-deliverables">${deliverables}</div>
@@ -292,32 +315,9 @@ function renderProjects() {
 
   list.querySelectorAll(".project-row").forEach((row) => {
     const pi = Number(row.dataset.index);
-    const p = projects[pi];
-    const total = slideCount(p);
-    const bigThumb = row.querySelector(".project-thumb .thumb");
-    const smThumb = row.querySelector(".project-thumb-sm");
-    const counter = row.querySelector(".project-counter");
-
-    const setSlide = (idx) => {
-      const clamped = ((idx % total) + total) % total;
-      row.dataset.current = clamped;
-      const bg = slideBackground(p, clamped);
-      bigThumb.style.background = bg;
-      smThumb.style.background = bg;
-      counter.textContent = `${clamped + 1} / ${total}`;
-    };
-
-    row.querySelector(".thumb-nav.prev").addEventListener("click", (e) => {
-      e.stopPropagation();
-      setSlide(Number(row.dataset.current) - 1);
-    });
-    row.querySelector(".thumb-nav.next").addEventListener("click", (e) => {
-      e.stopPropagation();
-      setSlide(Number(row.dataset.current) + 1);
-    });
 
     row.addEventListener("click", () => {
-      openModal(pi, Number(row.dataset.current));
+      openModal(pi);
     });
   });
 }
@@ -336,10 +336,15 @@ function initViewToggle() {
 }
 
 function initNav() {
-  document.querySelectorAll(".nav-link, .to-top").forEach((el) => {
-    el.addEventListener("click", () => {
+  document.querySelectorAll(".nav-link, .to-top, [data-target='top']").forEach((el) => {
+    el.addEventListener("click", (e) => {
       if (el.dataset.target === "index-section") toggleFilterPanel();
       if (el.dataset.target === "about") toggleAbout();
+      if (el.dataset.target === "top") {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        return;
+      }
       const target = document.getElementById(el.dataset.target);
       if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
     });
@@ -509,6 +514,8 @@ document.addEventListener("DOMContentLoaded", () => {
   initModal();
   initHeaderScrollShrink();
   initHeaderOffsetSync();
+  initAboutScrollCollapse();
   document.body.classList.add("view-image");
+  toggleAbout(true);
   openFromUrl();
 });

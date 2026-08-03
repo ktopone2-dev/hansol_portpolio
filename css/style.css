@@ -35,16 +35,20 @@ button {
   padding: 0;
 }
 
-/* Header */
+/* Header (sticky container: nav bar + logo + About/Index drawers all stay pinned together) */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 50;
+  background: var(--white);
+  border-bottom: 1px solid var(--black);
+}
+
+.header-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 18px 28px;
-  background: var(--white);
   border-bottom: 1px solid var(--black);
 }
 
@@ -66,6 +70,7 @@ button {
   letter-spacing: -0.01em;
 }
 .nav-link:hover { opacity: 0.55; }
+.nav-link.active { color: var(--gray); }
 
 .view-toggle {
   display: flex;
@@ -79,27 +84,32 @@ button {
 .view-btn.active { color: var(--black); }
 .view-btn:hover { opacity: 0.6; text-decoration: none; }
 
-/* Logo mark */
+/* Logo mark (shrinks once the page is scrolled, stays shrunk — matches eepark.org reference) */
 .logo-mark {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   padding: 0 28px;
   margin: 0;
-  height: 150px;
+  height: 76px;
   overflow: hidden;
   pointer-events: none;
   user-select: none;
+  transition: height 0.3s ease;
 }
 .logo-letter {
   font-family: "Pretendard", "Helvetica Neue", Arial, sans-serif;
   font-weight: 800;
-  font-size: clamp(48px, 10vw, 150px);
-  line-height: 0.78;
+  font-size: clamp(32px, 6vw, 64px);
+  line-height: 0.9;
   letter-spacing: -0.04em;
   white-space: nowrap;
+  transition: font-size 0.3s ease;
 }
 .logo-letter--right { text-align: right; }
+
+.site-header.scrolled .logo-mark { height: 32px; }
+.site-header.scrolled .logo-letter { font-size: 22px; line-height: 1; }
 
 /* Layout */
 .main-stack {
@@ -108,11 +118,28 @@ button {
   padding: 0 28px;
 }
 
-/* About */
-.about-text {
-  padding: 50px 0 40px;
-  border-bottom: 1px solid var(--black);
+/* About (collapsed by default, toggled by the ABOUT nav button) */
+.about-inner {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
 }
+.about-clip {
+  overflow: hidden;
+  min-height: 0;
+}
+.about-content {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 50px 28px 40px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+body.about-open .about-content {
+  opacity: 1;
+  transition-delay: 0.08s;
+}
+body.about-open .about-inner { grid-template-rows: 1fr; }
 .about-lede {
   font-size: clamp(18px, 2vw, 24px);
   line-height: 1.4;
@@ -146,6 +173,93 @@ button {
 /* Index / list header */
 .index-section { padding: 40px 0 60px; }
 
+/* Filter panel (toggled by the INDEX nav button) */
+.filter-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  border-top: 1px solid var(--line);
+  transition: grid-template-rows 0.3s ease;
+}
+.filter-panel-inner {
+  overflow: hidden;
+  min-height: 0;
+}
+.filter-panel-content {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 18px 28px 22px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+body.filters-open .filter-panel { grid-template-rows: 1fr; }
+body.filters-open .filter-panel-content {
+  opacity: 1;
+  transition-delay: 0.08s;
+}
+
+.filter-grid {
+  display: grid;
+  grid-template-columns: var(--grid-image);
+  gap: var(--gap);
+}
+.filter-spacer { grid-column: span 2; }
+
+.filter-col-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-bottom: 10px;
+}
+
+.filter-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.filter-item {
+  display: block;
+  text-align: left;
+  padding: 2px 0;
+  font-size: 14px;
+  color: var(--black);
+  transition: color 0.15s ease;
+}
+.filter-item:hover { color: var(--gray); }
+.filter-item.active { font-weight: 700; }
+
+.filter-sort {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+.filter-sort span { color: var(--line); }
+.sort-btn { color: var(--gray); }
+.sort-btn.active { color: var(--black); font-weight: 700; }
+.sort-btn:hover { color: var(--black); }
+
+.filter-row-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 18px;
+}
+.filter-clear {
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+}
+.filter-clear:hover { opacity: 0.6; }
+
+.filter-empty {
+  padding: 24px 0;
+  color: var(--gray);
+}
+
 .list-header {
   display: grid;
   grid-template-columns: var(--grid-image);
@@ -158,7 +272,7 @@ button {
   text-transform: uppercase;
   color: var(--black);
   position: sticky;
-  top: 57px;
+  top: var(--header-h, 57px);
   background: var(--white);
   z-index: 10;
 }
@@ -170,9 +284,8 @@ button {
   padding: 18px 0;
   border-bottom: 1px solid var(--line);
   align-items: start;
-  transition: background 0.15s ease;
 }
-.project-row:hover { background: var(--hover-bg); }
+.project-row.is-hidden { display: none; }
 
 /* Thumbnail / carousel column (holds both the large carousel and the small list-view swatch) */
 .project-thumb-wrap { position: relative; }
@@ -180,12 +293,16 @@ button {
 .project-thumb {
   position: relative;
   display: block;
+  overflow: hidden;
+  border-radius: 2px;
 }
 .project-thumb .thumb {
   width: 100%;
   aspect-ratio: 3 / 2;
   border-radius: 2px;
+  transition: transform 0.3s ease;
 }
+.project-thumb:hover .thumb { transform: scale(1.05); }
 .thumb-nav {
   position: absolute;
   top: 0;
@@ -413,6 +530,8 @@ body.view-list .project-main h2 { margin: 0; font-size: 14px; }
 @media (max-width: 900px) {
   .about-meta { grid-template-columns: 1fr; gap: 28px; }
   .list-header { display: none; }
+  .filter-grid { grid-template-columns: 1fr; gap: 20px; }
+  .filter-spacer { display: none; }
 
   .project-row,
   body.view-image .project-row,
@@ -446,8 +565,9 @@ body.view-list .project-main h2 { margin: 0; font-size: 14px; }
 }
 
 @media (max-width: 560px) {
-  .site-header { padding: 14px 18px; }
+  .header-bar { padding: 14px 18px; }
   .main-nav { gap: 14px; }
-  .logo-mark { padding: 0 18px; height: 90px; }
+  .logo-mark { padding: 0 18px; height: 56px; }
+  .about-content, .filter-panel-content { padding-left: 18px; padding-right: 18px; }
   .main-stack { padding-left: 18px; padding-right: 18px; }
 }

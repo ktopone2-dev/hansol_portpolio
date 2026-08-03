@@ -128,6 +128,129 @@ projects.forEach((p) => {
   p.slug = slugify(p.title);
 });
 
+const filterState = { disciplines: new Set(), deliverables: new Set(), years: new Set() };
+
+function collectListValues(field) {
+  const seen = new Set();
+  projects.forEach((p) => p[field].forEach((v) => seen.add(v)));
+  return [...seen];
+}
+
+function renderFilterList(containerId, values, group) {
+  document.getElementById(containerId).innerHTML = values
+    .map((v) => `<button type="button" class="filter-item" data-group="${group}" data-value="${v}">${v}</button>`)
+    .join("");
+}
+
+function renderFilterLists() {
+  renderFilterList("filter-disciplines", collectListValues("disciplines"), "disciplines");
+  renderFilterList("filter-deliverables", collectListValues("deliverables"), "deliverables");
+  const years = [...new Set(projects.map((p) => p.year))].sort((a, b) => a - b);
+  renderFilterList("filter-year", years.map(String), "years");
+}
+
+function matchesFilters(p) {
+  const discOk = filterState.disciplines.size === 0 ||
+    p.disciplines.some((d) => filterState.disciplines.has(d));
+  const delivOk = filterState.deliverables.size === 0 ||
+    p.deliverables.some((d) => filterState.deliverables.has(d));
+  const yearOk = filterState.years.size === 0 || filterState.years.has(String(p.year));
+  return discOk && delivOk && yearOk;
+}
+
+function applyFilters() {
+  const rows = document.querySelectorAll("#project-list .project-row");
+  let visible = 0;
+  rows.forEach((row) => {
+    const match = matchesFilters(projects[Number(row.dataset.index)]);
+    row.classList.toggle("is-hidden", !match);
+    if (match) visible++;
+  });
+  document.getElementById("filter-empty").hidden = visible > 0;
+}
+
+function clearFilters() {
+  filterState.disciplines.clear();
+  filterState.deliverables.clear();
+  filterState.years.clear();
+  document.querySelectorAll(".filter-item.active").forEach((c) => c.classList.remove("active"));
+  applyFilters();
+}
+
+function sortProjectsByYear(order) {
+  const list = document.getElementById("project-list");
+  const rows = [...list.querySelectorAll(".project-row")];
+  rows.sort((a, b) => {
+    const ya = projects[Number(a.dataset.index)].year;
+    const yb = projects[Number(b.dataset.index)].year;
+    return order === "oldest" ? ya - yb : yb - ya;
+  });
+  rows.forEach((row) => list.appendChild(row));
+}
+
+function initFilters() {
+  renderFilterLists();
+  const panel = document.getElementById("filter-panel");
+  panel.addEventListener("click", (e) => {
+    const item = e.target.closest(".filter-item");
+    if (item) {
+      const { group, value } = item.dataset;
+      if (filterState[group].has(value)) {
+        filterState[group].delete(value);
+      } else {
+        filterState[group].add(value);
+      }
+      item.classList.toggle("active");
+      applyFilters();
+      return;
+    }
+    const sortBtn = e.target.closest(".sort-btn");
+    if (sortBtn) {
+      document.querySelectorAll(".sort-btn").forEach((b) => b.classList.remove("active"));
+      sortBtn.classList.add("active");
+      sortProjectsByYear(sortBtn.dataset.sort);
+      return;
+    }
+    if (e.target.closest("#filter-clear")) clearFilters();
+  });
+}
+
+function toggleBodyPanel(bodyClass, btnSelector, forceState) {
+  const next = typeof forceState === "boolean" ? forceState : !document.body.classList.contains(bodyClass);
+  document.body.classList.toggle(bodyClass, next);
+  const btn = document.querySelector(btnSelector);
+  btn.classList.toggle("active", next);
+  btn.setAttribute("aria-expanded", String(next));
+}
+
+function toggleFilterPanel(forceState) {
+  toggleBodyPanel("filters-open", '.nav-link[data-target="index-section"]', forceState);
+}
+
+function toggleAbout(forceState) {
+  toggleBodyPanel("about-open", '.nav-link[data-target="about"]', forceState);
+}
+
+function initHeaderScrollShrink() {
+  const header = document.querySelector(".site-header");
+  let hasScrolled = false;
+  const sync = () => {
+    if (window.scrollY > 0) hasScrolled = true;
+    header.classList.toggle("scrolled", hasScrolled);
+  };
+  window.addEventListener("scroll", sync, { passive: true });
+  sync();
+}
+
+function initHeaderOffsetSync() {
+  const header = document.querySelector(".site-header");
+  const sync = () => {
+    document.documentElement.style.setProperty("--header-h", `${header.getBoundingClientRect().height}px`);
+  };
+  new ResizeObserver(sync).observe(header);
+  sync();
+}
+
 function renderProjects() {
   const list = document.getElementById("project-list");
 
@@ -215,6 +338,8 @@ function initViewToggle() {
 function initNav() {
   document.querySelectorAll(".nav-link, .to-top").forEach((el) => {
     el.addEventListener("click", () => {
+      if (el.dataset.target === "index-section") toggleFilterPanel();
+      if (el.dataset.target === "about") toggleAbout();
       const target = document.getElementById(el.dataset.target);
       if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
     });
@@ -378,9 +503,12 @@ function openFromUrl() {
 
 document.addEventListener("DOMContentLoaded", () => {
   renderProjects();
+  initFilters();
   initViewToggle();
   initNav();
   initModal();
+  initHeaderScrollShrink();
+  initHeaderOffsetSync();
   document.body.classList.add("view-image");
   openFromUrl();
 });

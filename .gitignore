@@ -1,0 +1,5 @@
+.DS_Store
+.claude/
+node_modules/
+# Never commit resumes or other personal documents to this public repo
+*.pdf

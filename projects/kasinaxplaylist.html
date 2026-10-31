@@ -1,0 +1,1825 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><style>html,body{margin:0;min-height:0!important;height:auto!important}body{overflow:hidden}img{max-width:100%}</style></head><body><link rel="stylesheet" href="https://static.kasina-store.com/content_file/manual/reset.css">
+<link rel="stylesheet" href="https://static.kasina-store.com/_next/static/css/d384998cb8cf8200.css">
+<link rel="stylesheet" href="https://static.shoeprize.com/styles/plugin/swiper-bundle.min.34476e47c975.css">
+<link rel="stylesheet" href="https://static.kasina-store.com/_next/static/css/df8393030b985bb4.css">
+<link rel="stylesheet" href="https://static.kasina-store.com/_next/static/css/ff5488400d2f9eb9.css">
+<link rel="stylesheet" href="https://static.kasina-store.com/_next/static/css/5ad3bc195aa90c72.css">
+
+<style>
+    #kasina_playlist{  margin: 0px auto;}
+    #kasina_playlist img{width: 100%; height: 100%; display: block; object-fit: cover;}
+
+    /*폰트*/
+    .title{font-size: 24px; font-weight: 500; line-height: 24px; letter-spacing: 0em; text-transform: uppercase;}
+    .sub_title{font-size: 15px; font-weight: 500; line-height: 20px; letter-spacing: 0.01em; text-transform: uppercase;}
+    .body{font-size: 13px; font-weight: 400; line-height: 20px; letter-spacing: 0.01em;}
+    .text{font-size:13px; font-weight:400; line-height:16px; letter-spacing:0.01em;}
+    .button_text{font-size: 15px; font-weight: 500; line-height: 48px; text-align: center;}
+    .info_title{font-size: 15px; font-weight: 500; line-height: 20px; display: block; padding-bottom: 4px;}
+    .info_list li{font-size: 13px; line-height: 20px;}
+    .list_name{font-size: 13px; line-height: 16px; font-weight: 400; }
+    .record_t{font-weight: 500 !important;}
+    .record_title .body{line-height: 16px;}
+
+    .awards_t{font-size: 20px; line-height: 20px; font-weight: 500; margin-bottom: 8px;}
+    .awards_sub_t{font-size: 20px; line-height: 20px; margin-bottom: 8px;}
+    .awards_p{font-size: 9px; line-height: 11px;}
+
+    .s_text{font-size: 11px;}
+
+    /*MARGIN*/
+    .cont_title_wrap{padding-bottom: 20px;}
+
+    /*메인타이틀*/
+    .main_title{width: calc(100% - 32px); margin: 0px auto; padding-top: 48px;}
+    .main_title .title{padding: 0px 0px 12px;}
+
+    /*네비*/
+    .nav{width: 100%; padding: 0px 8px; padding-bottom: 48px;}
+
+    /*플레이리스트*/
+    .playlist_wrap{width: calc(100% - 32px) ;margin: 0px auto; margin-top: 48px;}
+    .playlist_cont{position: relative;}
+    .playlist_text{position: absolute; left: 0px; bottom: 0px; padding: 12px; width: 100%; color: #fff; z-index: 1;}
+    .playlist_cont:after { border-radius: 4px; content: ""; position: absolute; left: 0; bottom: 0; width: 100%; height: 120px; background: linear-gradient(180deg, transparent, rgba(0, 0, 0, .4));z-index: 0;}
+    .line_button{ color: #fff; position: relative;}
+    .line_button::after{content: ""; width: 100%; position: absolute; bottom: 0px; left: 0px; height: 1px; background: #fff;}
+
+    .playlist_list{ margin-top: 12px;}
+    .playlist_list li{padding: 8px; background: #f4f4f4; border-radius: 4px; display: flex; gap: 12px;} 
+    .playlist_list li:nth-child(2n){background: #fff; color: #000;}
+    .playlist_list li:not(:first-child){margin-top: 4px;}
+    .list_img{ width: 40px; height: 40px; border-radius: 2px; overflow: hidden; aspect-ratio: 1/1;}
+    .list_img{aspect-ratio: 1/1;}
+    .playlist_name{width: calc(100% - 40px); position: relative; display:grid; grid-template-columns: 1fr 20px;}
+    .playlist_name dd{display: flex; align-items: center;}
+    .playlist_name .sub_title{font-weight: 400; }
+    .playlist_icon{  background-image: url('https://static.kasina-store.com/content_file/manual/promotion/2024/12/playlist/list_icon.svg');  width: 20px; height: 100%;  background-repeat: no-repeat;background-position: center;  }
+    .playlist_list{overflow: hidden; overflow-y: scroll; height: calc(5.1 * 64px); /* 동적 계산 */}  
+    .playlist_list:-webkit-scrollbar {display: none;}
+    .playlist_list{-ms-overflow-style: none; /* 인터넷 익스플로러 */scrollbar-width: none; /* 파이어폭스 */}
+
+    .playlist_buton{display: block;width: 100%; background: #000; color: #fff; border-radius: 4px; margin-top: 12px;}
+
+    .event_noti{margin-top: 8px;}
+    .playlist_info{padding:24px 0px; border-top: solid 1px #dfdfdf; margin-top: 24px;}
+
+    /*기록*/
+    .records_wrap{ width: calc(100% - 32px); margin: 0px auto; margin-top: 48px;}
+    .records_inner{display: grid; grid-template-columns: repeat(2,1fr); gap: 8px;}
+    .records_slide{width: 100%;}
+    .record_img{background: #f4f4f4;}
+
+    .records_slide {position: relative;}
+    .record_title{position: absolute; top: 0px; left: 0px; width: 100%; padding: 16px; z-index: 1; text-align: center;}
+
+    /*어워즈*/
+    .awards_wrap {
+    width:100%; /* 부모 너비 설정 */
+
+    margin-top: 48px;
+    }
+
+.awards_wrap .cont_title_wrap{padding: 0px 16px 20px; }
+.awards_inner{}
+
+.awards_inner .swiper-wrapper{
+    height: auto;
+width: calc(100% - 16px);
+margin-left: 16px;
+}
+.awards_img {
+    aspect-ratio: 4/5;
+    background: #f4f4f4;
+}
+
+.swiper-container {
+    width: 100%;
+    height: auto;
+}
+
+.event_wrap{width: calc(100% - 32px); margin: 0px auto;}
+.awards_desc{padding: 8px 16px;}
+
+
+
+    
+
+.sr-only {position: absolute;width: 1px;height: 1px;padding: 0;margin: -1px;overflow: hidden;clip-path: inset(50%);border: 0;clip: rect(0 0 0 0);}
+.playlist_img{ aspect-ratio: 1/1;}
+.record_img{aspect-ratio: 1/1;margin: 25% 0px 0px;}
+.record_img img{ aspect-ratio: 1/1;}
+.record-item{aspect-ratio: 4/5;background: #f4f4f4; position: relative;}
+.record_name{ margin: 8px 16px 30px; font-size: 13px; line-height: 16px; min-height: 32px; width: calc(100% - 32px); text-align: center;}
+.gfit_prod_wrap img{width: 100%;}
+.gift_img_gird{display: grid; grid-template-columns:repeat(2,1fr); gap: 8px;}
+
+.event_wrap{margin-top: 72px;}
+.event_wrap .title{margin-bottom: 20px;}
+.event_in{margin-top: 48px;}
+.event_in .sub_title{margin-bottom: 12px;}
+
+
+.coupon_wrap{ width: 100%; max-width: 600px; background: #333; margin: 0px auto; border-radius: 5px; position: relative;}
+    .coupon_wrap::after{
+    height: 24px;
+    width: 24px;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    margin-top: -12px;
+    content: "";
+    background-image: url(//static.kasina-store.com/ui-static/img/ico_download.svg);
+    background-size: 24px;
+    right: 13px; 
+    filter: invert(99%) sepia(7%) saturate(47%) hue-rotate(14deg) brightness(118%) contrast(100%);
+
+    
+
+    }
+    .coupon_inner{color: white; text-align: left; padding: 12px 16px; font-size: 12px; display: block; width: 100%;}
+    .coupon_date{margin-top: 8px; color: #a2a2a2;}
+    .coupon_sale{font-size: 24px;}
+    .coupon_wrap{width: 100%; }
+    .coupon_icon{width: 50px; height: 100%; position: absolute; right: 0px; top: 0px; border-radius: 0px 5px 5px 0px ;}
+    .coupon_info{color: #fff;}
+
+    .coupon_desc{width: calc(100% - 16px); margin: 0px auto; margin-top: 24px; padding-top: 24px; border-top: solid 1px #dfdfdf;}
+    .awards_img{border-radius: 4px; overflow: hidden;}
+    .event_in .botton_wrap{margin-top: 48px;}
+    .event_text{margin-top: 8px;}
+
+    .awards_img{position: relative;}
+    .awards_cont_text{position: absolute; padding: 16px; color: #fff; z-index: 1; left: 0px ; top: 0px;}
+
+    .c-sticky [data-ui-type=List_Submenu]{margin-left: 0px;}
+    .list_button.active{background: #333 !important; color: #fff !important;}
+
+    .awards_shopper{position: absolute; bottom: 0px; left: 0px; padding: 16px; color: #fff;}
+    .record_n_p{white-space: nowrap; overflow: hidden ; text-overflow: ellipsis;}
+    .record_n_brand{font-weight: 500;}
+    .record_t_p{font-size: 11px ; line-height: 15px;}
+    .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {background-color: #000 !important; width: 6px; height: 6px;}
+
+    .scroll-css__wrap{max-width: 100%;}
+
+    @media screen and (min-width: 1080px) {
+
+        .main_visual img{content: url('https://static.kasina-store.com/content_file/manual/promotion/2024/12/playlist/00_pc.jpg');}
+        .playlist_buton{max-width: 484px; margin: 0px auto; margin-top: 24px; }
+        .coupon_wrap{max-width: 600px;}
+        .coupon_in_t{max-width: 600px; margin: 0px auto; margin-top: 12px;}
+
+
+        .main_title{margin-bottom: 12px; margin-top: 72px;}
+        .s-list{margin: 8px auto !important;}
+        .event_wrap{max-width: 960px; margin-top: 120px;}
+        .records_wrap, .playlist_wrap{max-width: 960px; margin: 0px auto; margin-top: 100px;}
+        .awards_wrap{ max-width: 960px; margin: 0px auto; margin-top: 100px;}
+        .playlist_list{margin-top: 0px;}
+        .play_wrap{display: grid; grid-template-columns: repeat(2,1fr) ; gap: 8px;}
+        .playlist_list{height: 100%; aspect-ratio: 1/1; overflow-y: scroll;}
+        .records_inner{display: grid; grid-template-columns: repeat(4,1fr); gap: 8px;}
+
+        .title{font-size: 24px; font-weight: 500; line-height: 24px; letter-spacing: 0em; text-transform: uppercase;  text-align: center;}
+        .sub_title{font-size: 18px; font-weight: 500; line-height: 24px; letter-spacing: 0.01em; text-transform: uppercase;  text-align: center;}
+        .body{font-size: 15px; font-weight: 400; line-height: 20px; letter-spacing: 0.01em; text-align: center;}
+        .text{font-size:13px; font-weight:400; line-height:16px; letter-spacing:0.01em;}
+        .playlist_text .sub_title{text-align: left;}
+    }
+
+
+</style>
+
+<div id="kasina_playlist">
+
+
+    <section class="main_visual">
+        <img src="https://static.kasina-store.com/content_file/manual/promotion/2024/12/playlist/00_mo.jpg" alt="kasinaPlaylist">
+    </section>
+    
+    <section class="main_title">
+        <h3 class="title">
+            KASINA PLAYLIST 2024
+        </h3>
+        <p class="body">
+            2024년 Kasina와 함께 빛난 모든 순간들이 한 트랙 한 트랙 모여 완성된 특별한 플레이리스트. 회원, 파트너 <br>그리고 우리의 여정을 함께한 아이템들로 채워진 Kasina의 2024년 플레이리스트를 지금 만나보세요.
+        </p>
+    </section>
+
+    <div class="c-sticky">
+        <div class="l-grid__row l-grid__no-gap" data-ui-type="List_Submenu">
+            <div class="scroll-css__wrap">
+                <div class="scroll-css">
+                    <ul class="s-list">
+                       
+                        <li>
+                            <button type="button" class="c-chip c-chip--selected" data-index="1"> 2024 PLAYLIST</button>
+                        </li>
+                        <li>
+                            <button type="button" class="c-chip" data-index="2"> 2024 RECORDS</button>
+                        </li>
+                        <li>
+                            <button type="button" class="c-chip" data-index="3"> 2024 AWARDS</button>
+                        </li>
+                        <li>
+                            <button type="button" class="c-chip " data-index="4">
+                                EVENT
+                            </button>
+                        </li>
+                        
+                    
+                        
+                    
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <section class="playlist_wrap contents" id="_event01">
+        <div class="cont_title_wrap">
+            <dl>
+                <dt>
+                    <h4 class="sub_title">2024 KASINA PLAYLIST</h4>
+                </dt>
+                <dd>
+                    <p class="body">
+                        여러분에게 가장 인상 깊었던 순간을&nbsp;투표해 주시면, 추첨을&nbsp;통해 
+                    </p>
+                </dd>
+                <dd>
+                    <p class="body gray_t">
+                        KASINA PLAYLIST&nbsp;한정판 기프트 팩을&nbsp;선물해 드립니다.
+                    </p>
+                </dd>
+            </dl>
+        </div>
+
+        <div class="cont_wrap">
+            <div class="play_wrap">
+            <div class="playlist_visual">
+                <ul class="playlist_wrapper">
+                    <li class="playlist_cont" data="001">
+                        <a href="/features/36933">
+                        <div class="playlist_img">
+                          
+                            <img src="https://static.kasina-store.com/content_file/manual/promotion/2024/12/playlist/001.webp" alt="kasinaPlaylist">
+                           
+                        </div>
+                        </a><div class="playlist_text"><a href="/features/36933">
+                            </a><dl><a href="/features/36933">
+                                <dt>
+                                    <p class="sub_title">KASINA X POLO RALPH LAUREN BUSAN TO SEOUL </p>
+                                </dt>
+                                </a><dd><a href="/features/36933">
+                                    </a><a href="/features/36933" class="line_button">
+                                        MORE VIEW
+                                    </a>
+                                </dd>
+                            </dl>
+                        </div>
+                    
+                    </li>
+
+                    <li class="playlist_cont" data="002">
+                        <a href="/features/41345">
+                        <div class="playlist_img">
+                            <img src="https://static.kasina-store.com/content_file/manual/promotion/2024/12/playlist/002.webp" alt="kasinaPlaylist">
+                        </div>
+                        </a><div class="playlist_text"><a href="/features/41345">
+                            </a><dl><a href="/features/41345">
+                                <dt>
+                                    <p class="sub_title">AIR JORDAN 4 RETRO REIMAGINED</p>
+                                </dt>
+                                </a><dd><a href="/features/41345">
+                                    </a><a href="/features/41345" class="line_button">
+                                        MORE VIEW
+                                    </a>
+                                </dd>
+                            </dl>
+                        </div>
+                    
+                        
+                    </li>
+
+                    <li class="playlist_cont" data="003">
+                        <a href="/features/42042">
+                        <div class="playlist_img">
+                            <img src="https://static.kasina-store.com/content_file/manual/promotion/2024/12/playlist/003.webp" alt="kasinaPlaylist">
+                        </div>
+                        </a><div class="playlist_text"><a href="/features/42042">
+                            </a><dl><a href="/features/42042">
+                                <dt>
+                                    <p class="sub_title">줄리아나 : 가요 리믹스 1ST BIRTHDAY</p>
+                                </dt>
+                                </a><dd><a href="/features/42042">
+                                    </a><a href="/features/42042" class="line_button">
+                                        MORE VIEW
+                                    </a>
+                                </dd>
+                            </dl>
+                        </div>
+                    
+                    </li>
+
+                
+                    <li class="playlist_cont" data="004">
+                        <a href="/features/42044">
+                        <div class="playlist_img">
+                            <img src="https://static.kasina-store.com/content_file/manual/promotion/2024/12/playlist/004.webp" alt="kasinaPlaylist">
+                        </div>
+                        </a><div class="playlist_text"><a href="/features/42044">
+                            </a><dl><a href="/features/42044">
+                                <dt>
+                                    <p class="sub_title">KICKGIRLS GLOW UP COLLABORATION</p>
+                                </dt>
+                                </a><dd><a href="/features/42044">
+                                    </a><a href="/features/42044" class="line_button">
+                                        MORE VIEW
+                                    </a>
+                                </dd>
+                            </dl>
+                        </div>
+                    
+                    </li>
+
+                    <li class="playlist_cont" data="005">
+                        <a href="/features/42043">
+                        <div class="playlist_img">
+                            <img src="https://static.kasina-store.com/content_file/manual/promotion/2024/12/playlist/005.webp" alt="kasinaPlaylist">
+                        </div>
+                        </a><div class="playlist_text"><a href="/features/42043">
+                            </a><dl><a href="/features/42043">
+                                <dt>
+                                    <p class="sub_title">KASINA PRESENT PAST LIVES</p>
+                                </dt>
+                                </a><dd><a href="/features/42043">
+                                    </a><a href="/features/42043" class="line_button">
+                                        MORE VIEW
+                                    </a>
+                                </dd>
+                            </dl>
+                        </div>
+                    
+                        
+                    </li>
+
+                    <li class="playlist_cont" data="006">
+                        <a href="/features/36248">
+                        <div class="playlist_img">
+                            <img src="https://static.kasina-store.com/content_file/manual/promotion/2024/12/playlist/006.webp" alt="kasinaPlaylist">
+                        </div>
+                        </a><div class="playlist_text"><a href="/features/36248">
+                            </a><dl><a href="/features/36248">
+                                <dt>
+                                    <p class="sub_title">KASINA NIGHT RUN : 5K RUNNING</p>
+                                </dt>
+                                </a><dd><a href="/features/36248">
+                                    </a><a href="/features/36248" class="line_button">
+                                        MORE VIEW
+                                    </a>
+                                </dd>
+                            </dl>
+                        </div>
+                    
+                    </li>
+
+                    <li class="playlist_cont" data="007">
+                        <a href="/features/36327">
+                        <div class="playlist_img">
+                            <img src="https://static.kasina-store.com/content_file/manual/promotion/2024/12/playlist/007.webp" alt="kasinaPlaylist">
+                        </div>
+                        </a><div class="playlist_text"><a href="/features/36327">
+                            </a><dl><a href="/features/36327">
+                                <dt>
+                                    <p class="sub_title">KASINA X TIMBERLAND</p>
+                                </dt>
+                                </a><dd><a href="/features/36327">
+                                    </a><a href="/features/36327" class="line_button">
+                                        MORE VIEW
+                                    </a>
+                                </dd>
+                            </dl>
+                        </div>
+                    
+                        
+                    </li>
+
+                    <li class="playlist_cont" data="008">
+                        <a href="/features/42045">
+                        <div class="playlist_img">
+                            <img src="https://static.kasina-store.com/content_file/manual/promotion/2024/12/playlist/008.webp" alt="kasinaPlaylist">
+                        </div>
+                        </a><div class="playlist_text"><a href="/features/42045">
+                            </a><dl><a href="/features/42045">
+                                <dt>
+                                    <p class="sub_title">KASINA X SSG LANDERS</p>
+                                </dt>
+                                </a><dd><a href="/features/42045">
+                                    </a><a href="/features/42045" class="line_button">
+                                        MORE VIEW
+                                    </a>
+                                </dd>
+                            </dl>
+                        </div>
+                    
+                    </li> 
+                    
+
+                    <li class="playlist_cont" data="009">
+                        <a href="/features/40658">
+                        <div class="playlist_img">
+                            <img src="https://static.kasina-store.com/content_file/manual/promotion/2024/12/playlist/009.webp" alt="kasinaPlaylist">
+                        </div>
+                        </a><div class="playlist_text"><a href="/features/40658">
+                            </a><dl><a href="/features/40658">
+                                <dt>
+                                    <p class="sub_title">KASINA X AOMG MOST WATED</p>
+                                </dt>
+                                </a><dd><a href="/features/40658">
+                                    </a><a href="/features/40658" class="line_button">
+                                        MORE VIEW
+                                    </a>
+                                </dd>
+                            </dl>
+                        </div>
+                    
+                        
+                    </li>
+
+                    <li class="playlist_cont" data="010">
+                        <a href="/features/39026">
+                        <div class="playlist_img">
+                            <img src="https://static.kasina-store.com/content_file/manual/promotion/2024/12/playlist/010.webp" alt="kasinaPlaylist">
+                        </div>
+                        </a><div class="playlist_text"><a href="/features/39026">
+                            </a><dl><a href="/features/39026">
+                                <dt>
+                                    <p class="sub_title">SUBCULTURE HOOLIGAN
+                                    </p>
+                                </dt>
+                                </a><dd><a href="/features/39026">
+                                    </a><a href="/features/39026" class="line_button">
+                                        MORE VIEW
+                                    </a>
+                                </dd>
+                            </dl>
+                        </div>
+                    
+                    </li>
+
+                    <li class="playlist_cont" data="011">
+                        <a href="/features/40137">
+                        <div class="playlist_img">
+                            <img src="https://static.kasina-store.com/content_file/manual/promotion/2024/12/playlist/011.webp" alt="kasinaPlaylist">
+                        </div>
+                        </a><div class="playlist_text"><a href="/features/40137">
+                            </a><dl><a href="/features/40137">
+                                <dt>
+                                    <p class="sub_title">NIKE BRAZIL 98’ REISSUE</p>
+                                </dt>
+                                </a><dd><a href="/features/40137">
+                                    </a><a href="/features/40137" class="line_button">
+                                        MORE VIEW
+                                    </a>
+                                </dd>
+                            </dl>
+                        </div>
+                    
+                        
+                    </li>
+                    <li class="playlist_cont" data="012">
+                        <a href="/features/47173">
+                        <div class="playlist_img">
+                            <img src="https://static.kasina-store.com/content_file/manual/promotion/2024/12/playlist/012.webp" alt="kasinaPlaylist">
+                        </div>
+                        </a><div class="playlist_text"><a href="/features/47173">
+                            </a><dl><a href="/features/47173">
+                                <dt>
+                                    <p class="sub_title">KASINA X B.READY WONDERPOOL POP-UP</p>
+                                </dt>
+                                </a><dd><a href="/features/47173">
+                                    </a><a href="/features/47173" class="line_button">
+                                        MORE VIEW
+                                    </a>
+                                </dd>
+                            </dl>
+                        </div>
+                    
+                    </li>
+
+                    <li class="playlist_cont" data="013">
+                        <a href="/features/43443">
+                        <div class="playlist_img">
+                            <img src="https://static.kasina-store.com/content_file/manual/promotion/2024/12/playlist/013.webp" alt="kasinaPlaylist">
+                        </div>
+                        </a><div class="playlist_text"><a href="/features/43443">
+                            </a><dl><a href="/features/43443">
+                                <dt>
+                                    <p class="sub_title">HIKING PATROL LAUNCH POP-UP</p>
+                                </dt>
+                                </a><dd><a href="/features/43443">
+                                    </a><a href="/features/43443" class="line_button">
+                                        MORE VIEW
+                                    </a>
+                                </dd>
+                            </dl>
+                        </div>
+                    
+                        
+                    </li>
+
+                    <li class="playlist_cont" data="014">
+                        <a href="/features/44386">
+                        <div class="playlist_img">
+                            <img src="https://static.kasina-store.com/content_file/manual/promotion/2024/12/playlist/014.webp" alt="kasinaPlaylist">
+                        </div>
+                        </a><div class="playlist_text"><a href="/features/44386">
+                            </a><dl><a href="/features/44386">
+                                <dt>
+                                    <p class="sub_title">KASINA X COLUMBIA</p>
+                                </dt>
+                                </a><dd><a href="/features/44386">
+                                    </a><a href="/features/44386" class="line_button">
+                                        MORE VIEW
+                                    </a>
+                                </dd>
+                            </dl>
+                        </div>
+                    
+                    </li>
+
+                    <li class="playlist_cont" data="015">
+                        <a href="/features/45266">
+                        <div class="playlist_img">
+                            <img src="https://static.kasina-store.com/content_file/manual/promotion/2024/12/playlist/015.webp" alt="kasinaPlaylist">
+                        </div>
+                        </a><div class="playlist_text"><a href="/features/45266">
+                            </a><dl><a href="/features/45266">
+                                <dt>
+                                    <p class="sub_title">KASINA X POLO RALPH LAUREN TAEGEUK CAPSULE</p>
+                                </dt>
+                                </a><dd><a href="/features/45266">
+                                    </a><a href="/features/45266" class="line_button">
+                                        MORE VIEW
+                                    </a>
+                                </dd>
+                            </dl>
+                        </div>
+                    
+                        
+                    </li>
+
+                    <li class="playlist_cont" data="016">
+                        <a href="/features/45099">
+                        <div class="playlist_img">
+                            <img src="https://static.kasina-store.com/content_file/manual/promotion/2024/12/playlist/016.webp" alt="kasinaPlaylist">
+                        </div>
+                        </a><div class="playlist_text"><a href="/features/45099">
+                            </a><dl><a href="/features/45099">
+                                <dt>
+                                    <p class="sub_title">WU-TANG CLAN DUNK HIGH PRE LAUNCH</p>
+                                </dt>
+                                </a><dd><a href="/features/45099">
+                                    </a><a href="/features/45099" class="line_button">
+                                        MORE VIEW
+                                    </a>
+                                </dd>
+                            </dl>
+                        </div>
+                    
+                    </li>
+
+                    <li class="playlist_cont" data="017">
+                        <a href="/features/45763">
+                        <div class="playlist_img">
+                            <img src="https://static.kasina-store.com/content_file/manual/promotion/2024/12/playlist/017.webp" alt="kasinaPlaylist">
+                        </div>
+                        </a><div class="playlist_text"><a href="/features/45763">
+                            </a><dl><a href="/features/45763">
+                                <dt>
+                                    <p class="sub_title">ANTI SOCIAL SOCIAL CLUB X JINRO</p>
+                                </dt>
+                                </a><dd><a href="/features/45763">
+                                    </a><a href="/features/45763" class="line_button">
+                                        MORE VIEW
+                                    </a>
+                                </dd>
+                            </dl>
+                        </div>
+                    
+                        
+                    </li>
+
+                    <li class="playlist_cont" data="018">
+                        <a href="/features/45958">
+                        <div class="playlist_img">
+                            <img src="https://static.kasina-store.com/content_file/manual/promotion/2024/12/playlist/018.webp" alt="kasinaPlaylist">
+                        </div>
+                        </a><div class="playlist_text"><a href="/features/45958">
+                            </a><dl><a href="/features/45958">
+                                <dt>
+                                    <p class="sub_title">JAMIE XX OFFICIAL MERCH POP-UP</p>
+                                </dt>
+                                </a><dd><a href="/features/45958">
+                                    </a><a href="/features/45958" class="line_button">
+                                        MORE VIEW
+                                    </a>
+                                </dd>
+                            </dl>
+                        </div>
+                    
+                    </li>
+                    <li class="playlist_cont" data="019">
+                        <a href="/features/46884">
+                        <div class="playlist_img">
+                            <img src="https://static.kasina-store.com/content_file/manual/promotion/2024/12/playlist/019.webp" alt="kasinaPlaylist">
+                        </div>
+                        </a><div class="playlist_text"><a href="/features/46884">
+                            </a><dl><a href="/features/46884">
+                                <dt>
+                                    <p class="sub_title">KASINA X CROCS</p>
+                                </dt>
+                                </a><dd><a href="/features/46884">
+                                    </a><a href="/features/46884" class="line_button">
+                                        MORE VIEW
+                                    </a>
+                                </dd>
+                            </dl>
+                        </div>
+                    
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="playlist_list_wrap">
+
+                <ul class="playlist_list">
+                    <li class="list_button" data-="001">
+                        <div class="list_img">
+                            <img src="https://static.kasina-store.com/content_file/manual/promotion/2024/12/playlist/001.webp" alt="콘텐츠명">
+                        </div>
+                        <dl class="playlist_name">
+                            <dt class="sr-only">플레이리스트명</dt>
+                            <dd><p class="list_name">KASINA X POLO RALPH LAUREN BUSAN TO SEOUL</p></dd>
+                            <dd class="playlist_icon">
+
+                            </dd>
+                        </dl>
+                    
+                    </li>
+                    <li class="list_button" data-="002">
+                        <div class="list_img">
+                            <img src="https://static.kasina-store.com/content_file/manual/promotion/2024/12/playlist/002.webp" alt="콘텐츠명">
+                        </div>
+                        <dl class="playlist_name">
+                            <dt class="sr-only">플레이리스트명</dt>
+                            <dd><p class="list_name">AIR JORDAN 4 RETRO REIMAGINED</p></dd>
+                            <dd class="playlist_icon">
+
+                            </dd>
+                        </dl>
+                    </li>
+                    <li class="list_button" data-="003">
+                        <div class="list_img">
+                            <img src="https://static.kasina-store.com/content_file/manual/promotion/2024/12/playlist/003.webp" alt="콘텐츠명">
+                        </div>
+                        <dl class="playlist_name">
+                            <dt class="sr-only">플레이리스트명</dt>
+                            <dd><p class="list_name">줄리아나 : 가요 리믹스 1ST BIRTHDAY</p></dd>
+                            <dd class="playlist_icon">
+
+                            </dd>
+                        </dl>
+                    </li>
+                    <li class="list_button" data-="004">
+                        <div class="list_img">
+                            <img src="https://static.kasina-store.com/content_file/manual/promotion/2024/12/playlist/004.webp" alt="콘텐츠명">
+                        </div>
+                        <dl class="playlist_name">
+                            <dt class="sr-only">플레이리스트명</dt>
+                            <dd><p class="list_name">KICKGIRLS GLOW UP COLLABORATION</p></dd>
+                            <dd class="playlist_icon">
+
+                            </dd>
+                        </dl>
+                    </li>
+                    <li class="list_button" data-="005">
+                        <div class="list_img">
+                            <img src="https://static.kasina-store.com/content_file/manual/promotion/2024/12/playlist/005.webp" alt="콘텐츠명">
+                        </div>
+                        <dl class="playlist_name">
+                            <dt class="sr-only">플레이리스트명</dt>
+                            <dd><p class="list_name">KASINA PRESENT PAST LIVES</p></dd>
+                            <dd class="playlist_icon">
+
+                            </dd>
+                        </dl>
+                    </li>
+                    <li class="list_button" data-="006">
+                        <div class="list_img">
+                            <img src="https://static.kasina-store.com/content_file/manual/promotion/2024/12/playlist/006.webp" alt="콘텐츠명">
+                        </div>
+                        <dl class="playlist_name">
+                            <dt class="sr-only">플레이리스트명</dt>
+                            <dd><p class="list_name">KASINA NIGHT RUN : 5K RUNNING</p></dd>
+                            <dd class="playlist_icon">
+
+                            </dd>
+                        </dl>
+                    </li>
+                    <li class="list_button" data-="007">
+                        <div class="list_img">
+                            <img src="https://static.kasina-store.com/content_file/manual/promotion/2024/12/playlist/007.webp" alt="콘텐츠명">
+                        </div>
+                        <dl class="playlist_name">
+                            <dt class="sr-only">플레이리스트명</dt>
+                            <dd><p class="list_name">KASINA X TIMBERLAND</p></dd>
+                            <dd class="playlist_icon">
+
+                            </dd>
+                        </dl>
+                    </li>
+                    <li class="list_button" data-="008">
+                        <div class="list_img">
+                            <img src="https://static.kasina-store.com/content_file/manual/promotion/2024/12/playlist/008.webp" alt="콘텐츠명">
+                        </div>
+                        <dl class="playlist_name">
+                            <dt class="sr-only">플레이리스트명</dt>
+                            <dd><p class="list_name">KASINA X SSG LANDERS</p></dd>
+                            <dd class="playlist_icon">
+
+                            </dd>
+                        </dl>
+                    </li>
+                    <li class="list_button" data-="009">
+                        <div class="list_img">
+                            <img src="https://static.kasina-store.com/content_file/manual/promotion/2024/12/playlist/009.webp" alt="콘텐츠명">
+                        </div>
+                        <dl class="playlist_name">
+                            <dt class="sr-only">플레이리스트명</dt>
+                            <dd><p class="list_name">KASINA X AOMG MOST WATED</p></dd>
+                            <dd class="playlist_icon">
+
+                            </dd>
+                        </dl>
+                    </li>
+                    <li class="list_button" data-="010">
+                        <div class="list_img">
+                            <img src="https://static.kasina-store.com/content_file/manual/promotion/2024/12/playlist/010.webp" alt="콘텐츠명">
+                        </div>
+                        <dl class="playlist_name">
+                            <dt class="sr-only">플레이리스트명</dt>
+                            <dd><p class="list_name">SUBCULTURE HOOLIGAN</p></dd>
+                            <dd class="playlist_icon">
+
+                            </dd>
+                        </dl>
+                    </li>
+                    <li class="list_button" data-="011">
+                        <div class="list_img">
+                            <img src="https://static.kasina-store.com/content_file/manual/promotion/2024/12/playlist/011.webp" alt="콘텐츠명">
+                        </div>
+                        <dl class="playlist_name">
+                            <dt class="sr-only">플레이리스트명</dt>
+                            <dd><p class="list_name">NIKE BRAZIL 98’ REISSUE</p></dd>
+                            <dd class="playlist_icon">
+
+                            </dd>
+                        </dl>
+                    </li>
+                    <li class="list_button" data-="012">
+                        <div class="list_img">
+                            <img src="https://static.kasina-store.com/content_file/manual/promotion/2024/12/playlist/012.webp" alt="콘텐츠명">
+                        </div>
+                        <dl class="playlist_name">
+                            <dt class="sr-only">플레이리스트명</dt>
+                            <dd><p class="list_name">KASINA X B.READY WONDERPOOL POP-UP</p></dd>
+                            <dd class="playlist_icon">
+
+                            </dd>
+                        </dl>
+                    </li>
+                    <li class="list_button" data-="013">
+                        <div class="list_img">
+                            <img src="https://static.kasina-store.com/content_file/manual/promotion/2024/12/playlist/013.webp" alt="콘텐츠명">
+                        </div>
+                        <dl class="playlist_name">
+                            <dt class="sr-only">플레이리스트명</dt>
+                            <dd><p class="list_name">HIKING PATROL LAUNCH POP-UP</p></dd>
+                            <dd class="playlist_icon">
+
+                            </dd>
+                        </dl>
+                    </li>
+                    <li class="list_button" data-="014">
+                        <div class="list_img">
+                            <img src="https://static.kasina-store.com/content_file/manual/promotion/2024/12/playlist/014.webp" alt="콘텐츠명">
+                        </div>
+                        <dl class="playlist_name">
+                            <dt class="sr-only">플레이리스트명</dt>
+                            <dd><p class="list_name">KASINA X COLUMBIA</p></dd>
+                            <dd class="playlist_icon">
+
+                            </dd>
+                        </dl>
+                    </li>
+                    <li class="list_button" data-="015">
+                        <div class="list_img">
+                            <img src="https://static.kasina-store.com/content_file/manual/promotion/2024/12/playlist/015.webp" alt="콘텐츠명">
+                        </div>
+                        <dl class="playlist_name">
+                            <dt class="sr-only">플레이리스트명</dt>
+                            <dd><p class="list_name">KASINA X POLO RALPH LAUREN TAEGEUK CAPSULE</p></dd>
+                            <dd class="playlist_icon">
+
+                            </dd>
+                        </dl>
+                    </li>
+                    <li class="list_button" data-="016">
+                        <div class="list_img">
+                            <img src="https://static.kasina-store.com/content_file/manual/promotion/2024/12/playlist/016.webp" alt="콘텐츠명">
+                        </div>
+                        <dl class="playlist_name">
+                            <dt class="sr-only">플레이리스트명</dt>
+                            <dd><p class="list_name">WU-TANG CLAN DUNK HIGH PRE LAUNCH</p></dd>
+                            <dd class="playlist_icon">
+
+                            </dd>
+                        </dl>
+                    </li>
+                    <li class="list_button" data-="017">
+                        <div class="list_img">
+                            <img src="https://static.kasina-store.com/content_file/manual/promotion/2024/12/playlist/017.webp" alt="콘텐츠명">
+                        </div>
+                        <dl class="playlist_name">
+                            <dt class="sr-only">플레이리스트명</dt>
+                            <dd><p class="list_name">ANTI SOCIAL SOCIAL CLUB X JINRO</p></dd>
+                            <dd class="playlist_icon">
+
+                            </dd>
+                        </dl>
+                    </li>
+                    <li class="list_button" data-="018">
+                        <div class="list_img">
+                            <img src="https://static.kasina-store.com/content_file/manual/promotion/2024/12/playlist/018.webp" alt="콘텐츠명">
+                        </div>
+                        <dl class="playlist_name">
+                            <dt class="sr-only">플레이리스트명</dt>
+                            <dd><p class="list_name">JAMIE XX OFFICIAL MERCH POP-UP</p></dd>
+                            <dd class="playlist_icon">
+
+                            </dd>
+                        </dl>
+                    </li>
+                    <li class="list_button" data-="019">
+                        <div class="list_img">
+                            <img src="https://static.kasina-store.com/content_file/manual/promotion/2024/12/playlist/019.webp" alt="콘텐츠명">
+                        </div>
+                        <dl class="playlist_name">
+                            <dt class="sr-only">플레이리스트명</dt>
+                            <dd><p class="list_name">KASINA X CROCS</p></dd>
+                            <dd class="playlist_icon">
+
+                            </dd>
+                        </dl>
+                    </li>
+
+                    
+                </ul>
+            </div>
+        </div>
+            <div class="botton_wrap">
+                <button class="playlist_buton" onclick=" window.applyDrawItem('kasinaplaylist2024')">
+                    <p class="button_text">
+                        투표하기
+                    </p>
+                </button>
+
+                <div class="event_noti">
+                    <dl>
+                        <dt class="sr-only">이벤트 추가사항</dt>
+                    </dl>
+                    <dd>
+                        <p class="body">
+                            * 자세한 이벤트 관련 내용은 페이지 하단 EVENT란을 참고해주세요.
+                        </p>
+                    </dd>
+                </div>
+                
+            </div>
+
+        
+        </div>
+
+    </section>
+
+    <section class="records_wrap contents" id="_event02">
+        <div class="cont_title_wrap">
+            <dl>
+                <dt>
+                    <h4 class="sub_title">2024 KASINA RECORDS</h4>
+                </dt>
+                <dd>
+                    <p class="body">
+                        여러분과 함께 만들어진 2024년의 흥미로운 기록들을 만나보세요</p>
+                </dd>
+            
+            </dl>
+        </div>
+
+        <div class="cont_wrap">
+            <div class="records_inner">
+                <div class="records_slide record01 swiper">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide record-item">
+                            <div class="record_img">
+                                <img src="//shopby-images.cdn-nhncommerce.com/SERVICE/bulkUpload/20241119/132379/07/805562653/FZ8117-204_main.webp" alt="">
+                            </div>
+                            <div class="record_name">
+                                <p class="record_n_brand">JORDAN</p>
+                                <p class="record_n_p">TRAVIS SCOTT X JORDAN JUMPMAN JACK TR</p>
+                            </div>
+                        </li>
+                        <li class="swiper-slide record-item">
+                            <div class="record_img">
+                                <img src="//shopby-images.cdn-nhncommerce.com/20240521/131546.145130000/DZ4137-700_1.webp" alt="">
+                            </div>
+                            <div class="record_name">
+                                <p class="record_n_brand">JORDAN</p>
+                                <p class="record_n_p">TRAVIS SCOTT X AIR JORDAN 1 LOW OG SP QS WMNS</p>
+                            </div>
+                        </li>
+                        <li class="swiper-slide record-item">
+                            <div class="record_img">
+                                <img src="//shopby-images.cdn-nhncommerce.com/SERVICE/bulkUpload/20240926/132379/46/317570850/DM7866-200_main.webp" alt="">
+                            </div>
+                            <div class="record_name">
+                                <p class="record_n_brand">JORDAN</p>
+                                <p class="record_n_p">TRAVIS SCOTT X AIR JORDAN 1 LOW OG SP QS</p>
+                            </div>
+                            
+                        </li>
+                    </ul>
+                    <div class="record_title">
+                        <dl>
+                            <dt>
+                                <span class="body record_t">DRAW DARLING</span>
+                            </dt>
+                            <dd>
+                                <span class="body">가장 치열했던 DRAW 아이템</span>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <div class="records_slide record02 swiper">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide record-item">
+                            <div class="record_img">
+                                <img src="//shopby-images.cdn-nhncommerce.com/20240813/082955.924291000/HM0950-001_1.webp" alt="">
+                            </div>
+                            <div class="record_name">
+                                <p class="record_n_brand">NIKE</p>
+                                <p class="record_n_p">LD-1000</p>
+                            </div>
+                            
+                        </li>
+                        <li class="swiper-slide record-item">
+                            <div class="record_img">
+                                <img src="//shopby-images.cdn-nhncommerce.com/20240614/083100.529118000/IH3144-1.webp" alt="">
+                            </div>
+                            <div class="record_name">
+                                <p class="record_n_brand">ADIDAS</p>
+                                <p class="record_n_p">CLOT X ADIDAS GAZELLE BY EC</p>
+                            </div>
+                            
+                        </li>
+                        <li class="swiper-slide record-item">
+                            <div class="record_img">
+                                <img src="//shopby-images.cdn-nhncommerce.com/20240416/083653.488201000/L47363200-1.webp" alt="">
+                            </div>
+                            <div class="record_name">
+                                <p class="record_n_brand">SALOMON</p>
+                                <p class="record_n_p">SALOMON RX MARIE-JEANNE</p>
+                            </div>
+                            
+                        </li>
+                    </ul>
+                    <div class="record_title">
+                        <dl>
+                            <dt>
+                                <span class="body record_t">SERVER WRECKER</span>
+                            </dt>
+                            <dd>
+                                <span class="body">서버를 흔들었던 아이템</span>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <div class="records_slide record03 swiper">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide record-item">
+                            <div class="record_img">
+                                <img src="//shopby-images.cdn-nhncommerce.com/20240213/112925.168184000/CW2288-111_1.webp" alt="">
+                            </div>
+                            <div class="record_name">
+                                <p class="record_n_brand">NIKE</p>
+                                <p class="record_n_p">NIKE AIR FORCE 1 '07</p>
+                            </div>
+                            
+                        </li>
+                        <li class="swiper-slide record-item">
+                            <div class="record_img">
+                                <img src="//shopby-images.cdn-nhncommerce.com/20231219/104359.608100000/B75806-1.png" alt="">
+                            </div>
+                            <div class="record_name">
+                                <p class="record_n_brand">ADIDAS</p>
+                                <p class="record_n_p">ADIDAS SAMBA OG</p>
+                            </div>
+                            
+                        </li>
+                        <li class="swiper-slide record-item">
+                            <div class="record_img">
+                                <img src="//shopby-images.cdn-nhncommerce.com/20240110/134623.185570000/BQ6817-500_1.webp" alt="">
+                            </div>
+                            <div class="record_name">
+                                <p class="record_n_brand">NIKE</p>
+                                <p class="record_n_p">NIKE SB DUNK LOW PRO</p>
+                            </div>
+                            
+                        </li>
+                    </ul>
+                    <div class="record_title">
+                        <dl>
+                            <dt>
+                                <span class="body record_t">BEST SNEAKERS</span>
+                            </dt>
+                            <dd>
+                                <span class="body">가장 많이 판매된 스니커즈</span>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <div class="records_slide record04 swiper">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide record-item">
+                            <div class="record_img">
+                                <img src="//shopby-images.cdn-nhncommerce.com/SERVICE/bulkUpload/20240910/132379/21/964792946/FV8682-010_main.webp" alt="">
+                            </div>
+                            <div class="record_name">
+                                <p class="record_n_brand">NIKE</p>
+                                <p class="record_n_p">NIKE AS M ACG SF PRMLFT SKL PK JKT</p>
+                            </div>
+                            
+                        </li>
+                        <li class="swiper-slide record-item">
+                            <div class="record_img">
+                                <img src="//shopby-images.cdn-nhncommerce.com/20240508/152728.424346000/POLO-KASINA-TEE-1.png" alt="">
+                            </div>
+                            <div class="record_name">
+                                <p class="record_n_brand">POLO RALPH LAUREN</p>
+                                <p class="record_n_p">KASINA X POLO BUSAN TO SEOUL CAPSULE 1997 LOGO COTTON CREWNECK T-SHIRTS</p>
+                            </div>
+                            
+                        </li>
+                        <li class="swiper-slide record-item">
+                            <div class="record_img">
+                                <img src="//shopby-images.cdn-nhncommerce.com/SERVICE/bulkUpload/20241108/132379/46/873673650/FV8911-010_main.webp" alt="">
+                            </div>
+                            <div class="record_name">
+                                <p class="record_n_brand">NIKE</p>
+                                <p class="record_n_p">NIKE AS M ACG TFADV LUNAR LAKE JKT</p>
+                            </div>
+                            
+                        </li>
+                    </ul>
+                    <div class="record_title">
+                        <dl>
+                            <dt>
+                                <span class="body record_t">BEST CLOTHES </span>
+                            </dt>
+                            <dd>
+                                <span class="body">가장 많이 판매된 의류</span> 
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <div class="records_slide record05 swiper">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide record-item">
+                            <div class="record_img">
+                                <img src="//shopby-images.cdn-nhncommerce.com/20241210/151526.601709000/210211-001_main.webp" alt="">
+                            </div>
+                            <div class="record_name">
+                                <p class="record_n_brand">CROCS</p>
+                                <p class="record_n_p">KASINA x CROCS All Terrain Clog</p>
+                            </div>
+                            
+                        </li>
+                        <li class="swiper-slide record-item">
+                            <div class="record_img">
+                                <img src="//shopby-images.cdn-nhncommerce.com/SERVICE/bulkUpload/20241024/132389/05/555332476/MAPOHGS0J421904_main.webp" alt="">
+                            </div>
+                            <div class="record_name">
+                                <p class="record_n_brand">POLO RALPH LAUREN</p>
+                                <p class="record_n_p">KASINA X POLO BUSAN TO SEOUL CAPSULE 1997 LOGO REVERSIBLE BUCKET HAT</p>
+                            </div>
+                            
+                        </li>
+                        <li class="swiper-slide record-item">
+                            <div class="record_img">
+                                <img src="//shopby-images.cdn-nhncommerce.com/20240508/152809.552026000/POLO KASINA BUCKET-1.png" alt="">
+                            </div>
+                            <div class="record_name">
+                                <p class="record_n_brand">POLO RALPH LAUREN</p>
+                                <p class="record_n_p">KASINA X POLO RALPH LAUREN TAEGEUK CAPSULE TWILL CAP</p>
+                            </div>
+                            
+                        </li>
+                    </ul>
+                    <div class="record_title">
+                        <dl>
+                            <dt>
+                                <span class="body record_t">BEST X KASINA</span>
+                            </dt>
+                            <dd>
+                                <span class="body">카시나 베스트 콜라보 아이템</span>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <div class="records_slide record06 swiper">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide record-item">
+                            <div class="record_img">
+                                <img src="https://static.kasina-store.com/content_file/manual/promotion/2024/12/playlist/brand/nike03.webp" alt="">
+                            </div>
+                            <div class="record_name">
+                                <p class="record_n_brand">NIKE</p>
+                                <p class="record_n_p"></p>
+                            </div>
+                            
+                        </li>
+                        <li class="swiper-slide record-item">
+                            <div class="record_img">
+                                <img src="https://static.kasina-store.com/content_file/manual/promotion/2024/12/playlist/brand/adidas.webp" alt="">
+                            </div>
+                            <div class="record_name">
+                                <p class="record_n_brand">adidas</p>
+                                <p class="record_n_p"></p>
+                            </div>
+                            
+                        </li>
+                        <li class="swiper-slide record-item">
+                            <div class="record_img">
+                                <img src="https://static.kasina-store.com/content_file/manual/promotion/2024/12/playlist/brand/new.webp" alt="">
+                            </div>
+                            <div class="record_name">
+                                <p class="record_n_brand">NEW BALANCE</p>
+                                <p class="record_n_p"></p>
+                            </div>
+                            
+                        </li>
+                    </ul>
+                    <div class="record_title">
+                        <dl>
+                            <dt>
+                                <span class="body record_t">FAVORITE BRAND</span>
+                            </dt>
+                            <dd>
+                                <span class="body">회원들이 즐겨찾는 브랜드</span>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <div class="records_slide record07 swiper">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide record-item">
+                            <div class="record_img">
+                                <img src="https://static.kasina-store.com/content_file/manual/promotion/2024/12/playlist/brand/on.webp" alt="">
+                            </div>
+                            <div class="record_name">
+                                <p class="record_n_brand">ON</p>
+                                <p class="record_n_p"></p>
+                            </div>
+                            
+                            
+                        </li>
+                        <li class="swiper-slide record-item">
+                            <div class="record_img">
+                                <img src="https://static.kasina-store.com/content_file/manual/promotion/2024/12/playlist/brand/atm.webp" alt="">
+                            </div>
+                            <div class="record_name">
+                                <p class="record_n_brand">AFTERMATH</p>
+                                <p class="record_n_p"></p>
+                            </div>
+                            
+                        </li>
+                        <li class="swiper-slide record-item">
+                            <div class="record_img">
+                                <img src="https://static.kasina-store.com/content_file/manual/promotion/2024/12/playlist/brand/roa.webp" alt="">
+                            </div>
+                            <div class="record_name">
+                                <p class="record_n_brand">ROA</p>
+                                <p class="record_n_p"></p>
+                            </div>
+                            
+                        </li>
+                    </ul>
+                    <div class="record_title">
+                        <dl>
+                            <dt>
+                                <span class="body record_t">GAME CHANGER</span>
+                            </dt>
+                            <dd>
+                                <span class="body">2024년 인기 급상승 브랜드</span>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <div class="records_slide record08 swiper">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide record-item">
+                            <div class="record_img">
+                                <img src="https://static.kasina-store.com/content_file/manual/promotion/2024/12/playlist/brand/assc.webp" alt="">
+                            </div>
+                            <div class="record_name">
+                                <p class="record_n_brand"></p>
+                                <p class="record_n_p">ANTI SOCIAL SOCIAL CLUB</p>
+                            </div>
+                            
+                        </li>
+                        <li class="swiper-slide record-item">
+                            <div class="record_img">
+                                <img src="https://static.kasina-store.com/content_file/manual/promotion/2024/12/playlist/brand/cpk.webp" alt="">
+                            </div>
+                            <div class="record_name">
+                                <p class="record_n_brand">COST PER KILO</p>
+                                <p class="record_n_p"></p>
+                            </div>
+                            
+                        </li>
+                        <li class="swiper-slide record-item">
+                            <div class="record_img">
+                                <img src="https://static.kasina-store.com/content_file/manual/promotion/2024/12/playlist/brand/umbro.webp" alt="">
+                            </div>
+                            <div class="record_name">
+                                <p class="record_n_brand">UMBRO</p>
+                                <p class="record_n_p"></p>
+                            </div>
+                            
+                        </li>
+                    </ul>
+                    <div class="record_title">
+                        <dl>
+                            <dt>
+                                <span class="body record_t">NEXT ERA 2025</span>
+                            </dt>
+                            <dd>
+                                <span class="body">2025년 더 기대되는 브랜드</span>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+
+            
+
+                
+            </div>
+        </div>
+    </section>
+
+    <section class="awards_wrap" id="_event03">
+    
+        <div class="cont_title_wrap">
+            <dl>
+                <dt>
+                    <h4 class="sub_title">2024 KASINA AWARDS</h4>
+                </dt>
+                <dd>
+                    <p class="body">
+                        카시나와 함께 희노애락 한해를 보낸 회원들에게 감사의 마음을 담아 KASINA PLAYLIST 한정판 기프트팩을 선물해드립니다.
+                    </p>
+                </dd>
+            
+            </dl>
+        </div>
+
+        <div class="swiper-container">
+            <div class="awards_inner swiper">
+                <div class="swiper-wrapper">
+                <div class="swiper-slide awards_img">
+                    <img src="https://static.kasina-store.com/content_file/manual/promotion/2024/12/playlist/Awards01.webp" alt="">
+                    <div class="awards_cont_text">
+                        <dl>
+                            <dt>
+                                <p class="awards_t">ATTENDANCE MVP</p>
+                            </dt>
+                            <dd>
+                                <p class="awards_sub_t">프로 출석러</p>
+                            </dd>
+                            <dd>
+                                <p class="awards_p">2024년 카시나 온라인을 가장 많이 방문한 회원.</p>
+                            </dd>
+                           
+                        </dl>
+                    </div>
+                    <p class="awards_shopper awards_p">
+                        got****88 / 서**
+                    </p>
+                </div>
+                <div class="swiper-slide awards_img">
+                    <img src="https://static.kasina-store.com/content_file/manual/promotion/2024/12/playlist/Awards02.webp" alt="">
+                    <div class="awards_cont_text">
+                        <dl>
+                            <dt>
+                                <p class="awards_t">SHOPPING CART RULER</p>
+                            </dt>
+                            <dd>
+                                <p class="awards_sub_t">장바구니 정복자</p>
+                            </dd>
+                            <dd>
+                                <p class="awards_p">주문이 가장 활발 했던 회원. </p>
+                            </dd>
+                        </dl>
+                    </div>
+                    <p class="awards_shopper awards_p">
+                        rl***f / 김*
+                    </p>
+                </div>
+                <div class="swiper-slide awards_img">
+                    <img src="https://static.kasina-store.com/content_file/manual/promotion/2024/12/playlist/awards07.webp" alt="">
+                    <div class="awards_cont_text">
+                        <dl>
+                            <dt>
+                                <p class="awards_t">DRAW DEVOTEE</p>
+                            </dt>
+                            <dd>
+                                <p class="awards_sub_t">DRAW에 진심인 회원</p>
+                            </dd>
+                            <dd>
+                                <p class="awards_p">Draw에 진심인 회원.</p>
+                            </dd>
+                        </dl>
+                    </div>
+                    <p class="awards_shopper awards_p">
+                        ja*****00 / 장**
+                    </p>
+                </div>
+                <div class="swiper-slide awards_img">
+                    <img src="https://static.kasina-store.com/content_file/manual/promotion/2024/12/playlist/awards08.webp" alt="">
+                    <div class="awards_cont_text">
+                        <dl>
+                            <dt>
+                                <p class="awards_t">SORRY, NOT 2024...</p>
+                            </dt>
+                            <dd>
+                                <p class="awards_sub_t">2025년은 나의 해</p>
+                            </dd>
+                            <dd>
+                                <p class="awards_p">Draw에 진심이지만, 운이 없었던 회원.</p>
+                            </dd>
+                        </dl>
+                    </div>
+                    <p class="awards_shopper awards_p">
+                        ja*****00 / 장**
+                    </p>
+                </div>
+                <div class="swiper-slide awards_img">
+                    <img src="https://static.kasina-store.com/content_file/manual/promotion/2024/12/playlist/Awards04.webp" alt="">
+                    <div class="awards_cont_text">
+                        <dl>
+                            <dt>
+                                <p class="awards_t">BRAND LOYALIST</p>
+                            </dt>
+                            <dd>
+                                <p class="awards_sub_t">한 브랜드만 노린다</p>
+                            </dd>
+                            <dd>
+                                <p class="awards_p">오직 한 브랜드만 구매한 회원.</p>
+                            </dd>
+                        </dl>
+                    </div>
+                    <p class="awards_shopper awards_p">
+                        my***9 / 신**
+                    </p>
+                </div>
+                <div class="swiper-slide awards_img">
+                    <img src="https://static.kasina-store.com/content_file/manual/promotion/2024/12/playlist/Awards05.webp" alt="">
+                    <div class="awards_cont_text">
+                        <dl>
+                            <dt>
+                                <p class="awards_t">REMOTE ORDERER </p>
+                            </dt>
+                            <dd>
+                                <p class="awards_sub_t">장거리 쇼퍼</p>
+                            </dd>
+                            <dd>
+                                <p class="awards_p">가장 먼곳에서 주문한 회원.<br>(카시나1997 기준)</p>
+                            </dd>
+                        </dl>
+                    </div>
+                    <p class="awards_shopper awards_p">
+                        pa****r1@n****.com / 심**
+                    </p>
+                </div>
+                <div class="swiper-slide awards_img">
+                    <img src="https://static.kasina-store.com/content_file/manual/promotion/2024/12/playlist/Awards06.webp" alt="">
+                    <div class="awards_cont_text">
+                        <dl>
+                            <dt>
+                                <p class="awards_t">NOTIFICATION ACE</p>
+                            </dt>
+                            <dd>
+                                <p class="awards_sub_t">알림 에이스</p>
+                            </dd>
+                            <dd>
+                                <p class="awards_p">“오늘의 신상"에 가장 관심이 많은 회원.<br></p>
+                            </dd>
+                        </dl>
+                    </div>
+                    <p class="awards_shopper awards_p">
+                        ma*****se / 이**
+                    </p>
+                </div>
+                </div>
+            </div>
+            <div class="awards_desc">
+                <span class="text gray_t">
+                    * 자세한 이벤트 관련 내용은 페이지 하단 EVENT란을 참고해주세요.
+                </span>
+            </div>
+        </div>
+        
+
+    </section>
+
+    <section class="event_wrap" id="_event04">
+        <div class="cont_text_wrap">
+            <h3 class="title">
+                EVENT
+            </h3>
+            <p class="body">
+                2024년을 추억하고, 다가올 2025년을 기념하는 의미로 준비된<br>PLAYLIST 한정판 기프트와 쿠폰 혜택을 만나보세요.
+            </p>
+        </div>
+        <div class="event_wrap_inner">
+        <ul class="evnet_list">
+            <li class="event_in">
+                <dl>
+                    <dt>
+                        <p class="sub_title">1. KASINA PLAYLIST GIFT PACK</p>
+                    </dt>
+                    
+                
+                    <dd>
+                        <div class="gfit_prod_wrap">
+                            <img src="https://static.kasina-store.com/content_file/manual/promotion/2024/12/playlist/gift05.webp" alt="">
+                            
+                        </div>
+                        <div class="event_text">
+                            <ul class="dot-list">
+                                <li>
+                                    <p class="text">
+                                        구성 : Kasina Playlist LP, 팔로산토 스틱, 스티커, 2025년 연력
+                                    </p>
+                                </li>
+                                <li>
+                                    <p class="text">
+                                        대상 : Kasina Playlist 투표 당첨인원 / 일부 VIP 멤버십 회원
+                                    </p>
+                                </li>
+                            </ul>
+                            <p class="text gray_t">*마케팅 미동의 회원은 발송 대상에서 제외됩니다.<br>*사은품 구성은 일부 변동될 수 있습니다.</p>
+
+                        </div>
+                    
+                    </dd>
+                
+
+                </dl>
+            </li>
+
+            <li class="event_in">
+                <dl>
+                    <dt>
+                        <p class="sub_title">2. 기간 내 20만원 이상 구매자 대상 추첨 사은품 증정 </p>
+                    </dt>
+                    
+                    <dd>
+                        <div class="gift_img_gird">
+                        <div class="gfit_prod_wrap">
+                            <img src="https://static.kasina-store.com/content_file/manual/promotion/2024/12/playlist/gift002.webp" alt="">
+                        
+                        
+                        </div>
+                        <div>
+                            <img src="https://static.kasina-store.com/content_file/manual/promotion/2024/12/playlist/gift04.webp" alt="">
+                        
+                        
+                        </div>
+
+                        </div>
+                        <div class="event_text">
+                            <ul class="dot-list">
+                                <li>
+                                    <p class="text">
+                                        구성 : 2025년 연력 &amp; Kasina 스티커
+                                    </p>
+                                </li>
+                                <li>
+                                    <p class="text">
+                                        대상 : 12월 23일 ~ 12월 31일 실결제 금액 기준 20만원 이상 구매 회원 (추첨)
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    
+                    </dd>
+                    
+
+                </dl>
+            </li>
+            <li class="event_in">
+                <dl>
+                    <dt>
+                        <p class="sub_title">3. GOOD BYE 2024 쿠폰 증정</p>
+                    </dt>
+                    <dd>
+                        <p class="body" style="margin-bottom: 12px;">
+2024년의 마지막 혜택 12%추가 할인 혜택을 만나보세요.
+                        </p>
+                    </dd>
+                    <dd>
+                        <div class="coupon_wrap">
+                            <button onclick="window.downloadCoupon(135763, () =&gt; {  })" class="coupon_inner">
+                                <ul class="coupon_info">
+                                    <li class="coupon_sale">12%</li>
+                                    <li class="coupon_text">GOOD-BYE 2024 COUPON</li>
+                                    <li class="coupon_date">
+                                        2024.12.23 - 2024.12.31
+                                    </li>
+                                </ul>
+                                <div class="button_icon"><span></span></div>
+                            </button>
+                        
+                            
+                        </div>
+                        <div class="event_text coupon_in_t">
+                            <p class="text gray_t">* 1인당 최대 3장 발급</p>
+                        </div>
+
+                        <div class="botton_wrap">
+                            <a class="playlist_buton" href="/event/47407">
+                                <p class="button_text">
+                                    2024 BEST SELLER
+                                </p>
+                            </a>
+            
+                        
+                        </div>
+                        <div class="coupon_desc">
+                            <dl>
+                                <dt>
+                                    <span class="info_title" 안내사항<="" span="">
+                                </span></dt>
+                                <dd>
+                                    <ul class="info_list dot-list">
+                                        <li>이벤트 기간 : 2024년 12월 31일까지 </li>
+                                        <li>마케팅 수신 미동의 회원은 당첨자 대상에서 제외됩니다.</li>
+                                        <li>이벤트 당첨자 대상으로 2025년 1월 9일 개별 SMS 안내가 발송될 예정입니다.</li>
+                                        <li>당첨자 대상 경품은 카시나 온라인에 등록된 ‘기본 배송지’로 2025년 1월 10일 일괄 발송될 예정이며, 배송 상황에 따라 일정이 변동될 수 있습니다.</li>
+                                        <li>‘기본 배송지’ 미설정 시, 경품 발송 대상에서 제외되오니 유의해주세요.</li>
+                                        <li>구매고객 대상 경품은 12월 23일 - 12월 31일 주문건 중, ‘구매확정’상태의 고객에게 추첨을 통해 별도 발송됩니다.</li>
+                                        <li>쿠폰사용기한 : 2024년 12월 31일까지</li>
+                                        <li>쿠폰은 카시나 온라인몰에서만 사용 가능하며, 신규 발매 상품 등 일부 상품은 쿠폰 적용대상에서 제외됩니다.</li><li>사은품 구성은 일부 변동될 수 있습니다.</li>
+                                    </ul>
+                                </dd>
+                            </dl>
+                            
+                        </div>
+            
+                    </dd>
+                    
+
+                </dl>
+            </li>
+
+        </ul>
+        
+        </div>
+    </section>
+
+   
+
+
+
+</div>
+
+
+
+
+
+<script>
+
+var el = document.querySelector('#shadowWrap').shadowRoot;
+
+
+
+function updateButtonClass() {
+    var windowHeight = $(window).height();
+    var scrollTop = $(window).scrollTop();
+    var windowMidpoint = scrollTop + windowHeight / 2;
+
+    $(el).find('[id^="_event"]').each(function () {
+        var $section = $(this);
+        var sectionTop = $section.offset().top;
+        var sectionBottom = sectionTop + $section.outerHeight();
+        var index = $section.attr('id').replace('_event0', '');
+
+        if (sectionTop <= windowMidpoint && sectionBottom >= windowMidpoint) {
+            $(el).find('.c-chip').removeClass('c-chip--selected');
+            var $activeButton =   $(el).find('.c-chip[data-index="' + index + '"]');
+            if ($activeButton.length) {
+                $activeButton.addClass('c-chip--selected');
+            }
+            return false; // 현재 섹션 찾으면 반복 중단
+        }
+    });
+}
+
+// 클릭 이벤트
+$(el).find('.c-chip').on('click', function () {
+    var index = $(this).data('index');
+    var $targetElement =   $(el).find('#_event0' + index);
+
+    if ($targetElement.length) {
+        var targetOffset = $targetElement.offset().top - 80; // 헤더 오프셋 고려
+        $('html, body').animate({ scrollTop: targetOffset }, 500, function () {
+            updateButtonClass();
+        });
+    }
+});
+
+// 윈도우 리사이즈 및 스크롤 이벤트
+$(window).on('resize scroll', function () {
+    updateButtonClass();
+});
+
+
+
+
+function waitForShadowDOM() {
+    return new Promise((resolve) => {
+        const check = () => {
+            const shadowRoot = document.querySelector('#shadowWrap')?.shadowRoot;
+            if (shadowRoot) {
+                resolve(shadowRoot);
+            } else {
+                setTimeout(check, 50);
+            }
+        };
+        check();
+    });
+}
+
+
+
+// Swiper 초기화를 위한 메인 함수
+async function initializeSwipers() {
+    const el = await waitForShadowDOM();
+
+    
+var swiper = new Swiper(el.querySelector('.awards_inner'), {
+    slidesPerView: 2.2,
+    spaceBetween: 8,  
+    breakpoints: {
+
+    
+        1024: {
+            slidesPerView: 4.14,
+            slidesPerGroup: 1,
+        
+            spaceBetween: 8, 
+        }
+    },
+    }); 
+    
+    // Records Swiper 초기화
+    const recordsSlides = el.querySelectorAll('.records_slide');
+    
+    recordsSlides.forEach((slider, index) => {
+        const pagination = slider.querySelector('.swiper-pagination');
+        
+        new Swiper(slider, {
+            slidesPerView: 1,
+            spaceBetween: 4,
+            slideToClickedSlide: true,
+            watchSlidesProgress: true,
+            watchSlidesVisibility: true,
+            autoHeight: true,
+            pagination: {
+                el: pagination,
+                clickable: true
+            },
+            breakpoints: {
+                1080: {
+                    slidesPerView: 1,
+                    initialSlide: 0
+                }
+            }
+        });
+    });
+}
+
+// DOM이 로드된 후 초기화 실행
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeSwipers);
+} else {
+    initializeSwipers();
+};
+
+
+// Shadow DOM 내부 요소 선택을 위한 함수
+function getShadowElement(selector) {
+    const shadowRoot = document.querySelector('#shadowWrap').shadowRoot;
+    return shadowRoot.querySelector(selector);
+}
+
+function getShadowElements(selector) {
+    const shadowRoot = document.querySelector('#shadowWrap').shadowRoot;
+    return shadowRoot.querySelectorAll(selector);
+}
+
+// Playlist 기능
+$(function() {
+    const shadowRoot = document.querySelector('#shadowWrap').shadowRoot;
+    let isAnimating = false;
+
+    // Shadow DOM 내부 요소 선택
+    const firstPlaylist = shadowRoot.querySelector('.playlist_cont');
+    const firstButton = shadowRoot.querySelector('.list_button');
+    const allPlaylists = shadowRoot.querySelectorAll('.playlist_cont');
+    const allButtons = shadowRoot.querySelectorAll('.list_button');
+
+    // 초기 상태 설정
+    if (firstPlaylist) firstPlaylist.style.display = 'block';
+    if (firstButton) firstButton.classList.add('active');
+    allPlaylists.forEach((playlist, index) => {
+        if (index !== 0) playlist.style.display = 'none';
+    });
+
+
+    allButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            if (isAnimating || this.classList.contains('active')) return;
+            
+            isAnimating = true;
+            
+    
+            allButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            
+            const buttonData = this.getAttribute('data-');
+            const visiblePlaylist = shadowRoot.querySelector('.playlist_cont[style*="display: block"]');
+            const targetPlaylist = shadowRoot.querySelector(`.playlist_cont[data="${buttonData}"]`);
+
+        
+            if (visiblePlaylist) {
+                visiblePlaylist.style.opacity = '0';
+                setTimeout(() => {
+                    visiblePlaylist.style.display = 'none';
+                    
+                    // fadeIn 효과
+                    if (targetPlaylist) {
+                        targetPlaylist.style.display = 'block';
+                        targetPlaylist.style.opacity = '0';
+                        setTimeout(() => {
+                            targetPlaylist.style.opacity = '1';
+                            isAnimating = false;
+                        }, 0);
+                    }
+                }, 0);
+            }
+        });
+    });
+});
+
+</script>
+<script>
+(()=>{let pending=false,last=0;function send(){if(pending)return;pending=true;requestAnimationFrame(()=>{pending=false;const h=Math.ceil(document.documentElement.getBoundingClientRect().height);if(Math.abs(h-last)>2){last=h;parent.postMessage({type:'portfolio-height',height:h},location.origin);}});}new ResizeObserver(send).observe(document.body);window.addEventListener('load',send);document.addEventListener('click',e=>{const a=e.target.closest('a');if(a){e.preventDefault();}},true);document.addEventListener('submit',e=>e.preventDefault(),true);send();})();
+</script></body></html>

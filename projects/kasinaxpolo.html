@@ -1,0 +1,815 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><style>html,body{margin:0;min-height:0!important;height:auto!important}body{overflow:hidden}img{max-width:100%}</style></head><body><link rel="stylesheet" href="https://static.kasina-store.com/content_file/manual/reset.css">
+<link rel="stylesheet" href="https://static.kasina-store.com/_next/static/css/48a17b5f9a560c5f.css">
+<link rel="stylesheet" href="https://static.kasina-store.com/_next/static/css/d384998cb8cf8200.css">
+
+
+
+<style>
+  img{width: 100%;}
+
+.body{font-size: 15px; line-height: 20px; font-weight: 400; letter-spacing: 0.01em;}
+.sub_title{font-size: 24px; line-height: 28px; letter-spacing: 0; font-weight: 400; text-transform: uppercase;}
+.sub_text{font-size: 13px; line-height: 18px; letter-spacing: 0.01em; font-weight: 400;}
+
+.nav_wrap{ margin: 0px auto; }
+.scroll-css__wrap {margin: 0px auto;} 
+.c-sticky [data-ui-type=List_Submenu] .scroll-css .s-list{margin: 8px auto; }
+.img_box{border-radius: 4px; display: block; overflow: hidden;}
+
+.contentSection{padding: 112px 0px 0px;}
+.section_title{padding: 0px 0px 48px; text-align: center;}
+.sub_text{margin-top: 8px; display: block;}
+.storyImgbox{padding: 16px 48px; background: #000; max-width: 1200px; margin: 0px auto;}
+
+.sectionDesc{max-width: 720px; margin: 0px auto;}
+
+.textWrap{padding: 24px 0px 0px;}
+.buttonWrap{padding: 24px 0px 0px;}
+.commonButton{width: 100%; height: 48px; text-align: center; background-color: #000; border-radius: 4px;}
+.commonButton a{width: 100%; height: 100%; text-align: center; display: block; font-size: 13px; font-weight: 500; line-height: 48px; text-transform: uppercase; color: #fff;}
+
+.hero_section{max-width: 1920px; margin: 0px auto;}
+.story_section{max-width: 1200px; margin: 0px auto; }
+.editoral_section{width: 100%; max-width: 1920px; margin: 0px auto; overflow: hidden;}
+.product_section{max-width: 1200px; margin: 0px auto;}
+.notice_section{max-width: 1200px; margin: 0px auto;}
+.notice_slide .swiper-slide{width: calc((100% - 8px)/2);}
+
+.editoral_hero{aspect-ratio: 2.5/1; border-radius: 4px; overflow: hidden; }
+.swiper-wrapper{height: auto;}
+.editoral_slide .swiper-wrapper{height: auto;}
+
+.editoral_section .editoral_slide{padding: 16px 16px 0px;}
+.editoral_section .editoral_slide{position: relative;}
+.editoral_section .editoral_slide .swiper-slide{width: calc((100% - 48px)/4);}
+
+.notice_section .editoral_slide .swiper-slide{width: calc((100% - 8px)/2);}
+
+.prodList{display: flex; gap: 8px; flex-wrap: wrap;}
+.prodImg{width: calc((100% - 24px)/4); flex: 1 1 20%;}
+.notice_desc{max-width: 720px; margin: 0px auto; padding-top: 48px;}
+ 
+  .editoral_slide.is-grid .swiper-wrapper{display:grid; grid-template-columns:repeat(2,1fr); gap:8px;}
+  .editoral_slide.is-grid .swiper-slide{width:auto; margin:0;}
+  .editoral_slide.is-grid .swiper-button-prev{display:none;}
+  .editoral_slide.is-grid .swiper-button-next{display:none;}
+
+
+  .features_text_title{padding: 48px 0px 12px ;}
+  .features_text_title strong{font-size: 15px; font-weight: 500; letter-spacing: 0.04em; line-height: 20px;  text-transform: uppercase;}
+
+.features_text_list{padding: 24px 0px 0px;}
+.features_text_list strong{display: block; padding: 0px 0px 8px; font-size: 13px; font-weight: 500; line-height: 20px; letter-spacing: 0.04em; text-transform: uppercase;}
+
+.editorial_list li,.list_font li{font-size: 13px; line-height: 20px;}
+.list_font li::before{top: 8px;}
+.notice_slide{position: relative;}
+
+.text_inner .body{ word-break: break-all;   white-space: normal ;}
+.text_inner .body:not(:first-child){margin-top: 8px;}
+.style_section{max-width: 720px; margin: 0px auto;}
+.style_slide{width: 100%; margin: 0px auto; overflow: hidden; padding: 0px 0px;}
+
+.style_slide .slide_pre_main{ overflow: hidden; border-radius: 4px; position: relative;}
+.style_slide .slide_pre_view{ padding: 8px 0px 0px;}
+.style_slide .slide_pre_view .swiper-slide{width: calc((100% - 40px)/4); border-radius: 4px; overflow: hidden; opacity: 1;}
+
+
+  @media screen and (max-width: 1199px){
+     .sectionDesc{padding: 0px 16px;} 
+     .storyimg .img_box{border-radius: 0px;}
+    .prodList{width: calc(100% - 32px); margin: 0px auto;}
+    .notice_slide{overflow: hidden; width: calc(100% - 32px); margin: 0px auto;}
+    .notice_slide .swiper-slide{width:100%;}  
+    .editoral_slide .swiper-button-prev{display:none;}
+    .editoral_slide .swiper-button-next{display:none;}
+    .sub_title{font-size: 18px; line-height: 24px; letter-spacing: 0.04em;}
+    .contentSection{padding: 48px 0px 0px;}
+
+    .section_title{padding: 0px 0px 24px;}
+
+  }
+  @media screen and (max-width: 1023px){
+    .editoral_hero{ aspect-ratio: 1200/900; }
+
+    .sub_title{font-size: 18px; line-height: 24px; letter-spacing: 0.04em; font-weight: 500;}
+    .contentSection{padding: 112px 0px 0px;}
+    .body{font-size: 13px; line-height: 18px; font-weight: 400; letter-spacing: 0.01em;}
+
+
+  }
+  @media screen and (max-width: 719px){
+    .style_slide{padding: 0px 16px;}
+  }
+  
+</style>
+
+<div id="kasinaPolo">
+    <section class="hero_section">
+        <picture>
+            <source media="(max-width: 1023px)" srcset="
+            https://static.kasina-store.com/content_file/manual/img/launches/2025/kasinaPolo/main/00main_mo.webp
+              " type="image/webp">
+            <source media="(min-width: 1024px)" srcset="
+            https://static.kasina-store.com/content_file/manual/img/launches/2025/kasinaPolo/main/00main_pc.webp
+              " type="image/webp">
+            <img alt="빅배너 이미지" loading="lazy" decoding="async">
+        </picture>
+
+
+    </section>
+    <div class="c-sticky nav_wrap">
+        <div class="l-grid__row l-grid__no-gap" data-ui-type="List_Submenu">
+            <div class="scroll-css__wrap">
+                <div class="scroll-css">
+                    <ul class="s-list">
+                        <li>
+                            <button type="button" class="c-chip c-chip--selected" data-index="0">STORY</button>
+                        </li>
+                        <li>
+                            <button type="button" class="c-chip" data-index="1">EDITORIAL</button>
+                        </li>
+                        <li>
+                            <button type="button" class="c-chip" data-index="4">STYLING</button>
+                        </li>
+                        <li>
+                            <button type="button" class="c-chip" data-index="2">PRODUCT</button>
+                        </li>
+                        <li>
+                            <button type="button" class="c-chip" data-index="3">EVENT</button>
+                        </li>
+                      
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="story_section contentSection" id="_event00">
+        <div class="section_title">
+            <h5 class="sub_title">
+                BUSAN TO SEOUL  
+            </h5>
+            <sub class="sub_text">
+                STORY
+            </sub>
+        </div>
+
+        <div class="sectionInner">
+            <div class="storyimg">
+                <div class="img_box">
+                <img src="
+                https://static.kasina-store.com/content_file/manual/img/launches/2025/kasinaPolo/main/001.webp
+                " alt="">
+                </div>
+            </div>
+
+        </div>
+        <div class="sectionDesc">
+            <div class="textWrap">
+                <p class="body">
+                    1997년 부산 골목에서 시작된 카시나의 태도는, 시간이 지나도 여전히 현재진행형입니다. 폴로 랄프로렌과 함께한 이번 협업은 단순한 제품 출시가 아니라, 우리가 어디에서 왔고 지금 어디에 서 있는지를 보여주는 서사의 연장선입니다. 이번 컬렉션은 그 전환을 담고 있습니다.
+                </p>
+            </div>
+            <div class="buttonWrap">
+                <div class="commonButton">
+                    <a href="/features/62150">
+                        VIEW MORE STORY
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="editoral_section contentSection" id="_event01">
+        <div class="section_title">
+            <h5 class="sub_title">
+                BUSAN to Now Here
+            </h5>
+            <sub class="sub_text">
+                EDITORIAL
+            </sub>
+        </div>
+        <div class="section_inner">
+            <div class="editoral_img_list">
+                <div class="editoral_hero">
+                    <picture>
+                        <source media="(max-width: 1023px)" srcset="
+                        https://static.kasina-store.com/content_file/manual/img/editorial/2025/sep/kasinaPolo/00.webp
+                        " type="image/webp">
+                        <source media="(min-width: 1024px)" srcset="
+                        https://static.kasina-store.com/content_file/manual/img/launches/2025/kasinaPolo/main/02.webp
+                          " type="image/webp">
+                        <img alt="빅배너 이미지" loading="lazy" decoding="async">
+                    </picture>
+                </div>
+                <div class="editoral_slide">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="img_box">
+                                <img src="
+                                https://static.kasina-store.com/content_file/manual/img/editorial/2025/sep/kasinaPolo/0011.webp
+                                " alt="kasina Polp Ra">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="img_box">
+                                <img src="
+                                https://static.kasina-store.com/content_file/manual/img/editorial/2025/sep/kasinaPolo/12.webp
+                                " alt="kasina Polp Ra">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="img_box">
+                                <img src="
+                                https://static.kasina-store.com/content_file/manual/img/editorial/2025/sep/kasinaPolo/15.webp
+                                " alt="kasina Polp Ra">
+                            </div>
+                        </div><div class="swiper-slide">
+                            <div class="img_box">
+                                <img src="
+                                https://static.kasina-store.com/content_file/manual/img/editorial/2025/sep/kasinaPolo/14.webp
+                                " alt="kasina Polp Ra">
+                            </div>
+                        </div><div class="swiper-slide">
+                            <div class="img_box">
+                                <img src="
+                                https://static.kasina-store.com/content_file/manual/img/editorial/2025/sep/kasinaPolo/07.webp
+                                " alt="kasina Polp Ra">
+                            </div>
+                        </div><div class="swiper-slide">
+                            <div class="img_box">
+                                <img src="
+                                https://static.kasina-store.com/content_file/manual/img/editorial/2025/sep/kasinaPolo/08.webp
+                                " alt="kasina Polp Ra">
+                            </div>
+                        </div><div class="swiper-slide">
+                            <div class="img_box">
+                                <img src="
+                                https://static.kasina-store.com/content_file/manual/img/editorial/2025/sep/kasinaPolo/01.webp
+                                " alt="kasina Polp Ra">
+                            </div>
+                        </div><div class="swiper-slide">
+                            <div class="img_box">
+                                <img src="
+                                https://static.kasina-store.com/content_file/manual/img/editorial/2025/sep/kasinaPolo/02.webp
+                                " alt="kasina Polp Ra">
+                            </div>
+                        </div>
+                       
+                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </div>
+        </div>
+        <div class="sectionDesc">
+            <div class="textWrap">
+                <p class="body">
+                    이번 시즌 제품은 클래식과 스트리트의 경계를 허무는 방식을 제안합니다. 우리가 입어온 것, 우리가 만들어가는 것을 연결하며, 아이템 하나하나가 기록이자 현재의 태도가 됩니다. 아카이브적 디테일과 동시대적 감각이 공존하는 이번 라인업을 통해 Kasina와 Polo Ralph Lauren이 함께 만든 지금의 순간을 경험하세요.                </p>
+            </div>
+            <div class="buttonWrap">
+                <div class="commonButton">
+                    <a href="/features/62152">
+                        VIEW MORE EDITORIAL
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+    <section class="style_section contentSection" id="_event04">
+        <div class="section_title">
+            <h5 class="sub_title">
+                Style to Now Here
+            </h5>
+            <sub class="sub_text">
+                STYLING
+            </sub>
+        </div>
+        <div class="sectionInner">
+            <div class="style_slide slide_preview">
+                <div class="slide_pre_main">
+                    <div class="swiper-container preMainSwiper">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="https://static.kasina-store.com/content_file/manual/img/editorial/2025/oct/poloStyle/01.webp" alt=""></div> 
+                        <div class="swiper-slide"><img src="https://static.kasina-store.com/content_file/manual/img/editorial/2025/oct/poloStyle/03.webp" alt=""></div> 
+                        <div class="swiper-slide"><img src="https://static.kasina-store.com/content_file/manual/img/editorial/2025/oct/poloStyle/05.webp" alt=""></div> 
+                        <div class="swiper-slide"><img src="https://static.kasina-store.com/content_file/manual/img/editorial/2025/oct/poloStyle/07.webp" alt=""></div> 
+                        <div class="swiper-slide"><img src="https://static.kasina-store.com/content_file/manual/img/editorial/2025/oct/poloStyle/09.webp" alt=""></div> 
+                        <div class="swiper-slide"><img src="https://static.kasina-store.com/content_file/manual/img/editorial/2025/oct/poloStyle/11.webp" alt=""></div> 
+                        <div class="swiper-slide"><img src="https://static.kasina-store.com/content_file/manual/img/editorial/2025/oct/poloStyle/13.webp" alt=""></div> 
+                        <div class="swiper-slide"><img src="https://static.kasina-store.com/content_file/manual/img/editorial/2025/oct/poloStyle/15.webp" alt=""></div> 
+                        <div class="swiper-slide"><img src="https://static.kasina-store.com/content_file/manual/img/editorial/2025/oct/poloStyle/17.webp" alt=""></div> 
+                        <div class="swiper-slide"><img src="https://static.kasina-store.com/content_file/manual/img/editorial/2025/oct/poloStyle/19.webp" alt=""></div> 
+                      </div>
+                      <div class="swiper-button-prev"></div>
+                      <div class="swiper-button-next"></div>
+                    </div>
+                  </div>
+                  <div class="slide_pre_view">
+                    <div class="swiper-container preViewSwiper">
+                      <div class="swiper-wrapper">
+                        <div class="preView_arrow"></div>
+                        <div class="swiper-slide"><img src="https://static.kasina-store.com/content_file/manual/img/editorial/2025/oct/poloStyle/01.webp" alt=""></div> 
+                        <div class="swiper-slide"><img src="https://static.kasina-store.com/content_file/manual/img/editorial/2025/oct/poloStyle/03.webp" alt=""></div> 
+                        <div class="swiper-slide"><img src="https://static.kasina-store.com/content_file/manual/img/editorial/2025/oct/poloStyle/05.webp" alt=""></div> 
+                        <div class="swiper-slide"><img src="https://static.kasina-store.com/content_file/manual/img/editorial/2025/oct/poloStyle/07.webp" alt=""></div> 
+                        <div class="swiper-slide"><img src="https://static.kasina-store.com/content_file/manual/img/editorial/2025/oct/poloStyle/09.webp" alt=""></div> 
+                        <div class="swiper-slide"><img src="https://static.kasina-store.com/content_file/manual/img/editorial/2025/oct/poloStyle/11.webp" alt=""></div> 
+                        <div class="swiper-slide"><img src="https://static.kasina-store.com/content_file/manual/img/editorial/2025/oct/poloStyle/13.webp" alt=""></div> 
+                        <div class="swiper-slide"><img src="https://static.kasina-store.com/content_file/manual/img/editorial/2025/oct/poloStyle/15.webp" alt=""></div> 
+                        <div class="swiper-slide"><img src="https://static.kasina-store.com/content_file/manual/img/editorial/2025/oct/poloStyle/17.webp" alt=""></div> 
+                        <div class="swiper-slide"><img src="https://static.kasina-store.com/content_file/manual/img/editorial/2025/oct/poloStyle/19.webp" alt=""></div> 
+
+
+
+
+                      </div>
+                    </div>
+                  </div>
+            </div>
+
+
+            <div class="sectionDesc">
+                <div class="features_text_title">
+                    <strong>
+                        Style to Now Here</strong>
+                </div>
+        
+                <div class="text_inner">
+                    <p class="body">카시나와 폴로 랄프 로렌의 콜렉션을 일상 속에서 자연스럽게 풀어내기 위해, 카시나 임직원과 함께하는 스타일링 콘텐츠를 선보입니다.</p>
+                    <p class="body">누구나 자기 방식대로 입을 수 있다’라는 가볍고 유연한 느낌과 각자가 직접 전하는 스타일링 의도와 코멘트를 통해 그들의시선으로 해석된 이번 컬렉션을 확인해보시길 바랍니다.</p>
+        
+        
+            </div>
+            <div class="buttonWrap">
+                <div class="commonButton">
+                    <a href="/features/62496">
+                        MORE VIEW
+                    </a>
+                </div>
+            </div>
+        
+      
+      
+       
+            </div>
+        </div>
+    </section>
+
+    <section class="product_section contentSection" id="_event02">
+        <div class="section_title">
+            <h5 class="sub_title">
+                Kasina &amp; Polo 3rd Collection
+            </h5>
+            <sub class="sub_text">
+                PRODUCT
+            </sub>
+        </div>
+        <div class="sectionInner">
+            <div class="prodList">
+                <div class="prodImg">
+                    <img src="
+                    https://kasina.cdn-nhncommerce.com/Mall-No-CwNc/20250925/092357.772552203/MNPOOTW16021833_main.webp?720x900
+                    " alt="">
+                </div>
+                <div class="prodImg">
+                    <img src="
+                    https://kasina.cdn-nhncommerce.com/Mall-No-CwNc/20250925/092312.514213540/MNPOKNI16824681_main.webp?720x900
+                    " alt="">
+                </div>
+                <div class="prodImg">
+                    <img src="
+                    https://kasina.cdn-nhncommerce.com/Mall-No-CwNc/20250925/092207.521835528/MNPOKNI16824682_main.webp?720x900
+                    " alt="">
+                </div>
+                <div class="prodImg">
+                    <img src="
+                    https://kasina.cdn-nhncommerce.com/Mall-No-CwNc/20250925/092115.537907751/MNPOTSH1N822939_main.webp?720x900
+                    " alt="">
+                </div>
+                <div class="prodImg">
+                    <img src="
+                    https://kasina.cdn-nhncommerce.com/Mall-No-CwNc/20250925/092010.50330552/MNPOTSH1N822940_main.webp?720x900
+                    " alt="">
+                </div>
+                <div class="prodImg">
+                    <img src="
+                    https://kasina.cdn-nhncommerce.com/Mall-No-CwNc/20250925/091925.716195774/MAPOHGS0J422365_main.webp?720x900
+                    " alt="">
+                </div>
+                <div class="prodImg">
+                    <img src="
+                    https://kasina.cdn-nhncommerce.com/Mall-No-CwNc/20250925/091835.560186316/MAPOHGS0J422366_main.webp?720x900
+                    " alt="">
+                </div>
+                <div class="prodImg">
+                    <img src="
+                    https://kasina.cdn-nhncommerce.com/Mall-No-CwNc/20250925/091755.790321632/MAPOHGS0J422375_main.webp?720x900
+                    " alt="">
+                </div>
+                
+              
+            </div>
+        </div>
+        <div class="sectionDesc">
+            <div class="textWrap">
+                <p class="body">
+                    이번 시즌 제품은 클래식과 스트리트의 경계를 허무는 방식을 제안합니다. 우리가 입어온 것, 우리가 만들어가는 것을 연결하며, 아이템 하나하나가 기록이자 현재의 태도가 됩니다. 아카이브적 디테일과 동시대적 감각이 공존하는 이번 라인업을 통해 Kasina와 Polo Ralph Lauren이 함께 만든 지금의 순간을 경험하세요.                </p>
+            </div>
+            <div class="buttonWrap">
+                <div class="commonButton">
+                    <a href="/brands/polo-ralph-lauren">
+                        VIEW MORE PRODUCT
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+    <section class="notice_section contentSection" id="_event03">
+        <div class="section_title">
+            <h5 class="sub_title">
+                Kasina’s brunch session
+            </h5>
+            <sub class="sub_text">
+                LAUNCH
+            </sub>
+        </div>
+        <div class="sectionInner">
+            <div class="notice_img">
+                <div class="notice_slide">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="img_box">
+                                <img src="
+                                https://static.kasina-store.com/content_file/manual/img/features/activation/kasinapolo%233/poster.webp?1080x1440
+                                " alt="kasina Polp Ra">
+                            </div>
+                        </div>
+                       
+                        <div class="swiper-slide">
+                            <div class="img_box">
+                                <img src="
+                                https://static.kasina-store.com/content_file/manual/img/launches/2025/kasinaPolo/main/12.webp
+                                " alt="kasina Polp Ra">
+                            </div>
+                        </div>
+                       
+                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </div>
+
+            <div class="sectionDesc">
+                <div class="features_text_title">
+                    <strong>
+                        Kasina's Brunch session</strong>
+                </div>
+        
+                <div class="text_inner">
+                    <p class="body">카시나와 폴로 랄프 로렌이 함께 선보이는 세 번째 콜렉션,'Busan to Now Here'의 발매를 기념하여 9월 27일(토) 카시나 도산점에서 런칭 이벤트가 진행됩니다.</p>
+                    <p class="body">Kasina's Brunch Session이라는 컨셉 아래 음악, 브런치 메뉴 그리고 Ralph's Coffee가 함께하는 이벤트는, 1997년 카시나 부산 1호점 사진 아카이브와 현재 도산점의 무드를 이어내며, Busan to Now Here라는 테마 안에서 전시, 제품, 경험이 교차하는 공간을 선보입니다</p>
+        
+        
+            </div>
+        
+        
+            <div class="features_text_list">
+                <strong>INFORMATION</strong>
+                <ul class="dot-list editorial_list">
+                    <li>DATE &amp; TIME : 2025.09.27 (토) 11:00am - 16:00pm </li>
+                    <li>Location : 서울 강남구 압구정로42길 27 1층 Kasina Dosan</li>
+                    <li>PROGRAM : Kasina ‘97 Exhibition, Brunch catering &amp; Ralph’s Coffee,  GWP 증정</li>
+                </ul>
+        </div>
+       
+            </div>
+        </div>
+    </section>
+
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
+<script>
+    (function($) {
+      function findElements(selector) {
+        let elements = $(selector).toArray();
+        const shadowHost = document.querySelector('#shadowWrap');
+        if (shadowHost?.shadowRoot) {
+          elements = elements.concat([...shadowHost.shadowRoot.querySelectorAll(selector)]);
+        }
+        return $(elements);
+      }
+
+
+       //아코디언 스크립트//
+      function setupAccordion() {
+        const accordionItems = findElements(".c-accordion__item");
+
+       
+        accordionItems.each(function() {
+            const detail = $(this).next(".c-accordion__detail");
+            if ($(this).hasClass("active")) {
+                detail.css("display", "block");
+            } else {
+                detail.css("display", "none");
+            }
+        });
+
+        accordionItems.on("click", function() {
+            $(this).toggleClass("active");
+            const detail = $(this).next(".c-accordion__detail");
+
+            if (detail.is(":visible")) {
+                detail.slideUp();
+            } else {
+                detail.slideDown();
+            }
+        });
+      }
+      //아코디언 스크립트//
+
+
+       //발매정보 슬라이드
+       function prodSlide() {
+        findElements('.notice_slide').each(function() {
+            const slideSlider = $(this);
+
+            // Swiper 인스턴스 제거
+            if (slideSlider[0].swiper) {
+                slideSlider[0].swiper.destroy(true, true);
+            }
+
+            // Swiper 초기화
+            const slideInstance = new Swiper(slideSlider[0], {
+                slidesPerView: "auto", 
+              
+                effect: 'slide',
+                spaceBetween: 8,
+                
+                speed: 500,
+                navigation: {
+                  nextEl: slideSlider[0].querySelector('.swiper-button-next'),
+                  prevEl: slideSlider[0].querySelector('.swiper-button-prev'),
+                },
+                breakpoints: {
+                  1024: {
+                    slidesOffsetAfter: 0, 
+                    slidesOffsetBefore: 0,
+                  }
+                },
+            });
+
+            slideSlider[0].swiper = slideInstance;
+        });
+      }
+      //발매정보 슬라이드
+      //에디토리얼 슬라이드
+      function girdSlide() {
+        findElements('.editoral_slide').each(function () {
+          const wrap = this;
+          const $wrap = $(wrap);
+          const isMo = window.matchMedia('(max-width: 1023px)').matches;
+
+          // 모바일: 그리드, 데스크톱: 슬라이더
+          if (isMo) {
+            if (wrap.swiper) {
+              wrap.swiper.destroy(true, true);
+              wrap.swiper = null;
+            }
+            $wrap.addClass('is-grid');
+          } else {
+            $wrap.removeClass('is-grid');
+            if (!wrap.swiper) {
+              const instance = new Swiper(wrap, {
+                slidesPerView: 'auto',
+                effect: 'slide',
+                spaceBetween: 8,
+                slidesOffsetAfter: 16,
+                slidesOffsetBefore: 16,
+                speed: 500,
+                navigation: {
+                  nextEl: wrap.querySelector('.swiper-button-next'),
+                  prevEl: wrap.querySelector('.swiper-button-prev'),
+                },
+                breakpoints: {
+                  1024: {
+                    slidesOffsetAfter: 0,
+                    slidesOffsetBefore: 0,
+                  },
+                },
+              });
+              wrap.swiper = instance;
+            }
+          }
+        });
+      }
+     //에디토리얼 슬라이드
+
+     //스타일 슬라이드
+     function styleSlide() {
+           // Intersection Observer for slide_pre_view
+      findElements('.slide_preview').each(function (idx, wrap) {
+        const $wrap = $(wrap);
+        const $mainSwiperEl = $wrap.find('.preMainSwiper')[0];
+        const $thumbSwiperEl = $wrap.find('.preViewSwiper')[0];
+        const $thumbWrapper = $wrap.find('.preViewSwiper .swiper-wrapper')[0];
+    
+        const thumbSwiper = new Swiper($thumbSwiperEl, {
+          spaceBetween: 8,
+          slidesPerView: 'auto',
+          slideToClickedSlide: true,
+          watchSlidesProgress: true,
+          
+          loop: false,
+        });
+    
+        const mainSwiper = new Swiper($mainSwiperEl, {
+          spaceBetween: 0,
+          centeredSlides: true,
+          loop: false,
+          navigation: {
+                  nextEl: $wrap.find('.swiper-button-next')[0],
+                  prevEl: $wrap.find('.swiper-button-prev')[0],
+                },
+          thumbs: {
+            swiper: thumbSwiper,
+          },
+          on: {
+            slideChange: function () {
+              centerActiveThumb(this.realIndex);
+            },
+          }, 
+        });
+
+        // 썸네일 클릭 시 메인 슬라이더 이동 + 중앙 정렬
+        $thumbSwiperEl.querySelectorAll('.swiper-slide').forEach((thumb, i) => {
+          thumb.addEventListener('click', () => {
+            mainSwiper.slideTo(i);
+            centerActiveThumb(i);
+          
+          });
+        });
+    
+  
+      }); 
+      }
+      //발매정보 슬라이드
+      
+
+      
+      // 네비게이션 스크롤 함수
+      function setupScrollNavigation() {
+        const $chips = findElements('.c-chip[data-index]');
+        const $sections = findElements('[id^="_event"]');
+
+        // 클릭 시 해당 섹션으로 스크롤 이동
+        $chips.on('click', function () {
+          const index = $(this).data('index');
+          const $targetSection = findElements('#_event0' + index);
+          if ($targetSection.length) {
+            const offsetTop = $targetSection.offset().top;
+            window.scrollTo({ top: offsetTop - 80, behavior: 'smooth' }); // 상단 여백 조정
+            try {
+              const id = `_event0${index}`;
+              history.replaceState(null, '', `${location.pathname}?${id}`);
+            } catch (e) {}
+          }
+        });
+
+        // 스크롤 시 뷰포트 내 섹션 active 체크
+        $(window).on('scroll', function () {
+          const windowHeight = window.innerHeight;
+          const scrollTop = window.scrollY;
+          const midPoint = scrollTop + (windowHeight * 0.3);
+
+          $sections.each(function () {
+            const $section = $(this);
+            const sectionTop = $section.offset().top;
+            const sectionBottom = sectionTop + $section.outerHeight();
+            const id = $section.attr('id');
+            const index = id.replace('_event0', '');
+
+            if (sectionTop <= midPoint && sectionBottom >= midPoint) {
+              $chips.each(function () {
+                const $chip = $(this);
+                const chipIndex = $chip.data('index');
+                if (String(chipIndex) === index) {
+                  $chip.addClass('c-chip--selected');
+                } else {
+                  $chip.removeClass('c-chip--selected');
+                }
+              });
+              return false; // 하나만 처리
+            }
+          });
+        }).trigger('scroll'); // 초기 실행
+      }
+
+// URL → 섹션 딥링크 헬퍼
+function getSectionIdFromURL(){
+  // 1) ?_event01 처럼 key-only 파라미터 지원
+  const raw = location.search.replace(/^\?/, '');
+  if (raw && /^_event\d{2}$/.test(raw)) return raw;
+
+  // 2) 일반 쿼리 파라미터도 지원: ?section=_event01, ?tab=1
+  const params = new URLSearchParams(location.search);
+  for (const [k,v] of params.entries()){
+    if (/^_event\d{2}$/.test(k)) return k; // ?_event01=&...
+    if (v && /^_event\d{2}$/.test(v)) return v;
+    if (k === 'section' && v) return v;
+    if (k === 'tab' && /^\d+$/.test(v)) return `_event0${v}`;
+  }
+
+  // 3) 해시 지원: #_event01
+  const hash = (location.hash||'').replace(/^#/, '');
+  if (/^_event\d{2}$/.test(hash)) return hash;
+  return null;
+}
+
+function scrollToSectionById(id){
+  const $target = findElements(`#${id}`);
+  if ($target.length){
+    const top = $target.offset().top;
+    window.scrollTo({ top: top - 80, behavior: 'smooth' });
+  }
+}
+
+function _onURLChange(){
+  const id = getSectionIdFromURL();
+  if (id) scrollToSectionById(id);
+}
+
+let _resizeTimer = null;
+function _onResize() {
+  clearTimeout(_resizeTimer);
+  _resizeTimer = setTimeout(function(){
+    girdSlide();
+  }, 150);
+}
+
+function cleanup() {
+  window.removeEventListener('resize', _onResize);
+  window.removeEventListener('popstate', _onURLChange);
+  window.removeEventListener('hashchange', _onURLChange);
+  window.removeEventListener('unload', cleanup);
+  cleanup = null;
+}
+
+
+// 초기 실행 및 리사이즈 이벤트 관리
+function initialize() {
+  setupAccordion();
+  setupScrollNavigation();
+  prodSlide();
+  girdSlide();
+  styleSlide();
+  const initId = getSectionIdFromURL();
+  if (initId) {
+    setTimeout(function(){ scrollToSectionById(initId); }, 50);
+  }
+  window.addEventListener('popstate', _onURLChange);
+  window.addEventListener('hashchange', _onURLChange);
+  window.addEventListener('resize', _onResize, { passive: true });
+  let currentPath = location.pathname;
+  let isCleanedUp = false;
+  observer = new MutationObserver(() => {
+    if (location.pathname !== currentPath) {
+      currentPath = location.pathname;
+      if (!isCleanedUp && typeof cleanup === 'function') {
+        cleanup();
+        isCleanedUp = true;
+        setTimeout(() => { isCleanedUp = false; }, 500);
+      }
+    }
+  });
+  observer.observe(document.body, {
+    childList: true,
+    subtree: true
+  });
+}
+
+window.addEventListener('unload', cleanup);
+setTimeout(() => {
+  initialize();
+}, 100);
+    })(jQuery);
+
+  
+    </script>
+
+<script>
+(()=>{let pending=false,last=0;function send(){if(pending)return;pending=true;requestAnimationFrame(()=>{pending=false;const h=Math.ceil(document.documentElement.getBoundingClientRect().height);if(Math.abs(h-last)>2){last=h;parent.postMessage({type:'portfolio-height',height:h},location.origin);}});}new ResizeObserver(send).observe(document.body);window.addEventListener('load',send);document.addEventListener('click',e=>{const a=e.target.closest('a');if(a){e.preventDefault();}},true);document.addEventListener('submit',e=>e.preventDefault(),true);send();})();
+</script></body></html>

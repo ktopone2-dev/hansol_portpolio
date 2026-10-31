@@ -1,0 +1,1225 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><style>html,body{margin:0;min-height:0!important;height:auto!important}body{overflow:hidden}img{max-width:100%}</style></head><body><link rel="stylesheet" href="https://static.kasina-store.com/content_file/manual/reset.css">
+<link rel="stylesheet" href="https://static.kasina-store.com/_next/static/css/d384998cb8cf8200.css">
+<link rel="stylesheet" href="https://static.shoeprize.com/styles/plugin/swiper-bundle.min.34476e47c975.css">
+<link rel="stylesheet" href="https://static.kasina-store.com/_next/static/css/df8393030b985bb4.css">
+<link rel="stylesheet" href="https://static.kasina-store.com/_next/static/css/ff5488400d2f9eb9.css">
+<link rel="stylesheet" href="https://static.kasina-store.com/_next/static/css/5ad3bc195aa90c72.css">
+<style>
+    #wishlist_wrap img{width: 100%;}
+    .contents_wrap{max-width: 960px; margin: 0px auto;}
+    .title_wrap{text-align: center; padding: 96px 0px;}
+    .wish_title{text-align: center; padding: 12px; border-top:solid 1px #000 ; border-bottom: solid 1px #000; margin-bottom: 12px;}
+    
+    
+    /*font*/
+    .tirofont{  font-family: "Tiro Bangla", serif;}
+    
+    .title{font-size: 32px; line-height: 40px;}
+    .sub_title{font-size: 24px; line-height: 30px;}
+    .body{font-size: 15px; line-height: 20px; letter-spacing: 0.01em; font-weight: 400;}
+    .body_t{font-weight: 500; margin-bottom: 8px; display: block;}
+
+    .cont_wrap{display: flex; flex-flow: row; gap: 8px; padding: 16px 0px; border-top: solid 1px #000; border-bottom: solid 1px #000;}
+    .cont_img, .cont_dec{width: calc((100% - 8px)/ 2);}
+    .cont_dec{padding-left: 40px; display: flex; flex-flow: column; padding-top: 16px;}
+    .item_title{padding: 0px 0px 48px;}
+
+    .item_dec_list li:not(:first-child){padding: 24px 0px 0px;}
+    .cont_button{ width: 100%; background: black; height: 48px; border-radius: 4px; margin-top: auto; }
+    .cont_button a{width: 100%; height: 100%;  display: block; color: white ; text-align: center; line-height: 48px; font-size: 15px;}
+    
+    
+.prod_list_wrap{margin-top: 56px;}
+.prod_list_slide .swiper-slide{background: #f4f4f4;}
+.prod_title{font-weight: 500; margin-bottom: 12px; font-size: 15px; line-height: 20px; letter-spacing: 0.01em; }
+
+.cont_img_wrap{position: relative;}
+
+.cont_prod_title{position: absolute; top: 20px; left: 50%; transform: translateX(-50%); text-align: center; width: 100%;}
+.cont_prod_flag{padding:1px 12px ; background: black; color: #fff; width: fit-content; margin: 0px auto; margin-bottom: 8px; line-height: 20px; border-radius: 11px;}
+.cont_prod_price{margin-top: 4px; display: block;}
+
+.wishlist_cont:not(:first-child){margin-top: 112px;}
+
+.prod_list_slide .swiper-slide {
+    width: calc((100% - 24px) / 4); /* 두 슬라이드 너비 */
+}
+.c-card--gallery .c-card__price {
+    line-height: normal !important;
+}
+.c-card__price-info{align-items: center;}
+
+.select_wrap:not(:first-child){padding-top: 128px;}
+
+
+.benefit_section{padding: 112px 16px ; max-width: 640px; margin: 0px auto;}
+    .benefit_title{text-align: center; padding: 0px 0px 24px;}
+    .benefit_title .body{padding-top: 4px; display: block;}
+
+
+    
+    .button_wrap{  margin-top: 9px; background: #333;  border-radius: 4px; position: relative; overflow: hidden; }
+    .button_wrap::after{
+    height: 24px;
+    width: 24px;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    margin-top: -12px;
+    content: "";
+    background-image: url(//static.kasina-store.com/ui-static/img/ico_download.svg);
+    background-size: 24px;
+    right: 13px; 
+    filter: invert(99%) sepia(7%) saturate(47%) hue-rotate(14deg) brightness(118%) contrast(100%);
+    }
+    .button_inner{color: black; text-align: left; padding: 12px ; font-size: 12px; display: block; width: 100%; background: #333;  color: #fff;} 
+    .button_date{margin-top: 8px; color: #fff;}
+    .button_sale{font-size: 24px;}
+    .button_wrap{width: 100%; }
+    .button_icon{width: 50px; height: 100%; position: absolute; right: 0px; top: 0px; border-radius: 0px 5px 5px 0px ; background: #333;}
+    .button_info{ color: #fff;}
+
+    
+    .benefit_info{ border-radius: 4px; padding-top: 16px;}
+    .info_title::after{content: '+'; margin-left: 8px; font-size: 13px;}
+    .info_title::after {content: var(--afterContent, '-'); margin-left: 8px;  font-size: 13px; line-height: 16px;}
+    .info_list{margin-top: 8px;}
+    .info_list li{font-size: 13px; }
+
+    .info_title{position: relative; margin: 0px auto; width: 100%; display: block;font-size: 12px;  text-align: left; color: #000 !important; font-weight: 500; line-height: 16px;} 
+
+
+    .c-card__price-info{align-items: center;}
+
+    @media screen and (max-width: 1080px) {
+    
+        .main_visual img{ content: url('https://static.kasina-store.com/content_file/manual/promotion/2025/01/curation_2/000.mo.webp');}
+        .prod_title{padding-left: 16px;}
+        .cont_img_wrap{padding: 0px 16px;}
+        .cont_text_wrap{padding: 18px 16px 32px;}
+        .wish_title{width: calc(100% - 32px); margin: 0px auto; margin-bottom: 12px;}
+        .title_wrap{width: 50%; margin: 0px auto;}
+        .shop_button{width: calc(50% - 36px); }
+        .prod_list_slide .swiper-slide {
+        width: calc((100% - 8px) / 2); /* 두 슬라이드 너비 */
+    }
+        .cont_wrap{flex-flow: column;width: calc(100% - 32px); margin: 0px auto; padding: 24px 0px;}
+        .cont_img, .cont_dec{width:100%;}
+        .cont_dec{padding-left: 0px; display: flex; flex-flow: column; padding-top: 24px;}
+        .item_title{padding: 0px 0px 16px;}
+        .cont_button{margin-top: 24px;}
+        .body_t{margin-bottom: 0px;}
+    
+    
+    }
+    @media screen and (max-width:768px){
+        .title_wrap{width: 80%; margin: 0px auto;}
+        .cont_prod_title{top: 16px; font-size: 13px; line-height: 16px;}
+        .cont_prod_flag{margin-bottom:8px;}
+        .cont_prod_price{margin-top: 4px;}
+        .body{font-size: 13px; line-height: 20px; letter-spacing: 0.01em; }
+        .cont_text_wrap .body:not(:first-child){margin-top: 0px;}
+        .shop_button{width: calc(100% - 32px); margin: 0px auto;}
+       
+    
+    }
+   
+</style>    
+
+<div id="wishlist_wrap">
+    <section class="main_visual">
+        <img src="https://static.kasina-store.com/content_file/manual/promotion/2025/01/curation_2/000.pc.webp">
+    </section>
+    <section class="title_wrap">
+        <h3 class="title tirofont">
+            Ordinary’s Select
+        </h3>
+        <p class="body">
+            화려한 콜라보 제품  대신, 평범한듯 손이가는 상품들을 소개합니다.
+        </p>
+    </section>
+
+    <section class="contents_wrap">
+
+        <!--section 1-->
+        <div class="select_wrap">
+        <div class="cont_wrap">
+            <div class="cont_img">
+                <a href="/product-detail/124284516">
+                    <img src="https://static.kasina-store.com/content_file/manual/promotion/2025/01/curation_2/001.webp" alt="이미지 1">
+                </a>
+            </div>
+            <div class="cont_dec">
+                <div class="cont_info">
+                    <dl>
+                        <dt>
+                            <div class="item_title">
+                            <h4 class="cont_title sub_title tirofont">
+                                NIKE : ACG IZY
+                            </h4>
+                            <span class="cont_sub_t text">
+                                말 그대로 이지한 스니커즈
+                            </span>
+                            </div>
+                        </dt>
+                        <dd>
+                            <div class="item_dec">
+                                <ul class="item_dec_list">
+                                    <li>
+                                        <span class="dec_t body body_t">
+                                            WINTER SNEAKERS
+                                        </span>
+                                        <p class="dec_p body">
+                                            겨울철 스니커즈는 기능성으로 인해 비주얼을 포기하거나, 부츠처럼 불편한 경우가 많다. 하지만 ACG 이지는 단순한 지퍼형태로 이루어져있고, 안감은 따뜻한 기모 소재로 매우 따뜻.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <span class="dec_t body body_t">
+                                            DESIGN
+                                        </span>
+                                        <p class="dec_p body">
+                                            겨울철 많이보이는 모카신을 모티브로 나온 스웨이드 소재의 스니커즈. 모카신보다 굽은 높고 동그란편. 캐주얼한 느낌으로 카고팬츠와 스웻팬츠와의 스타일링을 추천.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <span class="dec_t body body_t">
+                                            SIZE TIP
+                                        </span>
+                                        <p class="dec_p body">
+                                            안감이 두껍고, 발등이 지퍼형태라 발등이 있는 사람은 반업 또는 일업을 추천. 
+                                        </p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="cont_button">
+                    <a href="/product-detail/124284516">
+                        SHOP NOW
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="prod_list_wrap">
+            <div class="prod_title_wrap">
+                <h5 class="prod_title">
+                     RECOMMENDED ITEM
+                </h5>
+            </div>
+            <div class="prod_list_slide swiper">
+                <ul class="swiper-wrapper">
+
+                    <li class="swiper-slide">
+                        <a class="c-card__link" href="/product-detail/124284517">
+                            <div class="c-card__thumb">
+                                <span class="c-lazyload c-lazyload--ratio_1x1">
+                                    <img src="https://kasina.cdn-nhncommerce.com/SERVICE/bulkUpload/20250107/132379/40/310952217/FV4317-201_main.webp?720x900" loading="lazy" width="640" height="800">
+                                </span>
+                              
+                            </div>
+                            <div class="c-card__info">
+                                <dl>
+                                    <div class="c-card__brand">
+                                        <dt>브랜드명</dt>
+                                        <dd>
+                                            <span>NIKE</span>
+                                        </dd>
+                                    </div>
+                                    <div class="c-card__name">
+                                        <dt>상품명</dt>
+                                        <dd>NIKE ACG IZY</dd>
+                                    </div>
+                                    <div class="c-card__price-info">
+                                        <dt>가격정보</dt>
+                                        <dd class="c-card__price">
+                                            <span class="sr-only">할인 적용가</span>
+                                            <strong><em>￦</em>159,000
+                                            </strong>
+                                        </dd>
+                                        <dd class="c-card__rate">
+                                          
+                                        </dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </a>
+                    </li>
+                    
+                    <li class="swiper-slide">
+                        <a class="c-card__link" href="/product-detail/124022519">
+                            <div class="c-card__thumb">
+                                <span class="c-lazyload c-lazyload--ratio_1x1 ">
+                                    <img src="https://kasina.cdn-nhncommerce.com/SERVICE/bulkUpload/20241206/132381/05/96750312/FV2923-301_main.webp?720x900" loading="lazy" width="640" height="800">
+                                </span>
+                              
+                            </div>
+                            <div class="c-card__info">
+                                <dl>
+                                    <div class="c-card__brand">
+                                        <dt>브랜드명</dt>
+                                        <dd>
+                                            <span>NIKE</span>
+                                        </dd>
+                                    </div>
+                                    <div class="c-card__name">
+                                        <dt>상품명</dt>
+                                        <dd>NIKE ACG RUFUS
+                                        </dd>
+                                    </div>
+                                    <div class="c-card__price-info">
+                                        <dt>가격정보</dt>
+                                        <dd class="c-card__price">
+                                            <span class="sr-only">할인 적용가</span>
+                                            <strong><em>￦</em>129,000
+                                            </strong>
+                                        </dd>
+                                        <dd class="c-card__rate">
+                                            
+                                        </dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </a>
+                    </li>
+              
+                
+
+                    <li class="swiper-slide">
+                        <a class="c-card__link" href="/product-detail/124296608">
+                            <div class="c-card__thumb">
+                                <span class="c-lazyload c-lazyload--ratio_1x1">
+                                    <img src="https://kasina.cdn-nhncommerce.com/SERVICE/bulkUpload/20250110/132379/15/98110369/FV2923-400_main.webp?720x900" loading="lazy" width="640" height="800">
+                                </span>
+                              
+                            </div>
+                            <div class="c-card__info">
+                                <dl>
+                                    <div class="c-card__brand">
+                                        <dt>브랜드명</dt>
+                                        <dd>
+                                            <span>NIKE</span>
+                                        </dd>
+                                    </div>
+                                    <div class="c-card__name">
+                                        <dt>상품명</dt>
+                                        <dd>NIKE ACG RUFUS</dd>
+                                    </div>
+                                    <div class="c-card__price-info">
+                                        <dt>가격정보</dt><dd class="c-card__price">
+                                            <span class="sr-only">할인 적용가</span>
+                                            <strong><em>￦</em>129,000</strong>
+                                        </dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="swiper-slide">
+                        <a class="c-card__link" href="/product-detail/123544806">
+                            <div class="c-card__thumb">
+                                <span class="c-lazyload c-lazyload--ratio_1x1">
+                                    <img src="https://kasina.cdn-nhncommerce.com/SERVICE/bulkUpload/20241022/132379/21/2134262/BDF24S02004117BK01_main.webp?720x900" loading="lazy" width="640" height="800">
+                                </span>
+                              
+                            </div>
+                            <div class="c-card__info">
+                                <dl>
+                                    <div class="c-card__brand">
+                                        <dt>브랜드명</dt>
+                                        <dd>
+                                            <span>OAKLEY FACTORY TEAM</span>
+                                        </dd>
+                                    </div>
+                                    <div class="c-card__name">
+                                        <dt>상품명</dt>
+                                        <dd>OAKLEY FACTORY TEAM SUEDE FLESH SANDAL</dd>
+                                    </div>
+                                    <div class="c-card__price-info">
+                                        <dt>가격정보</dt><dd class="c-card__price">
+                                            <span class="sr-only">할인 적용가</span>
+                                            <strong><em>￦</em>289,000</strong>
+                                        </dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        </div>
+        <!--section 1-->
+
+        <!--section 2-->
+        <div class="select_wrap">
+            <div class="cont_wrap">
+                <div class="cont_img">
+                    <a href="/product-detail/123952463">
+                        <img src="https://static.kasina-store.com/content_file/manual/promotion/2025/01/curation_2/002.webp" alt="이미지 1">
+                    </a>
+                </div>
+                <div class="cont_dec">
+                    <div class="cont_info">
+                        <dl>
+                            <dt>
+                                <div class="item_title">
+                                <h4 class="cont_title sub_title tirofont">
+                                    NIKE : AIR MAX TL 2.5
+                                </h4>
+                                <span class="cont_sub_t text">
+                                    다시 새롭게 돌아온 맥스
+                                </span>
+                                </div>
+                            </dt>
+                            <dd>
+                                <div class="item_dec">
+                                    <ul class="item_dec_list">
+                                        <li>
+                                            <span class="dec_t body body_t">
+                                                AIR MAX
+                                            </span>
+                                            <p class="dec_p body">
+                                                90년대 후반에 나이키 에어맥스 인기제품을 재해석한 모델. 물결 형태의 디테일과 실루엣이 맥스97&amp;98과 테일윈드를 연상케한다.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <span class="dec_t body body_t">
+                                                DESIGN
+                                            </span>
+                                            <p class="dec_p body">
+                                                맥스 특유의 스포티한 스타일의 조합으로 고급스러운 느낌의 소재와 배색. 다시 돌아온 Y2K 패션에 데일리로 적합한 스니커즈.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <span class="dec_t body body_t">
+                                                SIZE TIP
+                                            </span>
+                                            <p class="dec_p body">
+                                                스니커즈의 실루엣이 날렵하지 않기 때문에, 정사이즈로 착용하는 것을 추천.
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="cont_button">
+                        <a href="/product-detail/123952463">
+                            SHOP NOW
+                        </a>
+                    </div>
+    
+                </div>
+            </div>
+    
+            <div class="prod_list_wrap">
+                <div class="prod_title_wrap">
+                    <h5 class="prod_title">
+                         RECOMMENDED ITEM
+                    </h5>
+                </div>
+                <div class="prod_list_slide swiper">
+                    <ul class="swiper-wrapper">
+    
+                        <li class="swiper-slide">
+                            <a class="c-card__link" href="/product-detail/123469811">
+                                <div class="c-card__thumb">
+                                    <span class="c-lazyload c-lazyload--ratio_1x1">
+                                        <img src="https://kasina.cdn-nhncommerce.com/SERVICE/bulkUpload/20241014/132379/35/405416194/FZ4110-002_main.webp?720x900" loading="lazy" width="640" height="800">
+                                    </span>
+                                  
+                                </div>
+                                <div class="c-card__info">
+                                    <dl>
+                                        <div class="c-card__brand">
+                                            <dt>브랜드명</dt>
+                                            <dd>
+                                                <span>NIKE</span>
+                                            </dd>
+                                        </div>
+                                        <div class="c-card__name">
+                                            <dt>상품명</dt>
+                                            <dd>NIKE AIR MAX TL 2.5</dd>
+                                        </div>
+                                        <div class="c-card__price-info">
+                                            <dt>가격정보</dt>
+                                            <dd class="c-card__price">
+                                                <span class="sr-only">할인 적용가</span>
+                                                <strong><em>￦</em>175,200
+                                                </strong>
+                                            </dd>
+                                            <dd class="c-card__rate">
+                                                <del>219,000</del>
+                                                <span class="sr-only">할인율</span>
+                                                <strong>20%</strong>
+                                            </dd>
+                                        </div>
+                                    </dl>
+                                </div>
+                            </a>
+                        </li>
+                        
+                        <li class="swiper-slide">
+                            <a class="c-card__link" href="/product-detail/124243292">
+                                <div class="c-card__thumb">
+                                    <span class="c-lazyload c-lazyload--ratio_1x1 ">
+                                        <img src="https://kasina.cdn-nhncommerce.com/20241227/151836.730303000/HQ1988-100_main.webp?720x900" loading="lazy" width="640" height="800">
+                                    </span>
+                                  
+                                </div>
+                                <div class="c-card__info">
+                                    <dl>
+                                        <div class="c-card__brand">
+                                            <dt>브랜드명</dt>
+                                            <dd>
+                                                <span>NIKE</span>
+                                            </dd>
+                                        </div>
+                                        <div class="c-card__name">
+                                            <dt>상품명</dt>
+                                            <dd>NIKE SHOX R4</dd>
+                                        </div>
+                                        <div class="c-card__price-info">
+                                            <dt>가격정보</dt>
+                                            <dd class="c-card__price">
+                                                <span class="sr-only">할인 적용가</span>
+                                                <strong><em>￦</em>179,000
+                                                </strong>
+                                            </dd>
+                                            <dd class="c-card__rate">
+                                                
+                                            </dd>
+                                        </div>
+                                    </dl>
+                                </div>
+                            </a>
+                        </li>
+                  
+                        <li class="swiper-slide">
+                            <a class="c-card__link" href="/product-detail/124302272">
+                                <div class="c-card__thumb">
+                                    <span class="c-lazyload c-lazyload--ratio_1x1">
+                                        <img src="https://kasina.cdn-nhncommerce.com/SERVICE/bulkUpload/20250110/132379/11/830789108/JH6114_main.webp?720x900" loading="lazy" width="640" height="800">
+                                    </span>
+                                  
+                                </div>
+                                <div class="c-card__info">
+                                    <dl>
+                                        <div class="c-card__brand">
+                                            <dt>브랜드명</dt>
+                                            <dd>
+                                                <span>ADIDAS</span>
+                                            </dd>
+                                        </div>
+                                        <div class="c-card__name">
+                                            <dt>상품명</dt>
+                                            <dd>ADIDAS EQUIPMENT AGRAVIC
+                                            </dd>
+                                        </div>
+                                        <div class="c-card__price-info">
+                                            <dt>가격정보</dt><dd class="c-card__price">
+                                                <span class="sr-only">할인 적용가</span>
+                                                <strong><em>￦</em>269,000</strong>
+                                            </dd>
+                                        </div>
+                                    </dl>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li class="swiper-slide">
+                            <a class="c-card__link" href="/product-detail/123899446">
+                                <div class="c-card__thumb">
+                                    <span class="c-lazyload c-lazyload--ratio_1x1">
+                                        <img src="https://kasina.cdn-nhncommerce.com/SERVICE/bulkUpload/20241119/132379/55/137335936/NBPDEB737R_main.webp?720x900" loading="lazy" width="640" height="800">
+                                    </span>
+                                  
+                                </div>
+                                <div class="c-card__info">
+                                    <dl>
+                                        <div class="c-card__brand">
+                                            <dt>브랜드명</dt>
+                                            <dd>
+                                                <span>NEW BALANCE</span>
+                                            </dd>
+                                        </div>
+                                        <div class="c-card__name">
+                                            <dt>상품명</dt>
+                                            <dd>NEW BALANCE ML860XA</dd>
+                                        </div>
+                                        <div class="c-card__price-info">
+                                            <dt>가격정보</dt><dd class="c-card__price">
+                                                <span class="sr-only">할인 적용가</span>
+                                                <strong><em>￦</em>159,000</strong>
+                                            </dd>
+                                        </div>
+                                    </dl>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--section 2-->
+
+        <!--section 3-->
+        <div class="select_wrap">
+            <div class="cont_wrap">
+                <div class="cont_img">
+                    <a href="/product-detail/124137296">
+                        <img src="https://static.kasina-store.com/content_file/manual/promotion/2025/01/curation_2/003.webp" alt="이미지 1">
+                    </a>
+                </div>
+                <div class="cont_dec">
+                    <div class="cont_info">
+                        <dl>
+                            <dt>
+                                <div class="item_title">
+                                <h4 class="cont_title sub_title tirofont">
+                                    SALOMON : XT-WHISPER
+                                </h4>
+                                <span class="cont_sub_t text">
+                                    남들과는 다르게
+                                </span>
+                                </div>
+                            </dt>
+                            <dd>
+                                <div class="item_dec">
+                                    <ul class="item_dec_list">
+                                        <li>
+                                            <span class="dec_t body body_t">
+                                                XT-WHISPER
+                                            </span>
+                                            <p class="dec_p body">
+                                                살로몬의 XT 라인의 헤리티지를 뛰어난 안정성과 디자인으로 재해석한 모델. 아웃도어 및 일상적인 스타일을 결합한 디자인이 특징. 
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <span class="dec_t body body_t">
+                                                DESIGN
+                                            </span>
+                                            <p class="dec_p body">
+                                                다양한 소재의 매트한 질감과 광택이 조화를 이루어 독창적인 시각적 질감 대비를 만들어내는 컬러웨이는 과거와 현재를 아우르는 감각적인 디자인을 보여줍니다. 이와 함께 연청이나 트레이닝 팬츠와의 스타일링을 추천.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <span class="dec_t body body_t">
+                                                SIZE TIP
+                                            </span>
+                                            <p class="dec_p body">
+                                                슬림한 쉐입에 전체적으로 두껍지 않은 소재를 사용하여, 정사이즈 또는 반 사이즈 업을 추천.
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="cont_button">
+                        <a href="/product-detail/124137296">
+                            SHOP NOW
+                        </a>
+                    </div>
+    
+                </div>
+            </div>
+    
+            <div class="prod_list_wrap">
+                <div class="prod_title_wrap">
+                    <h5 class="prod_title">
+                         RECOMMENDED ITEM
+                    </h5>
+                </div>
+                <div class="prod_list_slide swiper">
+                    <ul class="swiper-wrapper">
+    
+                        <li class="swiper-slide">
+                            <a class="c-card__link" href="/product-detail/124297238">
+                                <div class="c-card__thumb">
+                                    <span class="c-lazyload c-lazyload--ratio_1x1">
+                                        <img src="https://kasina.cdn-nhncommerce.com/SERVICE/bulkUpload/20250109/132379/46/928917927/FV1920-002_main.webp?720x900" loading="lazy" width="640" height="800">
+                                    </span>
+                                  
+                                </div>
+                                <div class="c-card__info">
+                                    <dl>
+                                        <div class="c-card__brand">
+                                            <dt>브랜드명</dt>
+                                            <dd>
+                                                <span>NIKE</span>
+                                            </dd>
+                                        </div>
+                                        <div class="c-card__name">
+                                            <dt>상품명</dt>
+                                            <dd>NIKE WMNS AIR MAX MUSE
+                                            </dd>
+                                        </div>
+                                        <div class="c-card__price-info">
+                                            <dt>가격정보</dt>
+                                            <dd class="c-card__price">
+                                                <span class="sr-only">할인 적용가</span>
+                                                <strong><em>￦</em>179,000
+                                                </strong>
+                                            </dd>
+                                            <dd class="c-card__rate">
+                                               
+                                            </dd>
+                                        </div>
+                                    </dl>
+                                </div>
+                            </a>
+                        </li>
+                        
+                        <li class="swiper-slide">
+                            <a class="c-card__link" href="/product-detail/124022523">
+                                <div class="c-card__thumb">
+                                    <span class="c-lazyload c-lazyload--ratio_1x1 ">
+                                        <img src="https://kasina.cdn-nhncommerce.com/SERVICE/bulkUpload/20241206/132381/05/96750312/FV2925-600_main.webp?720x900" loading="lazy" width="640" height="800">
+                                    </span>
+                                  
+                                </div>
+                                <div class="c-card__info">
+                                    <dl>
+                                        <div class="c-card__brand">
+                                            <dt>브랜드명</dt>
+                                            <dd>
+                                                <span>NIKE</span>
+                                            </dd>
+                                        </div>
+                                        <div class="c-card__name">
+                                            <dt>상품명</dt>
+                                            <dd>NIKE ACG AIR EXPLORAID
+                                            </dd>
+                                        </div>
+                                        <div class="c-card__price-info">
+                                            <dt>가격정보</dt>
+                                            <dd class="c-card__price">
+                                                <span class="sr-only">할인 적용가</span>
+                                                <strong><em>￦</em>152,100
+                                                </strong>
+                                            </dd>
+                                            <dd class="c-card__rate">
+                                                <del>169,000</del>
+                                                <span class="sr-only">할인율</span>
+                                                <strong>10%</strong>
+                                            </dd>
+                                        </div>
+                                    </dl>
+                                </div>
+                            </a>
+                        </li>
+                  
+                    
+    
+                        <li class="swiper-slide">
+                            <a class="c-card__link" href="/product-detail/123899394">
+                                <div class="c-card__thumb">
+                                    <span class="c-lazyload c-lazyload--ratio_1x1">
+                                        <img src="https://kasina.cdn-nhncommerce.com/SERVICE/bulkUpload/20241115/132379/11/225395358/40327502_main.webp?720x900" loading="lazy" width="640" height="800">
+                                    </span>
+                                  
+                                </div>
+                                <div class="c-card__info">
+                                    <dl>
+                                        <div class="c-card__brand">
+                                            <dt>브랜드명</dt>
+                                            <dd>
+                                                <span>PUMA</span>
+                                            </dd>
+                                        </div>
+                                        <div class="c-card__name">
+                                            <dt>상품명</dt>
+                                            <dd>PUMA INHALE ESSENTIALS</dd>
+                                        </div>
+                                        <div class="c-card__price-info">
+                                            <dt>가격정보</dt>
+                                            <dd class="c-card__price">
+                                                <span class="sr-only">할인 적용가</span>
+                                                <strong><em>￦</em>143,100
+                                                </strong>
+                                            </dd>
+                                            <dd class="c-card__rate">
+                                                <del>159,000</del>
+                                                <span class="sr-only">할인율</span>
+                                                <strong>10%</strong>
+                                            </dd>
+                                        </div>
+                                    </dl>
+                                </div>
+                            </a>
+                        </li>
+              
+                        <li class="swiper-slide">
+                            <a class="c-card__link" href="/product-detail/123278212">
+                                <div class="c-card__thumb">
+                                    <span class="c-lazyload c-lazyload--ratio_1x1">
+                                        <img src="https://static.kasina-store.com/content_file/manual/promotion/2025/01/curation_2/item04.webp" loading="lazy" width="640" height="800">
+                                    </span>
+                                  
+                                </div>
+                                <div class="c-card__info">
+                                    <dl>
+                                        <div class="c-card__brand">
+                                            <dt>브랜드명</dt>
+                                            <dd>
+                                                <span>NEGATIVE THREE</span>
+                                            </dd>
+                                        </div>
+                                        <div class="c-card__name">
+                                            <dt>상품명</dt>
+                                            <dd>NEGATIVE THREE Asymmetry Sneakers</dd>
+                                        </div>
+                                        <div class="c-card__price-info">
+                                            <dt>가격정보</dt>
+                                            <dd class="c-card__price">
+                                                <span class="sr-only">할인 적용가</span>
+                                                <strong><em>￦</em>188,100
+                                                </strong>
+                                            </dd>
+                                            <dd class="c-card__rate">
+                                                <del>209,000</del>
+                                                <span class="sr-only">할인율</span>
+                                                <strong>10%</strong>
+                                            </dd>
+                                        </div>
+                                    </dl>
+                                </div>
+                            </a>
+                        </li>
+                    
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--section 3-->
+            
+        <!--section 4-->
+        <div class="select_wrap">
+                <div class="cont_wrap">
+                    <div class="cont_img">
+                        <a href="/product-detail/123584235">
+                            <img src="https://static.kasina-store.com/content_file/manual/promotion/2025/01/curation_2/004.webp" alt="이미지 1">
+                       </a>
+                    </div>
+                    <div class="cont_dec">
+                        <div class="cont_info">
+                            <dl>
+                                <dt>
+                                    <div class="item_title">
+                                    <h4 class="cont_title sub_title tirofont">
+                                        SALOMON : SNOWCLOG
+                                    </h4>
+                                    <span class="cont_sub_t text">
+                                        클로그의 또다른 선택지
+                                    </span>
+                                    </div>
+                                </dt>
+                                <dd>
+                                    <div class="item_dec">
+                                        <ul class="item_dec_list">
+                                            <li>
+                                                <span class="dec_t body body_t">
+                                                    CLOG
+                                                </span>
+                                                <p class="dec_p body">
+                                                    슬리퍼처럼 편하게 신을수있는 스타일의 클로그. 유명한 크록스부터 나이키,아디다스도 다양한 모델로 나오는 상품. 특유의 단점인 겨울철 미끄러움, 접지력을 메꾼 스노우 클로그는 겨울철 가히 최고의 클로그. 
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <span class="dec_t body body_t">
+                                                    DESIGN
+                                                </span>
+                                                <p class="dec_p body">
+                                                    클로그 특유의 단순하고 동그란 실루엣이 아닌 날렵한디자인에 벌키한 솔이 스노우 클로그의 매력. 그리고 포인트 되는 다양한 컬러웨이로 데일리부터, 포인트 아이템으로 활용하기 좋다.
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <span class="dec_t body body_t">
+                                                    SIZE TIP
+                                                </span>
+                                                <p class="dec_p body">
+                                                    날렵한 디자인의 클로그 형태로 발볼과 발등이 좁고 낮게 나와 반업에서 일업을 추천.
+                                                </p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="cont_button">
+                            <a href="/product-detail/123584235">
+                                SHOP NOW
+                            </a>
+                        </div>
+        
+                    </div>
+                </div>
+        
+                <div class="prod_list_wrap">
+                    <div class="prod_title_wrap">
+                        <h5 class="prod_title">
+                             RECOMMENDED ITEM
+                        </h5>
+                    </div>
+                    <div class="prod_list_slide swiper">
+                        <ul class="swiper-wrapper">
+        
+                            <li class="swiper-slide">
+                                <a class="c-card__link" href="/product-detail/123584207">
+                                    <div class="c-card__thumb">
+                                        <span class="c-lazyload c-lazyload--ratio_1x1">
+                                            <img src="https://kasina.cdn-nhncommerce.com/SERVICE/bulkUpload/20241028/143605/39/686868800/L47579000_main.webp?720x900" loading="lazy" width="640" height="800">
+                                        </span>
+                                      
+                                    </div>
+                                    <div class="c-card__info">
+                                        <dl>
+                                            <div class="c-card__brand">
+                                                <dt>브랜드명</dt>
+                                                <dd>
+                                                    <span>SALOMON</span>
+                                                </dd>
+                                            </div>
+                                            <div class="c-card__name">
+                                                <dt>상품명</dt>
+                                                <dd>SALOMON SNOWCLOG</dd>
+                                            </div>
+                                            <div class="c-card__price-info">
+                                                <dt>가격정보</dt>
+                                                <dd class="c-card__price">
+                                                    <span class="sr-only">할인 적용가</span>
+                                                    <strong><em>￦</em>105,000
+                                                    </strong>
+                                                </dd>
+                                                <dd class="c-card__rate">
+                                                    <del>150,000</del>
+                                                    <span class="sr-only">할인율</span>
+                                                    <strong>30%</strong>
+                                                </dd>
+                                            </div>
+                                        </dl>
+                                    </div>
+                                </a>
+                            </li>
+                            
+                            <li class="swiper-slide">
+                                <a class="c-card__link" href="/product-detail/123480329">
+                                    <div class="c-card__thumb">
+                                        <span class="c-lazyload c-lazyload--ratio_1x1 ">
+                                            <img src="https://kasina.cdn-nhncommerce.com/SERVICE/bulkUpload/20241016/132379/19/434899901/NBUW177LE38_main.webp?720x900" loading="lazy" width="640" height="800">
+                                        </span>
+                                      
+                                    </div>
+                                    <div class="c-card__info">
+                                        <dl>
+                                            <div class="c-card__brand">
+                                                <dt>브랜드명</dt>
+                                                <dd>
+                                                    <span>ROA</span>
+                                                </dd>
+                                            </div>
+                                            <div class="c-card__name">
+                                                <dt>상품명</dt>
+                                                <dd>ROA Pala SYRAH BLACK
+                                                </dd>
+                                            </div>
+                                            <div class="c-card__price-info">
+                                                <dt>가격정보</dt>
+                                                <dd class="c-card__price">
+                                                    <span class="sr-only">할인 적용가</span>
+                                                    <strong><em>￦</em>365,000
+                                                    </strong>
+                                                </dd>
+                                                <dd class="c-card__rate">
+                                                    <del>730,000</del>
+                                                    <span class="sr-only">할인율</span>
+                                                    <strong>50%</strong>
+                                                </dd>
+                                            </div>
+                                        </dl>
+                                    </div>
+                                </a>
+                            </li>
+                      
+                            <li class="swiper-slide">
+                                <a class="c-card__link" href="/product-detail/123863481">
+                                    <div class="c-card__thumb">
+                                        <span class="c-lazyload c-lazyload--ratio_1x1 ">
+                                            <img src="https://kasina.cdn-nhncommerce.com/SERVICE/bulkUpload/20241111/132379/23/604555724/HF6881-100_main.webp?720x900" loading="lazy" width="640" height="800">
+                                        </span>
+                                      
+                                    </div>
+                                    <div class="c-card__info">
+                                        <dl>
+                                            <div class="c-card__brand">
+                                                <dt>브랜드명</dt>
+                                                <dd>
+                                                    <span>NIKE</span>
+                                                </dd>
+                                            </div>
+                                            <div class="c-card__name">
+                                                <dt>상품명</dt>
+                                                <dd>NIKE CLOGPOSITE
+                                                </dd>
+                                            </div>
+                                            <div class="c-card__price-info">
+                                                <dt>가격정보</dt>
+                                                <dd class="c-card__price">
+                                                    <span class="sr-only">할인 적용가</span>
+                                                    <strong><em>￦</em>152,100
+                                                    </strong>
+                                                </dd>
+                                                <dd class="c-card__rate">
+                                                    <del>169,000</del>
+                                                    <span class="sr-only">할인율</span>
+                                                    <strong>10%</strong>
+                                                </dd>
+                                            </div>
+                                        </dl>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a class="c-card__link" href="/product-detail/123846999">
+                                    <div class="c-card__thumb">
+                                        <span class="c-lazyload c-lazyload--ratio_1x1 ">
+                                            <img src="https://kasina.cdn-nhncommerce.com/SERVICE/bulkUpload/20241106/132379/41/608550637/209747-2Y2_main.webp?720x900" loading="lazy" width="640" height="800">
+                                        </span>
+                                      
+                                    </div>
+                                    <div class="c-card__info">
+                                        <dl>
+                                            <div class="c-card__brand">
+                                                <dt>브랜드명</dt>
+                                                <dd>
+                                                    <span>CROCS</span>
+                                                </dd>
+                                            </div>
+                                            <div class="c-card__name">
+                                                <dt>상품명</dt>
+                                                <dd>CROCS Classic Energy Running Vest
+                                                </dd>
+                                            </div>
+                                            <div class="c-card__price-info">
+                                                <dt>가격정보</dt>
+                                                <dd class="c-card__price">
+                                                    <span class="sr-only">할인 적용가</span>
+                                                    <strong><em>￦</em>111,600
+                                                    </strong>
+                                                </dd>
+                                                <dd class="c-card__rate">
+                                                    <del>124,000</del>
+                                                    <span class="sr-only">할인율</span>
+                                                    <strong>10%</strong>
+                                                </dd>
+                                            </div>
+                                        </dl>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+        </div>
+        <!--section 4-->
+    
+        
+    </section>
+
+    <section class="benefit_section">
+
+        <div class="benefit_title">
+            <dl>
+                <dt>
+                    <span class="sr-only">카테고리명</span>
+                </dt>
+                <dd>
+                    <strong class="sub_title">
+                        COUPON BENEFIT
+                    </strong>
+                </dd>
+                <dd>
+                    <strong class="body">
+                        ORDINARY'S SELECT 쇼핑 지원 쿠폰
+                    </strong>
+                </dd>
+            </dl>
+        </div>
+        <!-- 혜택 리스트 -->
+       
+        <!-- 쿠폰 영역 -->
+        <div class="button_wrap">
+            
+            <button onclick="window.downloadCoupon(138764, () =&gt; {  })" class="button_inner">
+                <ul class="button_info">
+                    <li class="button_sale">10%</li>
+                    <li class="button_text">ORDINARY'S SELECT COUPON</li>
+                    <li class="button_date">
+                        2025.1.20 - 2025.1.26
+                    </li>
+                </ul>
+                <div class="button_icon"><span></span></div>
+            </button>
+        </div>
+        <div class="benefit_info">
+            <button class="info_title">유의사항</button>
+            <ul class="info_list dot-list">
+                <li>
+                    <p class="info_p">발급 및 사용기간 : 2025. 1. 20. - 2025. 1. 26</p>
+                </li>
+                <li>
+                    <p class="info_p">할인조건 : 10% (최대 10만원 할인)</p>
+                </li>
+                <li>
+                    <p class="info_p">적용대상 : 해당 기획전 내 상품 대상 (일부 상품 제외)</p>
+                </li>
+                <li>
+                    <p class="info_p">기간 내 발급 및 사용가능하며, 미사용 시 자동소멸되어 재발급은 불가합니다.</p>
+                </li>
+            </ul>
+        </div>
+        <!-- 쿠폰 영역 -->
+    </section>
+    <!-- 혜택 -->
+
+</div>
+
+
+
+<script>
+
+
+   
+$(document).ready(function() {
+    // Shadow DOM 내부에 접근
+    var shadowWrap = document.querySelector('#shadowWrap');
+    if (shadowWrap && shadowWrap.shadowRoot) {
+        var $el = $(shadowWrap.shadowRoot.querySelector('#wishlist_wrap')); // Shadow Root 내부 요소 선택
+
+        // 유의사항 리스트 숨기기
+        
+
+        // 유의사항 제목 클릭 이벤트
+        $el.find('.info_title').on('click', function() {
+            var $this = $(this);
+            var $list = $this.next('.info_list');
+
+            $list.slideToggle(); // 슬라이드 애니메이션
+
+            if ($this.hasClass('active')) {
+                $this.removeClass('active');
+                $this.attr('style', '--afterContent: "-";'); // 기본 상태
+            } else {
+                $this.addClass('active');
+                $this.attr('style', '--afterContent: "+";'); // 열렸을 때
+            }
+        });
+    } else {
+        console.error('Shadow DOM을 찾을 수 없습니다. ID: #shadowWrap');
+    }
+});
+
+    var el = document.querySelector('#shadowWrap').shadowRoot;
+ 
+ $(el).ready(function() {
+     const $contents = $(el).find('.prod_list_wrap');
+     const swiperInstances = []; // swiper 인스턴스들을 저장할 배열
+     
+     $contents.each(function() {
+         const $content = $(this);
+         const swiper = initializeSwiper($content);
+         swiperInstances.push(swiper);
+     });
+ 
+     function initializeSwiper($content) {
+         const $mainSlider = $content.find('.prod_list_slide')[0];
+ 
+         const prodSlide = new Swiper($mainSlider, {
+             slidesPerView: 'auto', // 슬라이드 너비를 자동으로 계산
+     spaceBetween: 8,
+     slideToClickedSlide: true,
+     watchSlidesProgress: true,
+     watchSlidesVisibility: true,
+     observer: true, // DOM 변화 감지
+     observeParents: true, // 부모 요소 변화 감지
+     slidesOffsetBefore: 16, // 슬라이드의 왼쪽 여백
+     slidesOffsetAfter: 16,  // 슬라이드의 오른쪽 여백
+     breakpoints: {
+         1080: {
+             slidesPerView: 'auto', // 슬라이드 너비를 자동으로 계산
+             spaceBetween: 8,
+             slidesOffsetBefore: 0, // 여백 제거
+             slidesOffsetAfter: 16, // 오른쪽 여백 16px
+         },
+     },
+             on: {
+                 init: function() {
+                     setTimeout(() => {
+                         setEqualHeightShadow($content);
+                     }, 100);
+                 },
+                 resize: function() {
+                     setTimeout(() => {
+                         setEqualHeightShadow($content);
+                     }, 100);
+                 },
+                 breakpoint: function() {
+                     setTimeout(() => {
+                         setEqualHeightShadow($content);
+                     }, 100);
+                 }
+             }
+         });
+ 
+         return prodSlide;
+     }
+ 
+     // 높이 조정 함수
+     function setEqualHeightShadow($content) {
+         var maxHeight = 0;
+         $content.find('.swiper-slide').each(function() {
+             $(this).css('height', '');
+             var thisHeight = $(this).outerHeight();
+             maxHeight = Math.max(maxHeight, thisHeight);
+         });
+         $content.find('.swiper-slide').height(maxHeight);
+     }
+ 
+     // 리사이징 이벤트 최적화
+     let resizeTimer;
+     $(window).on('resize', function() {
+         clearTimeout(resizeTimer);
+         resizeTimer = setTimeout(function() {
+             swiperInstances.forEach((swiper) => {
+                 swiper.update(); // swiper 업데이트
+             });
+             $contents.each(function() {
+                 setEqualHeightShadow($(this));
+             });
+         }, 150);
+     });
+ 
+     // 브라우저 방향 전환 시 대응 (모바일)
+     window.addEventListener('orientationchange', function() {
+         setTimeout(function() {
+             swiperInstances.forEach((swiper) => {
+                 swiper.update();
+             });
+             $contents.each(function() {
+                 setEqualHeightShadow($(this));
+             });
+         }, 200);
+     });
+ });
+ </script>
+ 
+<script>
+(()=>{let pending=false,last=0;function send(){if(pending)return;pending=true;requestAnimationFrame(()=>{pending=false;const h=Math.ceil(document.documentElement.getBoundingClientRect().height);if(Math.abs(h-last)>2){last=h;parent.postMessage({type:'portfolio-height',height:h},location.origin);}});}new ResizeObserver(send).observe(document.body);window.addEventListener('load',send);document.addEventListener('click',e=>{const a=e.target.closest('a');if(a){e.preventDefault();}},true);document.addEventListener('submit',e=>e.preventDefault(),true);send();})();
+</script></body></html>

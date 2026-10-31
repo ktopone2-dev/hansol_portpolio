@@ -1,0 +1,653 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><style>html,body{margin:0;min-height:0!important;height:auto!important}body{overflow:hidden}img{max-width:100%}</style></head><body>    <link rel="stylesheet" href="https://static.kasina-store.com/content_file/manual/reset.css">
+    <link rel="stylesheet" href="https://static.kasina-store.com/_next/static/css/d384998cb8cf8200.css">
+    <link rel="stylesheet" href="https://static.shoeprize.com/styles/plugin/swiper-bundle.min.34476e47c975.css">
+    <link rel="stylesheet" href="https://static.kasina-store.com/_next/static/css/df8393030b985bb4.css">
+    <link rel="stylesheet" href="https://static.kasina-store.com/_next/static/css/ff5488400d2f9eb9.css">
+    <link rel="stylesheet" href="https://static.kasina-store.com/_next/static/css/5ad3bc195aa90c72.css">
+    <link rel="stylesheet" href="https://static.kasina-store.com/_next/static/css/48a17b5f9a560c5f.css">
+
+    <style>
+        .editorial img {width: 100%;}
+
+        .editorial{overflow: hidden;}
+        #event_00{display: block;}
+        #event_01{display: none;}
+        
+        .title{font-size: 24px; line-height: 28px; text-transform: uppercase; letter-spacing: 0.04em; font-weight: 400;}
+        .sub_title{font-size: 18px ; line-height: 24px; letter-spacing: -0.01em; font-weight: 400; text-transform: uppercase;}
+        .flag_text{font-size: 13px; line-height: 15px;}
+        .title_sub_text{font-size: 13px; line-height: 18px; text-transform: uppercase;}
+        .body{font-size: 15px; line-height: 20px; letter-spacing: 0.01em; font-weight: 400; }
+        .body_t{font-size: 15px; line-height: 20px; letter-spacing: 0.01em; text-transform: uppercase; font-weight: 500; }
+        .text_t{font-size: 13px; line-height: 20px; letter-spacing: 0.04em; text-transform: uppercase; font-weight: 500;}
+        .text{font-size: 13px; line-height: 20px; letter-spacing: 0.01em; text-transform: uppercase; font-weight: 400;}
+        
+        .features_title{padding: 90px 16px 48px; text-align: center;}
+        .features_title .title{padding: 12px 16px 8px;}
+
+        .c-tab__link{color: #757575;}
+        .c-tab__link.active{border:solid 1px #000 !important; color: #000;}
+        .nav_wrap{ max-width: 404px; margin: 0px auto; width: calc(100% - 16px); padding: 8px 0px 24px;}
+        .c-tab__item button{width:100% ;}
+    
+        .swiper_wrap .swiper-wrapper{height: auto;}
+        .slide_main>.swiper-pagination .swiper-pagination-bullet,
+        .slide02_main>.swiper-pagination .swiper-pagination-bullet{
+            width: 6px; height: 6px; margin: 0 2px !important;
+            background-color: transparent; border: 1px solid #dcdcdc;
+            opacity: 1; box-sizing: border-box;
+        }
+        .slide_main>.swiper-pagination .swiper-pagination-bullet-active,
+        .slide02_main>.swiper-pagination .swiper-pagination-bullet-active{
+            background-color: #000; border-color: #000;
+        }
+
+        .features_top_img{border-radius: 4px; overflow: hidden; display: flex; gap: 8px;}
+        .contents_wrap{max-width: 1200px; margin: 0px auto;}
+        .features_text{padding: 48px 0px 0px; margin: 0px auto; max-width: 720px} 
+        .features_text_title{margin-bottom: 8px;}
+        .text_inner .body{ word-break: break-all; white-space: normal;}
+        .text_inner .body:not(:first-child){margin-top: 8px;}
+
+        /* EVENT INFOMATION / CCC EVENT 공통 */
+        .event_details {
+            display: flex;
+            width: 100%;
+            max-width: 480px;
+            padding: 16px 16px 24px 16px;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 4px;
+            background: #F4F4F4;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin: 48px auto 0;
+        }
+
+        .text_box_cont{max-width: 720px ; margin: 0px auto;}
+        .img_box_cont{padding: 48px 0px;}
+        .img_box{border-radius: 4px;  box-sizing: border-box; overflow: hidden; }
+        .col_wrap{display: flex; gap: 8px; flex-wrap: wrap;}
+        .col_wrap:not(:first-child){margin-top: 48px;}
+        .f_img_2col>.img_box{width: calc((100% - 8px)/2); flex: 1 1 40%;}
+        .f_img_2col>.video_box{width: calc((100% - 8px)); flex: 1 1 40%;}
+    
+
+        
+        .img_text{padding: 12px 0px 0px;}
+
+        .ccc_slide{ border-radius: 4px; box-sizing: border-box;  background: #ffffff;}
+        .ccc_slide .swiper-wrapper{
+            height: auto;
+            display: flex;
+        }
+        .ccc_slide .swiper-slide{
+            flex-shrink: 0;
+        }
+        .draw_img{width: 69.64%; margin: 0 auto; aspect-ratio: 1/1;}
+        .draw_img img{width: 100%; height: 100%; display: block; object-fit: cover;}
+        .ccc_recap .img_box img{
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            aspect-ratio: auto !important;
+        }
+    
+        .prod_flag{
+            position: absolute;
+            height: 16px;
+            padding: 0 4px;
+            font-weight: 500;
+            font-size: 11px;
+            line-height: 16px;
+            left: 16px;
+            top: 16px;
+            background: #000;
+            border-radius: 4px;
+            color: #fff;
+        }
+        .col_slide{position: relative;}
+        .col_slide.swiper-horizontal>.swiper-pagination .swiper-pagination-bullet {
+            flex: 1; height: 3px; margin: 0 2px;
+            background: hsla(0, 0%, 100%, 0.5); border-radius: 0; z-index: 2;
+        }
+        .col_slide.swiper-horizontal>.swiper-pagination {
+            display: flex; width: calc(100% - 28px); max-width: 1892px;
+            top: auto; left: 50%; transform: translateX(-50%);
+            right: auto; z-index: 2; bottom: 12px;
+        }
+
+        .prod_info{  padding: 48px 0px 0px; max-width: 720px; margin: 0px auto;}
+        .prod_price, .prod_k_name, .brand_name{display: block;}
+        .prod_k_name{color: #757575; margin-top: 4px;} 
+        .brand_name{padding: 0px 0px 8px;}
+        .prod_price{padding: 16px 0px 0px;}
+
+        .release_info{margin-top: 24px;} 
+        .release_info_list .text_t{display: block; margin-bottom: 8px;}
+        .accordion_info_box:not(:first-child){margin-top: 8px;}
+        .accordion_info_box{background: #f4f4f4; margin-top: 16px;}
+
+        .editorial_list li,.list_font li{font-size: 13px; line-height: 20px;}
+        .list_font li::before{top: 8px;}
+
+        .features_text_list{padding: 24px 0px 0px;}
+        .features_text_list .text_t{display: block; padding: 0px 0px 8px;}
+
+        .prod_contents{padding: 48px 0px 0px;}
+        .draw_button_wrap{padding-top: 24px;}
+        .draw_button{
+            width: 100%; border-radius: 4px; overflow: hidden; box-sizing: border-box;
+            line-height: 48px; font-size: 13px; font-weight: 500; background: #000; color: #fff;
+        }
+
+        .button_disabled{
+            border: solid 1px #e4e4e4; background: #f4f4f4;
+            pointer-events: none; color: #f4f4f4;
+        }
+        .button_upcoming{border: solid 1px #000; background: #fff; color: #000; pointer-events: none;}
+
+        .play_list_wrap{max-width: 720px; margin: 0px auto;}
+        .play_list{width: 100%; border-radius: 4px; background: #f4f4f4; padding: 16px;}
+
+        .play_list_wrap{background: ;}
+        .list_slide{height: 48px; overflow: hidden; position: relative;}  
+
+        /* 상단 딤 */ 
+        .list_slide::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 16px;
+        width: 100%;
+        background: linear-gradient(to bottom, #f4f4f4, rgba(244, 244, 244, 0.3));  
+        z-index: 3;
+        }
+
+        /* 하단 딤 */
+        .list_slide::after { 
+        content: '';
+        position: absolute; 
+        bottom: 0;
+        left: 0; 
+        height: 16px;
+        width: 100%;
+        background: linear-gradient(to top, #f4f4f4, rgba(244, 244, 244, 0.3));
+        z-index: 1;
+        }
+        .list_slide .swiper-slide{
+            text-align: center; display: flex; justify-content: center; align-items: center;
+            padding: 8px; font-size: 13px; line-height: 20px; text-transform: uppercase;
+        }  
+        .list_slide .swiper-wrapper{height: auto;}
+        .img_1col{width: 100%; flex: 100% !important;}
+        .img_3col{ width: calc((100% - 16px)/3); flex: 1 1 calc((100% - 16px)/3) !important;}
+        .more_contents{width: calc((100% - 8px)/2) ; flex: 1 1 40% ;} 
+
+        .ccc_recap{
+            margin: 0px auto; max-width: 1200px; overflow: hidden;
+            margin-top: 48px; padding-bottom: 112px;
+        } 
+        .section_title{padding: 0px 0px 12px;} 
+        .recap_box{width: auto; flex: 0 0 auto; border-radius: 4px; overflow: hidden;}
+        .marketing-agree__title{
+            padding: 2px 4px;
+        border-radius: 4px;
+        background: #E4E4E4;
+        color: #000;
+        font-family: Nort;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 16px;
+        letter-spacing: -0.565px;
+        }
+
+        /* PC: 2개 보이도록 */
+        @media screen and (min-width: 1025px){
+        .ccc_slide .swiper-slide {
+            width: calc(50% - 4px) !important;
+        }
+        }
+
+        /* 모바일: 1개 보이도록 */
+        @media screen and (max-width: 1024px){
+        .ccc_slide .swiper-slide {
+            width: 100% !important;
+        }
+        }
+
+    .features_top_img .video_box{width: 33%; margin: 0px auto;}
+    .features_top_img .video_box video{width: 100%; display: block; aspect-ratio: 9/16;}
+    .features_top_img{width: 100%; display: block; background: #000;} 
+    .col_slide .swiper-wrapper{height: auto;}
+    .col_wrap.f_img_c-2col{display: flex;gap: 8px;align-items: flex-end; }
+    .f_img_c-2col .img-1, .f_img_c-2col .img-4{ width: calc(70% - 4px);}
+    .f_img_c-2col .img-2, .f_img_c-2col .img-3{ width: calc(30% - 4px);}
+    .f_c_slide .swiper-slide.c_slide_1 img{margin-top: auto;}
+    .f_c_slide .swiper-slide.c_slide_1, .f_c_slide .swiper-slide.c_slide_2{ width: calc(25% - 6px);}
+    .f_c_slide .swiper-slide.c_slide_3{width: calc(50% - 6px);}
+    .f_c_slide {margin-top: 48px;}
+
+    .col_slide .swiper-wrapper{height: auto;}
+    .f_c_slide .c_slide_2 {
+        display: flex;            /* 플렉스 박스로 만듦 */
+        flex-direction: column;   /* 내부 요소를 세로로 배치 */
+        justify-content: flex-end; /* 세로 방향의 끝(바닥)으로 정렬 */
+        height: auto;
+        }
+
+        .img_end{  flex: 0 0 50% !important; margin: 0px auto;}
+
+    
+        @media screen and (max-width: 1024px){
+            .section_title{padding: 0px 16px 12px;} 
+
+            .col_slide .c_slide_1, .col_slide .c_slide_2, .col_slide .c_slide_3{width: 100% !important;}
+            .text {font-size: 13px; line-height: 20px; letter-spacing: 0.01em; font-weight: 400;}
+        
+            .img_end{  flex: 0 0 100% !important; margin: 0px auto;}
+            .draw_img{width: 100%;}
+            .features_title{padding: 74px 16px 32px; text-align: center;}
+            .features_title .title{padding: 12px 16px 4px;} 
+            .nav_wrap{padding: 0px;}
+            .main_title{padding: 16px 16px 0px;} 
+            .title{font-size: 18px; line-height: 24px; text-transform: uppercase;}
+            .sub_title{font-size: 15px; line-height: 20px; letter-spacing: 0.01em; font-weight: 500;}
+            .flag_text{font-size: 12px; line-height: 15px;}
+            .body{font-size: 13px; line-height: 20px; letter-spacing: -0.01em; font-weight: 400; }
+            .body_t{font-size: 15px; line-height: 20px; letter-spacing: 0.04em; text-transform: uppercase; font-weight: 500; }
+            .img_box_cont{padding: 48px 16px;}
+            .features_top_img{border-radius: 0px;}
+            .prod_info, .features_text{width: calc(100% - 32px);} 
+            .f_img_2col>.img_box{width:100%; flex: 100%;}  
+            .mo_2col>.img_box{width: calc((100% - 8px)/2) !important; flex: 1 1 40% !important;} 
+            .mo_none{display: none;}
+            .video_box{border-radius: 0px;}
+            .recap_box{width: calc((100% - 24px)/1); border-radius: 4px; overflow: hidden;}
+            .features_top_img .video_box{width: 100%; margin: 0px auto;}
+            .f_img_c-2col .img-4{order: 2;}
+                .f_img_c-2col .img-3{order: 3; margin-left: auto;}
+                .f_img_c-2col .img-1, .f_img_c-2col .img-4{ width: 100%;}
+                
+    .f_img_c-2col .img-2, .f_img_c-2col .img-3{ width: 66%; }
+        }
+    </style>
+
+    <div class="editorial">
+        <section class="features_title">
+            <div class="f_flag">
+                <b class="features_name"></b>
+            </div>
+            <h3 class="title">LIGHTER FASTER</h3>
+            <div class="title_sub_text">editorial</div>
+        </section>
+
+        <section class="contents_wrap">
+            <div class="features_top_img ">
+            
+                <div class="video_box">
+                    <video autoplay="" controls="" muted="" playsinline="" allowfullscreen="" loop="" frameborder="0"> 
+                        <source src="https://static.kasina-store.com/content_file/manual/img/editorial/2025/sep/superfly/00main.mp4" type="video/mp4"> 
+                    </video>
+                </div>
+            </div>
+                                
+            <div class="features_text editorial_title">
+                <div class="features_text_title">
+                    <strong class="body_t">
+                       LIGHTER FASTER : superfly MOC
+                    </strong>
+                </div>
+                <div class="text_inner">
+                    <p class="body">
+                    카시나가 슈퍼플라이 패밀리의 뉴 모델, ‘슈퍼플라이 목’의 런칭을 기념해 특별한 에디토리얼을 선보입니다. 이번 모델은 아이코닉한 슈퍼플라이 실루엣에 슬립온 구조를 더해, 군더더기 없는 매끄러운 룩을 선사하는 것이 특징입니다. 
+                    </p>
+                    <p class="body">
+                        카시나는 제품의 본질인 ‘빛’과 ‘속도’에 집중하여, 복잡한 도심 속 민첩한 움직임과 그 이면의 자유로운 감각을 에디토리얼에 담아냈습니다. 
+                    </p>
+                </div>
+                <div class="features_text_list">
+                    <strong class="text_t">POP-UP INFORMATION</strong>
+                    <ul class="dot-list editorial_list">
+                    
+                        <li>LOCATION : 카시나 성수
+                            </li>
+                            <li>DATE : 2026.01.02(금) 11:00 - 2026.01.11(일) 20:00
+                            </li>
+                    
+                    </ul>
+                </div>
+            <div class="features_text_list">
+                <strong class="text_t">LAUNCH INFORMATION</strong>
+                <ul class="dot-list editorial_list">
+                
+                    <li>STORE : 카시나 온라인 / 도산 / 성수 / 전포
+                        </li>
+                    <li>DATE : ONLINE - 2026.01.01(목) 10:00 / OFFLINE - 2026.01.02(금) 매장 오픈과 함께 발매 </li>
+                
+                </ul>
+        </div>
+            </div> 
+        
+            <div class="features_contents">
+                <div class="img_box_cont">
+                                
+                    <div class="col_wrap f_img_2col">
+                        <div class="slide_wrap ccc_slide">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="img_box">
+                                    <img src="https://static.kasina-store.com/content_file/manual/img/editorial/2025/sep/superfly/00.webp" alt="superfly">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="img_box">
+                                    <img src="https://static.kasina-store.com/content_file/manual/img/editorial/2025/sep/superfly/01.webp" alt="superfly">
+                                    </div>
+                                </div>                       
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <div class="col_wrap f_img_2col">
+                        <div class="img_box">
+                            <img src="https://static.kasina-store.com/content_file/manual/img/editorial/2025/sep/superfly/02.webp" alt="superfly">
+                        </div>
+                        <div class="img_box">
+                            <img src="https://static.kasina-store.com/content_file/manual/img/editorial/2025/sep/superfly/03.webp" alt="superfly">
+                        </div>
+                    </div>
+
+                    <div class="col_wrap f_img_c-2col">
+                        <div class="img_box img-1">
+                            <img src="https://static.kasina-store.com/content_file/manual/img/editorial/2025/sep/superfly/04.webp" alt="superfly">
+                        </div>
+                        <div class="img_box img-2">
+                            <img src="https://static.kasina-store.com/content_file/manual/img/editorial/2025/sep/superfly/05.webp" alt="superfly">
+                        </div>
+                        
+                    </div>
+
+                    <div class="col_wrap f_img_c-2col">
+                        <div class="img_box img-3">
+                            <img src="https://static.kasina-store.com/content_file/manual/img/editorial/2025/sep/superfly/06.webp" alt="superfly">
+                        </div>
+                        <div class="img_box img-4">
+                            <img src="https://static.kasina-store.com/content_file/manual/img/editorial/2025/sep/superfly/07.webp" alt="superfly">
+                        </div>
+                    </div>
+
+                    <div class="col_wrap f_img_2col">
+                        <div class="img_box img_1col">
+                            <img src="https://static.kasina-store.com/content_file/manual/img/editorial/2025/sep/superfly/008.webp" alt="superfly">
+                        </div>
+                        <div class="img_box">
+                            <img src="https://static.kasina-store.com/content_file/manual/img/editorial/2025/sep/superfly/09.webp" alt="superfly">
+                        </div>
+                        <div class="img_box">
+                            <img src="https://static.kasina-store.com/content_file/manual/img/editorial/2025/sep/superfly/10.webp" alt="superfly">
+                        </div>
+                        <div class="img_box img_1col">
+                            <img src="https://static.kasina-store.com/content_file/manual/img/editorial/2025/sep/superfly/11.webp" alt="superfly">
+                        </div>                
+                    </div> 
+
+
+                    <div class="col_wrap f_img_2col">
+                        <div class="img_box">
+                            <img src="https://static.kasina-store.com/content_file/manual/img/editorial/2025/sep/superfly/12.webp" alt="superfly">
+                        </div>
+                        <div class="img_box">
+                            <img src="https://static.kasina-store.com/content_file/manual/img/editorial/2025/sep/superfly/13.webp" alt="superfly">
+                        </div>
+
+                    </div> 
+
+                    <div class="f_c_slide">
+                        <div class="slide_wrap col_slide">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide c_slide_1">
+                                    <div class="img_box">
+                                        <img src="https://static.kasina-store.com/content_file/manual/img/editorial/2025/sep/superfly/14.webp" alt="superfly">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide c_slide_2">
+                                    <div class="img_box">
+                                        <img src="https://static.kasina-store.com/content_file/manual/img/editorial/2025/sep/superfly/15.webp" alt="superfly">
+                                    </div>
+                                </div>   
+                                <div class="swiper-slide c_slide_3">
+                                    <div class="img_box">
+                                        <img src="https://static.kasina-store.com/content_file/manual/img/editorial/2025/sep/superfly/16.webp" alt="superfly">
+                                    </div>
+                                </div>                       
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+
+                    <div class="f_c_slide">
+                        <div class="slide_wrap col_slide">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide c_slide_3">
+                                    <div class="img_box">
+                                        <img src="https://static.kasina-store.com/content_file/manual/img/editorial/2025/sep/superfly/17.webp" alt="superfly">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide c_slide_2">
+                                    <div class="img_box">
+                                        <img src="https://static.kasina-store.com/content_file/manual/img/editorial/2025/sep/superfly/18.webp" alt="superfly">
+                                    </div>
+                                </div>   
+                                <div class="swiper-slide c_slide_1">
+                                    <div class="img_box">
+                                        <img src="https://static.kasina-store.com/content_file/manual/img/editorial/2025/sep/superfly/19.webp" alt="superfly">
+                                    </div>
+                                </div>                       
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+
+
+                    <div class="col_wrap f_img_2col">
+                        <div class="img_box img_1col">
+                            <img src="https://static.kasina-store.com/content_file/manual/img/editorial/2025/sep/superfly/20.webp" alt="superfly">
+                        </div>
+                        <div class="img_box">
+                            <img src="https://static.kasina-store.com/content_file/manual/img/editorial/2025/sep/superfly/21.webp" alt="superfly">
+                        </div>
+                        <div class="img_box">
+                            <img src="https://static.kasina-store.com/content_file/manual/img/editorial/2025/sep/superfly/22.webp" alt="superfly">
+                        </div>
+
+                    </div> 
+    
+                    <div class="col_wrap f_img_2col">
+                        <div class="img_box img_end">
+                            <img src="https://static.kasina-store.com/content_file/manual/img/editorial/2025/sep/superfly/23.webp" alt="superfly">
+                        </div>
+                    
+
+                    </div> 
+            
+
+
+                
+
+            
+            
+
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+    (function($) {
+        function findElements(selector) {
+            let elements = $(selector).toArray();
+            const shadowHost = document.querySelector('#shadowWrap');
+            if (shadowHost?.shadowRoot) {
+                elements = elements.concat([...shadowHost.shadowRoot.querySelectorAll(selector)]);
+            }
+            return $(elements);
+        }
+
+        // 아코디언 스크립트
+        function setupAccordion() {
+            const accordionItems = findElements(".c-accordion__item");
+
+            // 기본 열림 (c-close_accordion만 닫힘)
+            accordionItems.each(function() {
+                if (!$(this).hasClass("c-close_accordion")) {
+                    $(this).addClass("active");
+                    $(this).next(".c-accordion__detail").css("display", "block");
+                }
+            });
+
+            accordionItems.on("click", function() {
+                $(this).toggleClass("active");
+                const detail = $(this).next(".c-accordion__detail");
+
+                if (detail.is(":visible")) {
+                    detail.slideUp();
+                } else {
+                    detail.slideDown();
+                }
+            });
+        }
+
+    function drawSlide() {
+        // 1. 현재 화면 너비 확인 (1024 이하면 모바일로 간주)
+        const isMobile = window.innerWidth <= 1024;
+
+        findElements('.ccc_slide').each(function() {
+            const slideSlider = $(this);
+
+            // 기존 스와이퍼가 있다면 삭제 (초기화)
+            if (slideSlider[0].swiper) {
+                slideSlider[0].swiper.destroy(true, true);
+            }
+
+            // 2. 공통 옵션 정의
+            let swiperConfig = {
+                slidesPerGroup: 1,
+                loop: false, // 필요시 true로 변경
+                spaceBetween: 8,
+                speed: 1500,
+                pagination: slideSlider.find('.swiper-pagination').length 
+                    ? { el: slideSlider.find('.swiper-pagination')[0], clickable: true } 
+                    : false,
+                autoplay: false // 기본값은 꺼둠
+            };
+
+            // 3. 모바일 vs PC 분기 처리
+            if (isMobile) {
+                // [모바일 설정]
+                swiperConfig.effect = 'fade';
+                swiperConfig.slidesPerView = 1;
+                swiperConfig.fadeEffect = { crossFade: true };
+                
+                // ★ 모바일에서만 오토플레이 켜기
+                swiperConfig.autoplay = {
+                    delay: 1500,                // 3초마다 넘어감
+                    disableOnInteraction: false // 사용자가 건드려도 계속 재생
+                };
+            } else {
+                // [PC 설정]
+                swiperConfig.effect = 'slide';
+                swiperConfig.slidesPerView = 2;
+                
+                // PC는 오토플레이 끔 (명시적)
+                swiperConfig.autoplay = false;
+            }
+
+            // 4. 스와이퍼 생성
+            const slideInstance = new Swiper(slideSlider[0], swiperConfig);
+
+            slideSlider[0].swiper = slideInstance;
+        });
+    }
+
+        function colSlide() {
+        findElements('.col_slide').each(function() {
+                const slideSlider = $(this);
+
+                if (slideSlider[0].swiper) {
+                    slideSlider[0].swiper.destroy(true, true);
+                }
+
+                const slideInstance = new Swiper(slideSlider[0], {
+            
+                    slidesPerView: 'auto',
+
+                    effect: 'slide',
+                    loop: false,
+                    spaceBetween: 8,
+                    speed: 500,
+                    pagination: slideSlider.find('.swiper-pagination').length 
+                        ? { el: slideSlider.find('.swiper-pagination')[0], clickable: true } 
+                        : false,
+                });
+
+                slideSlider[0].swiper = slideInstance;
+            });
+        }  
+
+        function fadeSwiper() {
+            findElements('.fade_slide').each(function() {
+                const fadeSlider = $(this);
+
+                if (fadeSlider[0].swiper) {
+                    fadeSlider[0].swiper.destroy(true, true);
+                }
+
+                const randomDelay = 2000 + Math.floor(Math.random() * 1000); 
+                const fadeInstance = new Swiper(fadeSlider[0], {
+                    slidesPerGroup: 1,
+                    slidesPerView: 1,
+                    effect: 'fade',
+                    loop: true,
+                    speed: 1000,
+                    allowTouchMove: false,
+                    autoplay: {
+                        delay: randomDelay,
+                        disableOnInteraction: false,
+                    },
+                    pagination: fadeSlider.find('.swiper-pagination').length 
+                        ? { el: fadeSlider.find('.swiper-pagination')[0], clickable: true } 
+                        : false,
+                });
+
+                fadeSlider[0].swiper = fadeInstance;
+            });
+        }  
+
+        $(document).ready(() => {
+            fadeSwiper();
+            setupAccordion();
+            drawSlide();
+            colSlide();
+        });
+        drawSlide();
+        
+        let resizeTimer;
+        $(window).on('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() {
+            drawSlide();
+        }, 200); 
+        });
+
+    })(jQuery);
+    </script><script>
+(()=>{let pending=false,last=0;function send(){if(pending)return;pending=true;requestAnimationFrame(()=>{pending=false;const h=Math.ceil(document.documentElement.getBoundingClientRect().height);if(Math.abs(h-last)>2){last=h;parent.postMessage({type:'portfolio-height',height:h},location.origin);}});}new ResizeObserver(send).observe(document.body);window.addEventListener('load',send);document.addEventListener('click',e=>{const a=e.target.closest('a');if(a){e.preventDefault();}},true);document.addEventListener('submit',e=>e.preventDefault(),true);send();})();
+</script></body></html>

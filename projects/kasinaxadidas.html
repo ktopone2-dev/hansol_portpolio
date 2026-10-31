@@ -1,0 +1,354 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><style>html,body{margin:0;min-height:0!important;height:auto!important}body{overflow:hidden}img{max-width:100%}</style></head><body><link rel="stylesheet" href="https://static.kasina-store.com/content_file/manual/reset.css">
+<link rel="stylesheet" href="https://static.kasina-store.com/_next/static/css/d384998cb8cf8200.css">
+<link rel="stylesheet" href="https://static.kasina-store.com/_next/static/css/5ad3bc195aa90c72.css">
+<link rel="stylesheet" href="https://static.kasina-store.com/_next/static/css/48a17b5f9a560c5f.css">
+
+<style>
+    .kasinaSuperstar {max-width: 1920px; margin: 0px auto;}
+    .kasinaSuperstar img{width: 100%;}
+    .kasinaSuperstar video{width: 100%;}
+    .sportDay{background: #0087C6; padding: 80px 0px 80px; position: relative; overflow: hidden;}
+    .body{font-size: 15px; line-height: 22px; letter-spacing: 0.01em; font-weight: 500;}
+    .description_list{color: #fff; text-align: center; margin-top: 40px;}
+    .sportDay_title{margin: 0px auto; width: 100%; max-width:458px;}
+    .description_list .body:not(:first-child){margin-top: 16px; }
+ 
+    .sprotDay_logo{width: 120px; margin: 48px auto 0px; }
+    .stripe_asst{position: absolute;  width: 200px;}
+
+.asst01{position: absolute; bottom: calc(-15% - 200px); left: 0;}
+.asst01 img{transform: rotate(120deg);}
+
+.asst02{position: absolute; top:  calc(-15% - 200px); right: 0;}
+.asst02 img{transform: rotate(-60deg);}
+
+    .lb_list .lb_section:not(:first-child){margin-top: 120px; padding: 0px 16px;}
+    
+    .lb_list .lb_colom_02{display: flex; gap: 8px; flex-wrap: wrap;}
+    .lb_list .lb_colom_02 .lb_img{width: calc((100% - 8px)/2);}
+
+    .lb_list .lb_custom_01{display: flex; gap: 8px; flex-wrap: wrap;}
+    .lb_list .lb_custom_01 .lb_img:first-child{ width: calc((100% - 8px)/4*3);}
+    .lb_list .lb_custom_01 .lb_img:last-child{ width: calc((100% - 8px)/4); margin-top: auto; }
+
+    .img_colom{display: flex; flex-wrap: wrap; gap: 8px;}
+    .lb_img_sub{border-radius: 4px; overflow: hidden;}
+    .img_colom .lb_img_sub{width: calc((100% - 8px)/2);}
+
+    .mo_only{display: none; width: 0; height: 0;}
+    .pc_only{display: block;  width: 0; height: 0;}
+    .pc_img{display: block;}
+    .mo_img{display: none;}
+
+    .video_container{background: #000;}
+    .video_container video{display: block;}
+    .video_pc{display:block; aspect-ratio: 1920/810;}
+    .video_pc video{ aspect-ratio: 1920/810;}
+    .video_mo{display:none; aspect-ratio: 375/608;}
+    .video_mo video{aspect-ratio: 375/608;}
+    .lb_img{border-radius: 4px; overflow: hidden;}
+        
+
+    /* mobile slider (<1024px) */
+    @media (max-width:1023px){
+            .kasinaSuperstar {max-width: 720px; margin: 0px auto;}
+        .sportDay{background: #0087C6; padding: 64px 16px 112px; position: relative; overflow: hidden; margin-bottom: 0px;}
+        .video_pc{display:none;}
+        .video_mo{display:block;}
+        .stripe_asst{position: absolute;  width: 100px;}
+        .asst01{display: none;}
+        .asst02{position: absolute; top:unset; bottom: calc(-7% - 100px); right: 0;}
+        .asst02 img{transform: rotate(-120deg);}
+            .sprotDay_logo{width: 120px; margin: 30px auto 0px; } 
+ 
+        .mo_only{display: block; width: unset; height: unset;}
+        .pc_only{display: none; width: 0; height: 0;}
+        .pc_img{display: none;}
+        .mo_img{display: block;}
+
+        .lb_list .lb_section:not(:first-child){margin-top: 56px; padding: 0px 16px;}
+        .lb_list .lb_colom_slide{display:block;}
+        .lb_list .lb_colom_slide .lb_img{width:100%;}
+        
+        .lb_list .lb_colom_02 .lb_img{width: 100%;}
+
+        .description_list{max-width: 344px; margin: 40px auto;}
+        .lb_list .lb_custom_01 .lb_img:first-child{ width: 100%;}
+        .lb_list .lb_custom_01 .lb_img:last-child{ width: calc((100% - 8px)/4*3); margin-top: auto; margin-left: auto; }
+    }
+
+
+/* =========================================
+   [PC 환경] swiper-wrapper가 직접 그리드 역할을 하도록 수정
+========================================= */
+.lb_list .lb_colom_slide { display: block; }
+.lb_list .lb_colom_slide .swiper-wrapper {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    height: auto;
+}
+.lb_list .lb_colom_slide .lb_img {
+    width: calc((100% - 16px) / 3);
+}
+
+/* =========================================
+   [모바일 환경] Swiper 작동을 위해 flex-wrap 해제
+========================================= */
+@media (max-width: 1023px) {
+    .lb_list .lb_colom_slide .swiper-wrapper {
+        flex-wrap: nowrap; /* 슬라이드가 가로로 이어지도록 묶음 해제 */
+        gap: 0; /* Swiper의 spaceBetween(8px)이 적용되므로 CSS gap은 초기화 */
+    }
+    .lb_list .lb_colom_slide .lb_img {
+        width: 100%; /* 슬라이드 한 칸당 너비 */
+    }
+}
+</style>
+<div class="kasinaSuperstar">
+    <section class="hero_">
+        <div class="video_container">
+            <div class="video_pc">
+            <video class="" autoplay="" muted="" playsinline="" allowfullscreen="" loop="" frameborder="0">
+                <source src="https://static.kasina-store.com/content_file/manual/img/editorial/2026/04/kasinaxadidas/00main_pc.mp4" type="video/mp4">
+            </video>
+            </div>
+<div class="video_mo">
+                <video class="" autoplay="" muted="" playsinline="" allowfullscreen="" loop="" frameborder="0">
+                <source src="https://static.kasina-store.com/content_file/manual/img/editorial/2026/04/kasinaxadidas/00main_mo2.mp4" type="video/mp4">
+            </video>
+</div>
+
+        </div>
+    </section>
+    <section class="sportDay">
+        <div class="sportDay_inner">
+            <div class="sportDay_title">
+                <div class="title_img">
+                    <img src="https://static.kasina-store.com/content_file/manual/img/editorial/2026/04/kasinaxadidas/title.webp">
+                </div>
+            </div>
+            <div class="sportDay_description">
+                <div class="description_list">
+                    <p class="body">
+                        컬러 선택이 곧 하나의 팀을 고르는 경험으로 이어지는 이번 컬렉션은,
+                        <span class="pc_only"><br></span>대비되는 디자인을 통해 팀 간의 구도를 직관적으로 드러냅니다.
+                    </p>
+                    <p class="body">
+                        아이코닉한 슈퍼스타 실루엣에 프리미엄 스웨이드 어퍼, 피그스킨 삭스라이너,<span class="pc_only"><br></span> 만국기 슈레이스를 더해 디테일 전반에서 완성도 높은 경험을 제공합니다.
+                    </p>
+                    <p class="body">
+                        4월 10일 카시나 도산, 성수, 전포 매장과<span class="pc_only"><br></span> 4월 11일 카시나 온라인에서 만나 보실 수 있습니다.
+                    </p>
+                </div>
+            </div>
+            <div class="sprotDay_logo">
+                <div class="logo">
+                      <img src="https://static.kasina-store.com/content_file/manual/img/editorial/2026/04/kasinaxadidas/logo.webp">
+                </div>
+            </div>
+
+        </div>
+        <div class="stripe_wrap">
+            <div class="stripe_asst asst01">
+                <img src="https://static.kasina-store.com/content_file/manual/img/editorial/2026/04/kasinaxadidas/stripe2.svg">
+            </div>
+            <div class="stripe_asst asst02">
+                <img src="https://static.kasina-store.com/content_file/manual/img/editorial/2026/04/kasinaxadidas/stripe2.svg">
+            </div>
+        </div>
+    </section>
+    <section class="lookbook">
+        <div class="lb_list">
+            <div class="lb_wide lb_section">
+                <div class=" pc_img">
+                    <img src="https://static.kasina-store.com/content_file/manual/img/editorial/2026/04/kasinaxadidas/01_pc.webp" alt="adidas Kasina">
+                </div>
+                <div class=" mo_img">
+                    <img src="https://static.kasina-store.com/content_file/manual/img/editorial/2026/04/kasinaxadidas/01_mo.webp" alt="adidas Kasina">
+                </div>
+            </div>
+            <div class="lb_colom_02 lb_section">
+                <div class="lb_img">
+                    <img src="https://static.kasina-store.com/content_file/manual/img/editorial/2026/04/kasinaxadidas/02.webp" alt="adidas Kasina">
+                </div>
+                <div class="lb_img">
+                    <img src="https://static.kasina-store.com/content_file/manual/img/editorial/2026/04/kasinaxadidas/03.webp" alt="adidas Kasina">
+                </div>
+                <div class="lb_img">
+                    <img src="https://static.kasina-store.com/content_file/manual/img/editorial/2026/04/kasinaxadidas/04.webp" alt="adidas Kasina">
+                </div>
+                <div class="lb_img">
+                    <img src="https://static.kasina-store.com/content_file/manual/img/editorial/2026/04/kasinaxadidas/05.webp" alt="adidas Kasina">
+                </div>
+            </div>
+            <div class="lb_custom_01 lb_section">
+                <div class="lb_img">
+                    <img src="https://static.kasina-store.com/content_file/manual/img/editorial/2026/04/kasinaxadidas/06.webp" alt="adidas Kasina">
+                </div>
+                <div class="lb_img">
+                    <img src="https://static.kasina-store.com/content_file/manual/img/editorial/2026/04/kasinaxadidas/07.webp" alt="adidas Kasina">
+                </div>
+            </div>
+            <div class="lb_colom_02 lb_section">
+                <div class="lb_img">
+                    <img src="https://static.kasina-store.com/content_file/manual/img/editorial/2026/04/kasinaxadidas/08.webp" alt="adidas Kasina">
+                </div>
+                <div class="lb_img">
+                    <img src="https://static.kasina-store.com/content_file/manual/img/editorial/2026/04/kasinaxadidas/09.webp" alt="adidas Kasina">
+                </div>
+            </div>
+            <div class="lb_colom_02 lb_section">
+                <div class="lb_img">
+                    <img src="https://static.kasina-store.com/content_file/manual/img/editorial/2026/04/kasinaxadidas/10.webp" alt="adidas Kasina">
+                </div>
+                <div class="lb_img">
+                    <img src="https://static.kasina-store.com/content_file/manual/img/editorial/2026/04/kasinaxadidas/11.webp" alt="adidas Kasina">
+                </div>
+                <div class="lb_img">
+                    <img src="https://static.kasina-store.com/content_file/manual/img/editorial/2026/04/kasinaxadidas/12.webp" alt="adidas Kasina">
+                </div>
+                <div class="lb_img">
+                    <img src="https://static.kasina-store.com/content_file/manual/img/editorial/2026/04/kasinaxadidas/13.webp" alt="adidas Kasina">
+                </div>
+            </div>
+            <div class="lb_colom_slide lb_section swiper">
+                <div class="swiper-wrapper">
+                     <div class="lb_img swiper-slide">
+                    <img src="https://static.kasina-store.com/content_file/manual/img/editorial/2026/04/kasinaxadidas/14.webp" alt="adidas Kasina">
+                </div>
+                <div class="lb_img swiper-slide">
+                    <img src="https://static.kasina-store.com/content_file/manual/img/editorial/2026/04/kasinaxadidas/15.webp" alt="adidas Kasina">
+                </div>
+                <div class="lb_img swiper-slide">
+                    <img src="https://static.kasina-store.com/content_file/manual/img/editorial/2026/04/kasinaxadidas/16.webp" alt="adidas Kasina">
+                </div>
+                </div>
+               
+            </div>
+            <div class="lb_colom_02 lb_section">
+                <div class="lb_img">
+                    <img src="https://static.kasina-store.com/content_file/manual/img/editorial/2026/04/kasinaxadidas/17.webp" alt="adidas Kasina">
+                </div>
+                <div class="lb_img img_colom">
+                    <div class="lb_img_sub">
+                        <img src="https://static.kasina-store.com/content_file/manual/img/editorial/2026/04/kasinaxadidas/18.webp" alt="adidas Kasina">
+                    </div>
+                    <div class="lb_img_sub">
+                        <img src="https://static.kasina-store.com/content_file/manual/img/editorial/2026/04/kasinaxadidas/19.webp" alt="adidas Kasina">
+                    </div>
+                    <div class="lb_img_sub">
+                        <img src="https://static.kasina-store.com/content_file/manual/img/editorial/2026/04/kasinaxadidas/20.webp" alt="adidas Kasina">
+                    </div>
+                    <div class="lb_img_sub">
+                        <img src="https://static.kasina-store.com/content_file/manual/img/editorial/2026/04/kasinaxadidas/21.webp" alt="adidas Kasina">
+                    </div>
+                </div>
+            </div>
+            <div class="lb_wide lb_section">
+                <div class="lb_img">
+                    <img src="https://static.kasina-store.com/content_file/manual/img/editorial/2026/04/kasinaxadidas/22.webp" alt="adidas Kasina">
+                </div>
+            </div>
+        </div>
+    </section>
+    </div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+   (function($){
+
+function findElements(selector) {
+    let elements = $(selector).toArray();
+    const shadowHost = document.querySelector('#shadowWrap');
+    if (shadowHost?.shadowRoot) {
+        elements = elements.concat([...shadowHost.shadowRoot.querySelectorAll(selector)]);
+    }
+    return $(elements);
+}
+
+let isVisible = false; 
+
+function handleSwiper() {
+    var $slides = findElements('.lb_colom_slide');
+    if(!$slides.length) return;
+
+    var isMobile = window.innerWidth < 1024;
+
+    $slides.each(function(){
+        var el = this;
+
+        if (isMobile && isVisible) {
+            if (!el.swiper) {
+                new Swiper(el, {
+                    slidesPerView: "auto",
+                    spaceBetween: 8,
+                });
+            }
+        } else {
+            if (el.swiper) {
+                el.swiper.destroy(true, true);
+            }
+        }
+    });
+}
+
+// 옵저버 세팅을 별도 함수로 분리
+function initObserver($target) {
+    var observer = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+            if(entry.isIntersecting){
+                isVisible = true; 
+                handleSwiper();   
+                observer.disconnect(); 
+            }
+        });
+    }, { 
+        // 핵심 해결책: 요소가 화면에 보이기 직전(화면 높이의 50% 아래에 있을 때) 미리 감지!
+        rootMargin: "50% 0px", 
+        threshold: 0 
+    });
+
+    observer.observe($target[0]);
+}
+
+function waitAndInit(){
+    var retry = 0;
+    var interval = setInterval(function(){
+        var $target = findElements('.lb_colom_slide');
+
+        if($target.length){
+            clearInterval(interval);
+            initObserver($target); // 요소가 찾아지면 즉시 감시 시작
+        }
+
+        retry++;
+        // 탐색 시도 횟수를 조금 늘려줍니다 (프레임워크 환경 등 고려)
+        if(retry > 50){ 
+            clearInterval(interval);
+        }
+    }, 100); // 0.1초 간격으로 빠르게 탐색
+}
+
+// 핵심 해결책: window.load 대신 document.ready 사용
+// 무거운 영상/이미지 로딩을 기다리지 않고 DOM 구조만 잡히면 바로 실행
+$(document).ready(function(){
+    waitAndInit();
+});
+
+var resizeTimer;
+$(window).on('resize', function(){
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function(){
+        if (isVisible) {
+            handleSwiper();
+        }
+    }, 200); 
+});
+
+})(jQuery);
+</script><script>
+(()=>{let pending=false,last=0;function send(){if(pending)return;pending=true;requestAnimationFrame(()=>{pending=false;const h=Math.ceil(document.documentElement.getBoundingClientRect().height);if(Math.abs(h-last)>2){last=h;parent.postMessage({type:'portfolio-height',height:h},location.origin);}});}new ResizeObserver(send).observe(document.body);window.addEventListener('load',send);document.addEventListener('click',e=>{const a=e.target.closest('a');if(a){e.preventDefault();}},true);document.addEventListener('submit',e=>e.preventDefault(),true);send();})();
+</script></body></html>

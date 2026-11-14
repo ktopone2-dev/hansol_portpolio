@@ -762,3 +762,5 @@ html{scroll-padding-top:64px}
 .detail-hero .detail-aside .project-credits>div{display:grid;grid-template-columns:minmax(0,1fr) max-content;column-gap:16px;row-gap:0;width:100%;min-width:0;margin:0;padding:0;align-items:baseline}
 .detail-hero .detail-aside .project-credits dt{display:block;min-width:0;white-space:normal;word-break:keep-all}
 .detail-hero .detail-aside .project-credits dd{display:block;white-space:nowrap;word-break:keep-all;text-align:right;margin:0}
+/* Detail information starts 16px from the viewport edge at every size. */
+.project-detail .detail-layout{padding-left:16px}

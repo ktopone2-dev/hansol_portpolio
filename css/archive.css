@@ -768,3 +768,5 @@ html{scroll-padding-top:64px}
 .detail-hero .detail-aside{gap:0}
 .detail-hero .detail-description{margin:10px 0 24px}
 .detail-hero .detail-meta-line{margin:0 0 4px}
+/* Project description line height: 160%. */
+.detail-hero .detail-description{line-height:1.6}

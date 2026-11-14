@@ -803,3 +803,8 @@ body :is(p,h2,h3,h4,h5,h6,dt,dd,li,small,figcaption,summary,button,a),
 .index-panel .index-column a,.index-sort{color:#efefef;font-family:inherit;font-weight:400;line-height:1.6}
 .index-panel .index-table-head>a{color:inherit;font-weight:400}
 .index-panel a:hover,.index-panel .index-column a:hover,.index-sort button:hover{color:#999}
+
+/* Motion artwork plays without native playback controls. */
+.motion-preview,.motion-modal-video{pointer-events:none}
+.motion-preview::-webkit-media-controls,.motion-modal-video::-webkit-media-controls{display:none!important}
+.motion-preview::-webkit-media-controls-start-playback-button,.motion-modal-video::-webkit-media-controls-start-playback-button{display:none!important}

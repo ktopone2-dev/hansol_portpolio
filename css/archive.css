@@ -764,3 +764,7 @@ html{scroll-padding-top:64px}
 .detail-hero .detail-aside .project-credits dd{display:block;white-space:nowrap;word-break:keep-all;text-align:right;margin:0}
 /* Detail information starts 16px from the viewport edge at every size. */
 .project-detail .detail-layout{padding-left:16px}
+/* Detail title, description and information rhythm. */
+.detail-hero .detail-aside{gap:0}
+.detail-hero .detail-description{margin:10px 0 24px}
+.detail-hero .detail-meta-line{margin:0 0 4px}

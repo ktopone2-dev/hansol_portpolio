@@ -777,3 +777,10 @@ body :is(p,h2,h3,h4,h5,h6,dt,dd,li,small,figcaption,summary,button,a),
 .detail-hero .detail-description,
 .detail-hero .detail-aside .project-credits :is(dt,dd),
 .index-panel .index-column a{line-height:1.6}
+/* Mobile details: balanced copy inset and edge-to-edge page artwork. */
+@media(max-width:850px){
+ .project-detail .detail-layout{padding-left:0;padding-right:0;min-width:0;width:100%}
+ .project-detail .detail-hero{padding-left:16px;padding-right:16px;min-width:0;box-sizing:border-box}
+ .project-detail .detail-images,.project-detail .detail-images .project-screen-gallery{width:100%;max-width:100%;margin-left:0;margin-right:0;padding-left:0;padding-right:0;min-width:0}
+ .project-detail .project-screen-gallery figure{margin-left:0;margin-right:0}
+}

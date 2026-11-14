@@ -770,3 +770,10 @@ html{scroll-padding-top:64px}
 .detail-hero .detail-meta-line{margin:0 0 4px}
 /* Project description line height: 160%. */
 .detail-hero .detail-description{line-height:1.6}
+/* Shared typography leading throughout the portfolio. */
+body{line-height:1.6}
+body :is(p,h2,h3,h4,h5,h6,dt,dd,li,small,figcaption,summary,button,a),
+.detail-hero .detail-project-bar h1,
+.detail-hero .detail-description,
+.detail-hero .detail-aside .project-credits :is(dt,dd),
+.index-panel .index-column a{line-height:1.6}

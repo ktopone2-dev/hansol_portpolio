@@ -748,3 +748,12 @@ html{scroll-padding-top:64px}
 .index-panel .index-column a:hover,.index-panel .index-column a:focus-visible{background:none;color:#999;text-decoration:none}
 .index-column a+a{margin-top:8px}.index-panel .index-years a+a{margin-top:0}
 @media(max-width:700px){.index-table-head,.index-table-body{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr) 48px;column-gap:12px}.index-table-head>span:first-child,.index-table-space{display:none}.index-table-head{font-size:10px;padding:12px 0}.index-table-body{min-height:260px;padding:16px 0 28px}.index-column{padding-right:0}.index-panel .index-column a{font-size:12px;line-height:1.5;overflow-wrap:anywhere}.index-column a+a{margin-top:12px}}
+
+/* Compact project detail information spacing. */
+.detail-hero .detail-aside{display:flex;flex-direction:column;gap:4px}
+.detail-hero .detail-project-bar,.detail-hero .detail-project-bar h1{margin:0;padding:0}
+.detail-hero .detail-description{margin:4px 0 0;padding:0}
+.detail-hero .detail-meta-line{margin:0;padding:0}
+.detail-hero .project-credits{display:grid;gap:4px;margin:0;padding:0}
+.detail-hero .project-credits>div{margin:0;padding:0;row-gap:0}
+.detail-hero .project-credits dt,.detail-hero .project-credits dd{margin:0;padding:0}

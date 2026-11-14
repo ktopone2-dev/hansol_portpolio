@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="610" viewBox="0 0 1440 610" role="img"><title>브랜드 에셋 수집 자동화</title><defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7" fill="none" stroke="#999999"/></marker></defs><rect width="1440" height="610" fill="#101010"/><style>text{font-family:Pretendard,Arial,sans-serif;fill:#eeeeee}@media(prefers-reduced-motion:no-preference){rect[rx]{animation:node-reveal .8s ease both}path[marker-end]{stroke-dasharray:800;stroke-dashoffset:800;animation:flow-connect 1.8s ease .35s forwards}@keyframes node-reveal{from{opacity:0}to{opacity:1}}@keyframes flow-connect{to{stroke-dashoffset:0}}}</style>
+<text x="32" y="44" font-size="26" fill="#eeeeee" style="fill:#eeeeee">브랜드 에셋 수집 자동화</text>
+<text x="32" y="76" font-size="16" fill="#999999" style="fill:#999999">10개 기준 30분 → 10분 · 자동화가 실행되는 동안 다른 작업 병행</text>
+<text x="32" y="135" font-size="16" fill="#999999" style="fill:#999999">이전 · 매 단계 직접 작업 / 30분</text>
+<rect x="32" y="160" width="300" height="76" rx="4" fill="#181818" stroke="#777777"/>
+<text x="48" y="191" font-size="18" fill="#eeeeee" style="fill:#eeeeee">입고대장 메일 확인</text>
+<text x="48" y="216" font-size="13" fill="#aaaaaa" style="fill:#aaaaaa">메일을 매번 직접 확인</text>
+<path d="M332 198H357.0V198H382" fill="none" stroke="#888888" marker-end="url(#arrow)"/>
+<rect x="382" y="160" width="300" height="76" rx="4" fill="#181818" stroke="#777777"/>
+<text x="398" y="191" font-size="18" fill="#eeeeee" style="fill:#eeeeee">브랜드 홈페이지 접속</text>
+<text x="398" y="216" font-size="13" fill="#aaaaaa" style="fill:#aaaaaa">이미지를 다른 이름으로 저장</text>
+<path d="M682 198H707.0V198H732" fill="none" stroke="#888888" marker-end="url(#arrow)"/>
+<rect x="732" y="160" width="300" height="76" rx="4" fill="#181818" stroke="#777777"/>
+<text x="748" y="191" font-size="18" fill="#eeeeee" style="fill:#eeeeee">폴더 정리</text>
+<text x="748" y="216" font-size="13" fill="#aaaaaa" style="fill:#aaaaaa">수집한 이미지 분류</text>
+<path d="M1032 198H1057.0V198H1082" fill="none" stroke="#888888" marker-end="url(#arrow)"/>
+<rect x="1082" y="160" width="300" height="76" rx="4" fill="#181818" stroke="#777777"/>
+<text x="1098" y="191" font-size="18" fill="#eeeeee" style="fill:#eeeeee">PSD 파일 생성</text>
+<text x="1098" y="216" font-size="13" fill="#aaaaaa" style="fill:#aaaaaa">파일을 하나씩 새로 생성</text>
+<text x="32" y="305" font-size="16" fill="#eeeeee" style="fill:#eeeeee">개선 · 메일과 수집 자동화 연결 / 10분</text>
+<rect x="32" y="355" width="270" height="76" rx="4" fill="#181818" stroke="#777777"/>
+<text x="48" y="386" font-size="18" fill="#eeeeee" style="fill:#eeeeee">입고대장 메일 자동화</text>
+<text x="48" y="411" font-size="13" fill="#aaaaaa" style="fill:#aaaaaa">메일과 자동 작업 연동</text>
+<rect x="372" y="355" width="270" height="76" rx="4" fill="#e8e8e8" stroke="#777777"/>
+<text x="388" y="386" font-size="18" fill="#111111" style="fill:#111111">수집 자동화 실행</text>
+<text x="388" y="411" font-size="13" fill="#444444" style="fill:#444444">브랜드 에셋 수집 시작</text>
+<path d="M302 393H337.0V393H372" fill="none" stroke="#888888" marker-end="url(#arrow)"/>
+<rect x="742" y="330" width="290" height="76" rx="4" fill="#e8e8e8" stroke="#777777"/>
+<text x="758" y="361" font-size="18" fill="#111111" style="fill:#111111">이미지 수집 · 폴더 정리</text>
+<text x="758" y="386" font-size="13" fill="#444444" style="fill:#444444">브랜드 에셋을 작업용으로 정리</text>
+<rect x="1102" y="330" width="300" height="76" rx="4" fill="#e8e8e8" stroke="#777777"/>
+<text x="1118" y="361" font-size="18" fill="#111111" style="fill:#111111">PSD 생성</text>
+<text x="1118" y="386" font-size="13" fill="#444444" style="fill:#444444">제작 준비 완료</text>
+<path d="M642 393H692.0V368H742" fill="none" stroke="#888888" marker-end="url(#arrow)"/>
+<path d="M1032 368H1067.0V368H1102" fill="none" stroke="#888888" marker-end="url(#arrow)"/>
+<rect x="742" y="490" width="290" height="76" rx="4" fill="#181818" stroke="#777777"/>
+<text x="758" y="521" font-size="18" fill="#eeeeee" style="fill:#eeeeee">다른 작업 병행</text>
+<text x="758" y="546" font-size="13" fill="#aaaaaa" style="fill:#aaaaaa">자동화 실행 중 작업 진행</text>
+<path d="M642 393H692.0V528H742" fill="none" stroke="#888888" marker-end="url(#arrow)"/>
+</svg>

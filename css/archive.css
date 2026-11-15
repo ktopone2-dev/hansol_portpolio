@@ -824,3 +824,8 @@ body :is(p,h2,h3,h4,h5,h6,dt,dd,li,small,figcaption,summary,button,a),
 .about-experience,.about-skills{margin-top:32px}.about-experience p+p{margin-top:8px}
 .navigation-open .index-panel{margin-bottom:24px}.index-panel{scroll-margin-top:48px}
 @media(max-width:850px){.about-panel{padding:20px 0 28px}.about-panel-grid{grid-template-columns:1fr;gap:24px}.about-panel-grid>div:first-child{display:none}.about-panel-copy,.about-panel-contact{padding:0}.about-panel p,.about-panel a{font-size:13px}.about-experience,.about-skills{margin-top:20px}.navigation-open .intro h1{font-size:18px}.about-panel h3{font-size:11px}}
+/* Folded panels share one 1px divider rather than stacking borders. */
+.navigation-open .intro{border-bottom:0}
+.index-panel .index-table-head{border-top:1px solid #666;border-bottom:1px solid #666}
+.index-panel .index-table-body{border-bottom:1px solid #666}
+.index-panel .index-table-head>a,.index-panel .index-column>a{border:0}

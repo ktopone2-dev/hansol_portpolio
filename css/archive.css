@@ -808,3 +808,19 @@ body :is(p,h2,h3,h4,h5,h6,dt,dd,li,small,figcaption,summary,button,a),
 .motion-preview,.motion-modal-video{pointer-events:none}
 .motion-preview::-webkit-media-controls,.motion-modal-video::-webkit-media-controls{display:none!important}
 .motion-preview::-webkit-media-controls-start-playback-button,.motion-modal-video::-webkit-media-controls-start-playback-button{display:none!important}
+
+/* Shared folding About / Index structure beneath a compact KIM strip. */
+.about-toggle{justify-self:center;height:100%;padding:0;border:0;background:none;color:inherit;font:inherit;font-weight:inherit;cursor:pointer}
+.about-toggle[aria-expanded="true"],.index-toggle[aria-expanded="true"]{color:#999}
+.navigation-open .intro{padding:0;border-top:1px solid #666;border-bottom:1px solid #666}
+.navigation-open .intro h1{display:flex;justify-content:space-between;font-size:20px;line-height:1.6;margin:0;padding:0;letter-spacing:0;height:auto;min-height:0}
+.navigation-open .intro h1 span{animation:none;transform:none;opacity:1;clip-path:none}
+.navigation-open .intro-bottom{display:none}
+.about-panel{margin:0 16px;padding:24px 0 32px;border:0;border-bottom:1px solid #666;background:#080808;color:#eee;scroll-margin-top:48px}
+.about-panel-grid{display:grid;grid-template-columns:22% 38% 40%;gap:0}
+.about-panel-copy{padding-right:48px}.about-panel-contact{padding-left:48px;padding-right:16px}
+.about-panel p,.about-panel a{font-size:clamp(14px,1.15vw,20px);line-height:1.6;margin:0;font-weight:400}
+.about-panel h3{font-size:12px;font-weight:400;color:#999;margin:0 0 10px}
+.about-experience,.about-skills{margin-top:32px}.about-experience p+p{margin-top:8px}
+.navigation-open .index-panel{margin-bottom:24px}.index-panel{scroll-margin-top:48px}
+@media(max-width:850px){.about-panel{padding:20px 0 28px}.about-panel-grid{grid-template-columns:1fr;gap:24px}.about-panel-grid>div:first-child{display:none}.about-panel-copy,.about-panel-contact{padding:0}.about-panel p,.about-panel a{font-size:13px}.about-experience,.about-skills{margin-top:20px}.navigation-open .intro h1{font-size:18px}.about-panel h3{font-size:11px}}

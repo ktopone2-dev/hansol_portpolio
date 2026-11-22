@@ -20,7 +20,7 @@ function collectContentGroups(){
   return [...groups.values()].flatMap(group=>{
     const assets=[...(contentAdditionalAssets[group.project]||[]),...group.images].filter(item=>item.src==='images/content/9e69f583fefd.webp'||(!item.isPC&&item.src!=='images/content/d688f52f5ec7.webp'&&!/(?:^|[_\s])PC(?:[_.\s]|$)/i.test(item.sourceName||'')));
     const portrait=assets.find(item=>Math.abs(item.w/item.h-.8)<.015);
-    const selectedCover={'imshop/colecole':"images/content/2f3cdd3a42af.webp",'kasina/spiridon':'images/content/f424b483a022.webp','kasina/SALOMPN_SNS컨텐츠':'images/content/dd6bb924776e.webp'}[group.project];
+    const selectedCover={'obscura/Troentorp':'images/content/troentorp-05.webp','imshop/colecole':"images/content/2f3cdd3a42af.webp",'kasina/spiridon':'images/content/f424b483a022.webp','kasina/SALOMPN_SNS컨텐츠':'images/content/dd6bb924776e.webp'}[group.project];
     const cover=assets.find(item=>item.src===selectedCover)||portrait||contentCoverAssets[group.project]||assets[0];
     if(!cover)return [];
     const unique=new Map();

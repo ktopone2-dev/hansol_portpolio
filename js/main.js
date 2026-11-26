@@ -429,8 +429,9 @@ document.querySelectorAll('.site-header a[href^="#"]').forEach(link=>{
 // Folding section index.
 const indexToggle=document.querySelector('.index-toggle');
 const indexPanel=document.querySelector('#index-panel');
-function closeIndex(){indexToggle.setAttribute('aria-expanded','false');indexPanel.hidden=true;document.body.classList.toggle('navigation-open',!document.querySelector('#about').hidden);}
-indexToggle.addEventListener('click',()=>{const open=indexToggle.getAttribute('aria-expanded')!=='true';indexToggle.setAttribute('aria-expanded',String(open));indexPanel.hidden=!open;document.body.classList.toggle('navigation-open',open);if(open){document.querySelector('#about').hidden=true;document.querySelector('.about-toggle').setAttribute('aria-expanded','false');if(!detail.hidden){fromList=false;originLink=null;history.replaceState(null,'',location.pathname);showList();}positionNavigationPanel();}});
+let indexCollapseAnimation=null,indexOpenedAt=0,indexScrollOrigin=window.scrollY;
+function closeIndex(){if(indexCollapseAnimation){indexCollapseAnimation.cancel();indexCollapseAnimation=null;}indexToggle.setAttribute('aria-expanded','false');indexPanel.hidden=true;document.body.classList.toggle('navigation-open',!document.querySelector('#about').hidden);}
+indexToggle.addEventListener('click',()=>{const open=indexToggle.getAttribute('aria-expanded')!=='true';indexToggle.setAttribute('aria-expanded',String(open));indexPanel.hidden=!open;document.body.classList.toggle('navigation-open',open);if(open){if(indexCollapseAnimation){indexCollapseAnimation.cancel();indexCollapseAnimation=null;}indexOpenedAt=performance.now();indexScrollOrigin=window.scrollY;document.querySelector('#about').hidden=true;document.querySelector('.about-toggle').setAttribute('aria-expanded','false');if(!detail.hidden){fromList=false;originLink=null;history.replaceState(null,'',location.pathname);showList();}positionNavigationPanel();}});
 indexPanel.addEventListener('click',event=>{const yearLink=event.target.closest('[data-index-year]');if(yearLink){event.preventDefault();const year=yearLink.dataset.indexYear;document.querySelectorAll('#pages [data-project]').forEach(card=>{card.hidden=projects.find(project=>project.slug===card.dataset.project)?.year!==year});closeIndex();document.querySelector('#pages').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});return;}const anyLink=event.target.closest('a');if(anyLink&&!anyLink.hash){closeIndex();return;}const link=event.target.closest('a[href^="#"]');if(!link)return;event.preventDefault();if(link.hash==='#pages'||link.hash==='#work')document.querySelectorAll('#pages [data-project]').forEach(card=>card.hidden=false);closeIndex();if(!detail.hidden){fromList=false;originLink=null;history.replaceState(null,'',location.pathname+link.hash);showList();}else history.replaceState(null,'',location.pathname+link.hash);requestAnimationFrame(()=>document.querySelector(link.hash)?.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'start'}));});
 document.addEventListener('click',event=>{if(!indexPanel.hidden&&!indexPanel.contains(event.target)&&!indexToggle.contains(event.target))closeIndex();});
 document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!indexPanel.hidden){closeIndex();indexToggle.focus();}});
@@ -446,3 +447,16 @@ if(location.hash==='#about')aboutToggle.click();
 
 function positionNavigationPanel(){const header=document.querySelector('.site-header');document.documentElement.style.setProperty('--navigation-top',`${header.getBoundingClientRect().bottom}px`);}
 window.addEventListener('resize',()=>{if(document.body.classList.contains('navigation-open'))positionNavigationPanel();});
+
+// Dismiss the index gently when the page is scrolled downward.
+window.addEventListener('scroll',()=>{
+ const y=window.scrollY;
+ if(indexPanel.hidden||indexCollapseAnimation){indexScrollOrigin=y;return;}
+ if(performance.now()-indexOpenedAt<350){indexScrollOrigin=y;return;}
+ if(y<indexScrollOrigin){indexScrollOrigin=y;return;}
+ if(y-indexScrollOrigin<16)return;
+ if(matchMedia('(prefers-reduced-motion: reduce)').matches){closeIndex();return;}
+ const animation=indexPanel.animate([{opacity:1,transform:'translateY(0)'},{opacity:0,transform:'translateY(-12px)'}],{duration:220,easing:'cubic-bezier(.22,1,.36,1)',fill:'forwards'});
+ indexCollapseAnimation=animation;
+ animation.finished.then(()=>{if(indexCollapseAnimation===animation)closeIndex();}).catch(()=>{});
+},{passive:true});
